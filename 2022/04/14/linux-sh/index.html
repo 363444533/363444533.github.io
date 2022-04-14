@@ -24,7 +24,7 @@
 
   
 
-  <title>Hello World | 星辰大海</title>
+  <title>linux(sh) | 星辰大海</title>
 
   
 
@@ -98,11 +98,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap">linux(sh)</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-14T07:44:46.694Z" itemprop="datePublished">2022-04-14</time>
+            <time  class="article-date" datetime="2022-04-14T12:11:40.000Z" itemprop="datePublished">2022-04-14</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -131,19 +131,80 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<p><code>echo</code>用于字符串的输出<br><code>echo -e</code>开启转义<br><code>echo</code>  `<code>data</code>`    显示命令结果 结果当显示当前日期<br><code>read 变量名</code>   读取键盘的值<br>使用变量<code>echo $&#123;变量名&#125;</code><br>声明只读变量 <code>readonly 变量名</code><br>删除变量<code>unset 变量名</code><br>shell数组声明是用的（）里面的值用空格分开<br>例：<code>array = (1 2 3 4 5)</code><br>获取数组长度用@来获取  <code>echo $&#123;array[@]&#125;</code><br>单行注释  <code>#</code><br>多行注释</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:&lt;&lt;EOF  </span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">注释内容...</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><code>expr</code>是一种计算工具 使用运算时前面应该加上expr<br>在``里包括着  例：<code>val=</code>`<code>expr 2 + 2</code>`<br>**  注意 乘号前面必须加反斜线</p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><blockquote>
+<ul>
+<li><code>-eq</code> 检测两个数是否相等<blockquote>
+<ul>
+<li><code>-ne</code> 检测两个数是否不相等</li>
+<li><code>-gt</code>  检测左边是否大于右边</li>
+<li><code>-lt</code>   检测左边是否小于右边</li>
+<li><code>-ge</code> 检测左边是否大于等于右边</li>
+<li><code>le</code>   检测左边是否小于等于右边</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h3><blockquote>
+<ul>
+<li><code>!</code>  非运算<blockquote>
+<ul>
+<li><code>-o</code> 或运算</li>
+<li><code>-a</code>  与运算</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><blockquote>
+<ul>
+<li><code>&amp;&amp;</code><blockquote>
+<ul>
+<li><code>||</code></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h3><blockquote>
+<ul>
+<li><code>=</code>   检测两个字符串是否相等<blockquote>
+<ul>
+<li><code>!=</code>  检测两个字符串是否不相等</li>
+<li><code>-Z</code>  检测字符串长度是否为0</li>
+<li><code>-n</code>  检测字符串长度是否不为 0</li>
+<li><code>$</code>   检测字符串是否为空</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h3><p><img src="https://img-blog.csdnimg.cn/573dfd78f9ab40eeaf6c3fa74d0380e3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAV0Hnu4jnu5PogIU=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="与其他语言相似 与echo不同的是需要用\n 换行"></p>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><blockquote>
+<h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if #判断条件</span><br><span class="line">then  #成立就执行</span><br><span class="line">else #不成立则执行 如果没有代码就不写else</span><br><span class="line">fi   #结束</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>多种判断条件的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if</span><br><span class="line">then</span><br><span class="line">elif</span><br><span class="line">then</span><br><span class="line">else</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for 变量 in 列表 </span><br><span class="line">do</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">while 判断条件</span><br><span class="line">do</span><br><span class="line">done</span><br><span class="line">```shell</span><br><span class="line">while 可以用来循环读取键盘信息  </span><br><span class="line">`while read X` 将键盘输入的值定义为X 按ctrl+D停止循环</span><br><span class="line">无限循环`while :`或`while true`</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">### until循环</span></span></span><br><span class="line">```shell</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">与<span class="keyword">while</span>循环相反 当判断条件为<span class="literal">true</span>时才跳出循环</span></span><br><span class="line">until 判断条件</span><br><span class="line">do</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h4 id="case…esac"><a href="#case…esac" class="headerlink" title="case…esac"></a>case…esac</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">只有在遇到;;时跳出 等价于<span class="built_in">break</span></span> </span><br><span class="line">case 值 in</span><br><span class="line">    1) echo </span><br><span class="line">    ;;</span><br><span class="line">    2) echo</span><br><span class="line">    ;;</span><br><span class="line">    3) echo</span><br><span class="line">    ;;</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    *) echo</span><br><span class="line">    ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>可以带function</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function funname()&#123;</span><br><span class="line">    echo &quot;hello shell&quot;</span><br><span class="line">    return `expr 1 + 1`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以不带function定义</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">demoFun()&#123;</span><br><span class="line">    echo &quot;hello shell&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>不带return时函数以最后一句结果为返回值</p>
+</blockquote>
 
       </section>
 
@@ -151,20 +212,20 @@
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/04/14/linux-sh/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">linux(sh)</h2>
+        <a href="/2022/04/14/hello-world/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Hello World</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
