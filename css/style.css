@@ -523,7 +523,7 @@ html.show-mobile-nav .navbar-list {
     width: 100vw;
     height: 100vh;
     padding: 20px 0;
-    background: linear-gradient(to right bottom,lightblue,lightgrey)
+    background: linear-gradient(to right bottom,lightblue,lightgrey);
     z-index: 999;
   }
   .navbar-list-item a {
