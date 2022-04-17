@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <link rel="icon" type="image/png" href="./images/favicon.png"/>
+    <meta charset="utf-8" http-equiv="Cache-Control" content="max-age=259200" />
+	<meta name ="description" content="利用百度搜索引擎搭建的简易，美观，有趣的搜索首页">
+    <title>dning百度一下</title>
+    <style type="text/css">
+        /*改变进度条*/
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 10px;
+            background-color: rgba(243, 235, 233, 0);
+        }
+        ::-webkit-scrollbar-track {
+            background-color: rgba(240, 220, 220, 0.8);
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            /* Firefox 4 */
+            -webkit-transition: all 0.4s ease;
+            /* Safari 和 Chrome */
+            -o-transition: all 0.4s ease;
+            /* Opera */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            border-radius: 3px;
+            background-color: rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            /* Firefox 4 */
+            -webkit-transition: all 0.4s ease;
+            /* Safari 和 Chrome */
+            -o-transition: all 0.4s ease;
+            /* Opera */
+        }
+        body {
+            color: #666;
+            font: 85%/140% Arial, Helvetica, sans-serif;
+            height:101%;
+            /* max-width: 96%; */
+            margin: 0 auto;
+            /* background: transparent url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F014b885b0e0aeaa8012181b064799e.gif&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635748889&t=f02679b3f5362f76836a7b4e73238f57) center center fixed !important; */
+            /* background: transparent url(./images/c74a20a4462309f70c229a7e650e0cf3d7cad609.gif) center center fixed !important; */
+            background: transparent url(images/meijing.jfif) center center fixed !important;
+
+
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        #header{
+            width: 100%;
+            height: 45px;
+        }
+        #header_nav{
+            position: absolute;
+            right: 40px;
+            top: 10px;
+            z-index: 15;
+        }
+        #header_nav li{
+            float: left;
+            list-style-type: none;
+            margin-left: 20px;
+            
+        }
+        #header_nav li a{
+            color:darkgray;
+            /* border: 5px solid rgb(10,60,86);
+            border-radius: 20%; */
+            font-size: 15px;
+            font-weight: 700;
+            line-height:24px;
+        }
+        #main{
+            width: 100%;
+            height: 503px;
+            text-align: center;
+        }
+        img{
+            margin-top: 117px;
+        }
+
+        /* 自定义收索内容 */
+        .imgLogo {
+            display: inline-block;
+        }
+
+        .RNNXgb {
+            background: #fff;
+            display: flex;
+            border: 1px solid #dfe1e5;
+            box-shadow: none;
+            border-radius: 24px;
+            height: 44px;
+            margin: 28px auto;
+            width: 584px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .SDkEP {
+            flex: 1;
+            display: flex;
+            padding: 5px 8px 0 20px;
+            width: 582px;
+        }
+
+        .RNNXgb:hover {
+            box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+            border-color: rgba(223, 225, 229, 0);
+        }
+        /* 结束 */
+        
+       
+
+    </style>
+</head>
+<body>
+    <!-- 鼠标特效代码开始 -->
+    <div style="position: absolute;z-index: 10;" id="container"></div>
+        <script type="text/javascript" src='js/sketch.min.js'></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </div>
+    <!-- 代码结束 -->
+    <!-- 看板娘开始 -->
+    <!-- L2Dwidget.js L2D网页动画人物 -->
+    
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script>
+        L2Dwidget.init({
+            "model": {
+                "jsonPath": "https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json",
+                "scale": 1,
+                "hHeadPos": 0.5,
+                "vHeadPos": 0.618
+                
+            },
+            "display": {
+                "position": "right",
+                "width":250,
+                "height": 500,
+                "hOffset": -50,
+                "vOffset": -130
+                
+            },
+            "mobile": {
+                "show": true,
+                "scale": 0.5
+                
+            },
+            "react": {
+                "opacityDefault": 0.98,       //默认透明度
+                "opacityOnHover": 0.2
+                
+            }
+        });
+    </script>
+    </script>
+   
+    <!--
+        其他可选的模型：
+            https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
+            小帅哥： https://unpkg.com/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json
+            萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
+            小可爱（女）：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
+            小可爱（男）：https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json
+            初音：https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json
+    -->
+    <!-- 看板娘结束 -->
+    <div id="header">
+        <ul id=header_nav>
+            <li><a href="https://www.csdn.net/">CSDN</a></li>
+            <li><a href=https://www.educoder.net>educoder</a></li>
+            <li><a href="https://www.oschina.net/">开源</a></li>
+            <li><a href="https://www.huya.com/">虎牙</a></li>
+            <li><a href="https://www.bilibili.com/">哔哩哔哩</a></li>   
+        </ul>
+    </div>
+
+    <div id="main">
+        <form id="form" class="tsf nj" name="f" action="https://www.baidu.com/s">
+            <div class="imgLogo" onclick="imgClick()">
+                <!-- 收索logo -->
+                <!-- <img src="http://tiebapic.baidu.com/forum/w%3D580/sign=237f0eafc0ca7bcb7d7bc7278e086b3f/fbf082025aafa40f1a8af9b1bc64034f78f01909.jpg" /> -->
+                 <img src="./images/fbf082025aafa40f1a8af9b1bc64034f78f01909.png" /><br />
+            </div>
+
+            <!-- 搜索输入框 -->
+            <div class="RNNXgb">
+                <div class="SDkEP">
+                    <div class="left">
+                        <style>
+                            .left {
+                                display: flex;
+                                flex: 1;
+                                flex-wrap: wrap
+                            }
+
+                            .vdLsw {
+                                color: transparent;
+                                flex: 100%;
+                                white-space: pre;
+                            }
+
+                            .gLFyf {
+                                background-color: transparent;
+                                border: none;
+                                padding: 0;
+                                color: rgba(0, 0, 0, .87);
+                                word-wrap: break-word;
+                                outline: none;
+                                display: flex;
+                                flex: 100%;
+                                -webkit-tap-highlight-color: transparent;
+                                margin-top: -37px;
+                            }
+
+                            .gsfi {
+                                font-weight: bold;
+                                font: 18px arial, sans-serif;
+                                line-height: 34px;
+                                height: 34px !important;
+                            }
+
+
+                        </style>
+                        <div class="vdLsw gsfi"></div>
+                        <input type="text" id="wd_infos" class="gLFyf gsfi" name="wd" maxlength="2048" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" autocomplete="off" role="combobox" spellcheck="false" title="duning 搜索" value="" aria-label="搜索" />
+                    </div>
+                    <div class="dRYYxd">
+                        <style>
+                            .dRYYxd {
+                                display: flex;
+                                flex: 0 0 auto;
+                                margin-top: -5px;
+                                align-items: stretch;
+                                flex-direction: row;
+                            }
+                            .JC0tCe {
+                                flex: 1 0 auto;
+                                display: flex;
+                                cursor: pointer;
+                                align-items: center;
+                                border: 0;
+                                background: transparent;
+                                outline: none;
+                                padding: 0 8px;
+                                width: 24px;
+                                line-height: 44px
+                            }
+
+                            .hb2Smf {
+                                background: url('./images/google_mc.png') 0 0 no-repeat;
+                                height: 24px;
+                                width: 24px;
+                                background-size: 24px;
+                                vertical-align: middle
+                            }
+                        </style>
+                        <div class="JC0tCe" aria-label="按语音搜索" role="button" tabindex="0">
+                          <span id="spanShow" class="hb2Smf" onclick="spanClick()"></span>
+                        </div>
+                        <div id="showDiv" style="background: rgb(45, 45, 45); border: 1px solid rgb(255, 255, 255); color: rgb(255, 255, 255); display: none; font-size: 11px; font-weight: bold; height: 29px;  line-height: 29px; position: fixed; margin-top: 52px; margin-left: -21px; padding: 0px 10px; text-align: center; white-space: nowrap; visibility: visible; z-index: 2000; box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px; box-sizing: border-box; transition: opacity 0.13s ease 0s;">
+                            请点击搜索
+                            <div style="border-width: 0px 6px 6px; border-style: solid; border-image: initial; border-color: rgb(255, 255, 255) transparent; display: block; font-size: 0px; height: 0px; line-height: 0; position: relative; top: -35px; width: 0px; left: 23.6667px;">
+                                <div style="border-width: 0px 6px 6px; border-style: solid; border-image: initial; border-color: rgb(45, 45, 45) transparent;  display: block; font-size: 0px; height: 0px; line-height: 0; position: relative; top: 1px; width: 0px; left: -6px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</body>
+<script type="text/javascript">
+    //点击图片
+    function imgClick() {
+         document.getElementById("wd_infos").value = '今日新鲜事';
+         document.getElementById("form").submit();
+    };
+
+    //捕捉search框键盘回车事件
+    document.getElementById("wd_infos").onkeydown = function(e) {
+        //捕捉回车事件
+        var ev = (typeof event!= 'undefined') ? window.event : e;
+        if(ev.keyCode == 13 && this.value == '' ) {
+            document.getElementById("wd_infos").value = '今日新鲜事';
+        }
+    }
+
+    //语音图标移入移出
+    var set = document.getElementById('spanShow');
+    set.onmouseover = function (){
+        document.getElementById("showDiv").style.display = "block";
+    }
+    set.onmouseout = function (){
+        document.getElementById("showDiv").style.display = "none";
+    }
+
+    点击事件收索
+    function spanClick(){
+        var value = document.getElementById("wd_infos").value;
+        if(''==value || value == null){
+            document.getElementById("wd_infos").value = '今日新鲜事';
+        }
+        document.getElementById("form").submit();
+    }
+
+</script>
+</html>
