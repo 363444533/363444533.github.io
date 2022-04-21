@@ -577,7 +577,7 @@ html.show-mobile-nav .navbar-list {
 }
 .header-container {
   position: relative;
-  background: no-repeat url("background-repeat: no-repeat") ;
+  background: no-repeat url("../images/background.jpg") ;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
@@ -600,7 +600,7 @@ html.show-mobile-nav .navbar-list {
   height: 100%;
   z-index: -1;
   background-size: cover;
-  background: no-repeat url("background-repeat: no-repeat") ;
+  background: no-repeat url("../images/background.jpg") ;
   background-position: center;
   background-repeat: no-repeat;
   z-index: auto;
