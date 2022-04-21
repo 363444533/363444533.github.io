@@ -577,7 +577,7 @@ html.show-mobile-nav .navbar-list {
 }
 .header-container {
   position: relative;
-  background: no-repeat url("https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg") ;
+  background: no-repeat url("background-repeat: no-repeat") ;
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
@@ -600,6 +600,7 @@ html.show-mobile-nav .navbar-list {
   height: 100%;
   z-index: -1;
   background-size: cover;
+  background: no-repeat url("background-repeat: no-repeat") ;
   background-position: center;
   background-repeat: no-repeat;
   z-index: auto;
