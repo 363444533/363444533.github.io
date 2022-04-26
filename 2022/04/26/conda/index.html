@@ -24,7 +24,7 @@
 
   
 
-  <title>pip设置源 | 星辰大海</title>
+  <title>常用conda命令 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F052420110515%2F200524110515-11-1200.jpg&amp;refer=http%3A%2F%2Fimg.jj20.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653021535&amp;t=246728005d6a808669d62916a53bf81d)"></div>
+    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fc90842fb5658432ff21954a35ab9d555b9e0794c.png&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653574095&amp;t=51a24c8f65cd700b88df96b0a5d1a634)"></div>
   
 
   <!-- navbar -->
@@ -100,22 +100,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">pip设置源</h1>
+          <h1 class="title-wrap">常用conda命令</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-19T14:55:03.000Z" itemprop="datePublished">2022-04-19</time>
+            <time  class="article-date" datetime="2022-04-26T13:52:13.000Z" itemprop="datePublished">2022-04-26</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/python/">📒 python</a></li>
+    <li><a href="/categories/conda/">📒 conda</a></li>
   
 </ul>
           <ul class="wrap-list dark">
-  
-    <li><a href="/tags/python/">🏷️ python</a></li>
-  
-    <li><a href="/tags/pip/">🏷️ pip</a></li>
   
 </ul>
         </div>
@@ -139,58 +135,32 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>pip默认使用国外的镜像源<br>使用pip下载时很慢<br>这时需要换国内的镜像源</p>
-<p>查看当前默认源<br><code>pip3 config list </code></p>
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>在下载时加入参数 <code>-i 镜像源地址</code>   </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jieba</span><br><span class="line">或者</span><br><span class="line">pip install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>在方法一种每次使用pip下载时都要接参数<br>下面结束一劳永逸的办法<br>修改默认源</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">pip config <span class="built_in">set</span> install.trusted-host mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
-
-<p>第一句代码后面网址接你要换源的网址</p>
-<p>下面介绍几种常用的国内镜像源</p>
-<h2 id="国内镜像源"><a href="#国内镜像源" class="headerlink" title="国内镜像源"></a>国内镜像源</h2><ul>
-<li>阿里云 <code>http://mirrors.aliyun.com/pypi/simple/</code></li>
-<li>中国科技大学 <code> https://pypi.mirrors.ustc.edu.cn/simple/</code></li>
-<li>豆瓣 <code>http://pypi.douban.com/simple</code></li>
-<li>python官方 <code>https://pypi.python.org/simple/</code></li>
-<li>v2ex <code>http://pypi.v2ex.com/simple/</code></li>
-<li>中国科学院 <code> http://pypi.mirrors.opencas.cn/simple/</code></li>
-<li>清华大学 <code> https://pypi.tuna.tsinghua.edu.cn/simple/</code></li>
-</ul>
-
+        <p>注意：以下<code>your_env_name</code>  指你所要操作的虚拟环境名称</p>
+<p>查看现有虚拟环境<br><code>conda  info  --envs</code><br>or<br><code>conda env list</code></p>
+<p>创建虚拟环境<br><code>conda  create  --name  your_env_name</code><br><code>conda  create  --name  your_env_name python=3.5</code>   &#x2F;&#x2F;创建指定python版本</p>
+<p>进入虚拟环境<br><code>activate your_env_name</code></p>
+<p>退出当前虚拟环境<br><code>deactivate</code></p>
+<p>删除虚拟环境<br><code>conda remove -n your_env_name --all</code><br>or<br><code>conda remove --name your_env_name --all</code></p>
+<p>查看当前虚拟环境下的包<br><code>conda  install  xxx</code></p>
+<p>卸载包<br><code>conda  uninstall  xxx</code></p>
+<p>升级anaconda</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs n1ql">conda  <span class="hljs-keyword">update</span>  conda<br>conda  <span class="hljs-keyword">update</span>  anaconda<br></code></pre></td></tr></table></figure>
       </section>
 
       
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fc90842fb5658432ff21954a35ab9d555b9e0794c.png&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653574095&amp;t=51a24c8f65cd700b88df96b0a5d1a634"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/04/26/conda/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">常用conda命令</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&amp;refer=http%3A%2F%2Fwww.2008php.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652576015&amp;t=5d8b46f9f59c9c1aaca2600fd8963763"></div>
+      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F052420110515%2F200524110515-11-1200.jpg&amp;refer=http%3A%2F%2Fimg.jj20.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653021535&amp;t=246728005d6a808669d62916a53bf81d"></div>
     
     <div class="card-text">
       
-        <a href="/2022/04/14/linux-sh/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">linux(sh)</h2>
+        <a href="/2022/04/19/pip%E8%AE%BE%E7%BD%AE%E6%BA%90/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">pip设置源</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -269,18 +239,6 @@
 </section>
 
       
-<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
-</svg>
-    <span>TOC</span>
-  </div>
-  <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-number">2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">国内镜像源</span></a></li></ol>
-  </div>
-</section>
-
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
