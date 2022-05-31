@@ -24,7 +24,7 @@
 
   
 
-  <title>更新文档 | 星辰大海</title>
+  <title>node.js | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202004%2F12%2F20200412095043_fdcqy.jpg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652630183&amp;t=bdaabf5984585fb6177281ce2e416c4a)"></div>
+    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb.zol-img.com.cn%2Fdesk%2Fbizhi%2Fimage%2F10%2F960x600%2F1602331134706.jpg&amp;refer=http%3A%2F%2Fb.zol-img.com.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1656600769&amp;t=61db364cace7ce41e6ec8b7a7be83e28)"></div>
   
 
   <!-- navbar -->
@@ -100,16 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">更新文档</h1>
+          <h1 class="title-wrap">node.js</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-14T07:44:46.694Z" itemprop="datePublished">2022-04-14</time>
+            <time  class="article-date" datetime="2022-05-31T14:39:34.000Z" itemprop="datePublished">2022-05-31</time>
           </h2>
           <ul class="wrap-list dark">
   
+    <li><a href="/categories/web/">📒 web</a></li>
+  
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/node/">🏷️ node</a></li>
   
 </ul>
         </div>
@@ -133,28 +137,14 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><p><code>hexo new [layout] &quot;post-name&quot;</code> </p>
-<h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><p><code>hexo c &amp;&amp; hexo g hexo d</code>  </p>
-<h2 id="静态本地部署"><a href="#静态本地部署" class="headerlink" title="静态本地部署"></a>静态本地部署</h2><p><code>hexo -g</code><br><code>hexo server</code></p>
-<h2 id="创造page"><a href="#创造page" class="headerlink" title="创造page"></a>创造page</h2><p><code> hexo new page xxx</code></p>
-<h2 id="Front-matter-参数类型"><a href="#Front-matter-参数类型" class="headerlink" title="Front-matter 参数类型"></a>Front-matter 参数类型</h2><p>标题	 <code>title</code><br>布局 	<code>layout</code><br>建立日期 <code>date</code><br>标签  <code>tags</code><br>分类 <code>categories</code><br>分页 <code>post</code><br>音频  <code>aplayer: true</code><br>视频  <code>dplayer: true</code><br>文章壁纸 <code>cover: 地址</code><br>文章上部壁纸 <code>top_img: 地址</code></p>
-<h2 id="插入图片音频"><a href="#插入图片音频" class="headerlink" title="插入图片音频"></a>插入图片音频</h2><p>&#x3D;&#x3D;图片&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  image</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg&quot;</span><br><span class="line">    title=&quot;带描述带图片&quot;</span><br><span class="line">%&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="后端node搭建"><a href="#后端node搭建" class="headerlink" title="后端node搭建"></a>后端node搭建</h2><p>在全局安装node后使用<br>创建node.js文件夹<br><code>npm i -g express</code>全局安装框架<br><code>npm i nodemon</code>  安装本地自动更新工具<br><code>express projectName</code>  创建相应projectName的模板<br>删除一些对应的文件<br><code>node install</code>  安装相应包</p>
+<blockquote>
+<p>|–api   这个文件夹是直接手动生成了，所有的接口代码处理都放在这里面<br>|–bin   项目的执行文件<br>    |–www    里面有一个参数，可以手动修改自己想要的端口号，直接更改里面的port后面的3000，因为项目默认是3000端口<br>|–config  这个文件也是手动创建的，项目写的是数据库的配置信息<br>|–node_modules   依赖库<br>|–public    静态的文件都放在这里面，比如一些第三方库啥的<br>|–routes    路由文件，规定每个URI调用的接口函数<br>|–utils	手动创建的，封装了一些常用的工具类函数，方便使用<br>|–views	这里面是视图代码，我没有用到<br>|–app.js	项目运行的主入口文件<br>|–package.json	工程的一些配置信息</p>
+</blockquote>
+<p>我的模板app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();<br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./function/login.js&quot;</span>);<br><span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./function/getUserInfo.js&quot;</span>);<br>cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;cors&quot;</span>)<br><span class="hljs-comment">// 配置静态资源文件夹</span><br>app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">static</span>(<span class="hljs-string">&quot;./upload&quot;</span>));<br><span class="hljs-comment">// 允许跨域</span><br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title function_">cors</span>());<br><span class="hljs-comment">// 解析数据</span><br>app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">json</span>());<br>app.<span class="hljs-title function_">use</span>(express.<span class="hljs-title function_">urlencoded</span>(&#123; <span class="hljs-attr">extended</span>: <span class="hljs-literal">false</span> &#125;));<br><br>app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/api/login&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;正在响应登录信息&quot;</span>)<br>  <span class="hljs-comment">// console.log(login(req));</span><br>   res.<span class="hljs-title function_">send</span>(<span class="hljs-title function_">login</span>(req));<br><br>&#125;)<br>app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/api/userInfo&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>)=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;正在响应个人信息&quot;</span>)<br>  res.<span class="hljs-title function_">send</span>(<span class="hljs-title function_">getUserInfo</span>(req));<br><br><br>&#125;)<br>app.<span class="hljs-title function_">post</span>(<span class="hljs-string">&#x27;/api/userInfo&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;收到登录信息&quot;</span>)<br>  <span class="hljs-comment">// console.log(login(req));</span><br>   res.<span class="hljs-title function_">send</span>(<span class="hljs-title function_">login</span>(req));<br><br>&#125;)<br> <br>app.<span class="hljs-title function_">listen</span>(<span class="hljs-number">4000</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;running&#x27;</span>)<br>&#125;);<br><br></code></pre></td></tr></table></figure>
 
-
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="带描述带图片" loading="lazy" />
-      <figcaption>带描述带图片</figcaption>
-    </figure>
-  
-
-<p>&#x3D;&#x3D;音频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  aplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3&quot;</span><br><span class="line">    name=&quot;アイロニ&quot;</span><br><span class="line">    artist=&quot;鹿乃&quot;</span><br><span class="line">    cover=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg&quot;</span><br><span class="line">    lrc=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc&quot;</span><br><span class="line">    lrcType=&quot;3&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
-<p>&#x3D;&#x3D;视频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  dplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4&quot;</span><br><span class="line">    pic=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="dplayer-box" data-url='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4' data-pic='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10' ></div>
-<p>我的<a target="_blank" rel="noopener" href="https://kyori.xyz/page/2/">主题</a></p>
+<p>最后<code>nodeman js文件</code>运行<br>报错的话可以加上 npx</p>
 
       </section>
 
@@ -162,22 +152,20 @@
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&amp;refer=http%3A%2F%2Fwww.2008php.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652576015&amp;t=5d8b46f9f59c9c1aaca2600fd8963763"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/04/14/linux-sh/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">linux(sh)</h2>
+        <a href="/2022/05/16/vue%E9%A1%B9%E7%9B%AE/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue项目</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
@@ -258,7 +246,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">创建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text">一键部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text">静态本地部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E9%80%A0page"><span class="toc-number">4.</span> <span class="toc-text">创造page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-matter-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">Front-matter 参数类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E9%9F%B3%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">插入图片音频</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AFnode%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">后端node搭建</span></a></li></ol>
   </div>
 </section>
 
@@ -399,70 +387,7 @@
   <!-- aplayer -->
 
 
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: true,
-          loop: true,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
-
-
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: true,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 

@@ -24,7 +24,7 @@
 
   
 
-  <title>更新文档 | 星辰大海</title>
+  <title>vue总结 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202004%2F12%2F20200412095043_fdcqy.jpg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652630183&amp;t=bdaabf5984585fb6177281ce2e416c4a)"></div>
+    <div class="post-image" style="background-image: url(https://img1.baidu.com/it/u=1197028092,1851839270&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500)"></div>
   
 
   <!-- navbar -->
@@ -100,16 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">更新文档</h1>
+          <h1 class="title-wrap">vue总结</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-14T07:44:46.694Z" itemprop="datePublished">2022-04-14</time>
+            <time  class="article-date" datetime="2022-05-15T12:02:28.000Z" itemprop="datePublished">2022-05-15</time>
           </h2>
           <ul class="wrap-list dark">
   
+    <li><a href="/categories/web/">📒 web</a></li>
+  
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/vue/">🏷️ vue</a></li>
   
 </ul>
         </div>
@@ -133,28 +137,208 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><p><code>hexo new [layout] &quot;post-name&quot;</code> </p>
-<h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><p><code>hexo c &amp;&amp; hexo g hexo d</code>  </p>
-<h2 id="静态本地部署"><a href="#静态本地部署" class="headerlink" title="静态本地部署"></a>静态本地部署</h2><p><code>hexo -g</code><br><code>hexo server</code></p>
-<h2 id="创造page"><a href="#创造page" class="headerlink" title="创造page"></a>创造page</h2><p><code> hexo new page xxx</code></p>
-<h2 id="Front-matter-参数类型"><a href="#Front-matter-参数类型" class="headerlink" title="Front-matter 参数类型"></a>Front-matter 参数类型</h2><p>标题	 <code>title</code><br>布局 	<code>layout</code><br>建立日期 <code>date</code><br>标签  <code>tags</code><br>分类 <code>categories</code><br>分页 <code>post</code><br>音频  <code>aplayer: true</code><br>视频  <code>dplayer: true</code><br>文章壁纸 <code>cover: 地址</code><br>文章上部壁纸 <code>top_img: 地址</code></p>
-<h2 id="插入图片音频"><a href="#插入图片音频" class="headerlink" title="插入图片音频"></a>插入图片音频</h2><p>&#x3D;&#x3D;图片&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  image</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg&quot;</span><br><span class="line">    title=&quot;带描述带图片&quot;</span><br><span class="line">%&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="带描述带图片" loading="lazy" />
-      <figcaption>带描述带图片</figcaption>
-    </figure>
-  
-
-<p>&#x3D;&#x3D;音频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  aplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3&quot;</span><br><span class="line">    name=&quot;アイロニ&quot;</span><br><span class="line">    artist=&quot;鹿乃&quot;</span><br><span class="line">    cover=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg&quot;</span><br><span class="line">    lrc=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc&quot;</span><br><span class="line">    lrcType=&quot;3&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
-<p>&#x3D;&#x3D;视频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  dplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4&quot;</span><br><span class="line">    pic=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="dplayer-box" data-url='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4' data-pic='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10' ></div>
-<p>我的<a target="_blank" rel="noopener" href="https://kyori.xyz/page/2/">主题</a></p>
+        <h2 id="认识VUE"><a href="#认识VUE" class="headerlink" title="认识VUE"></a>认识VUE</h2><p><code>vue</code>是一个开发<strong>用户界面</strong>的<strong>渐进式</strong>框架，典型的<code>SPA</code>单页面应用。</p>
+<p><code>vue</code>全家桶：</p>
+<ul>
+<li>vue router</li>
+<li>vuex</li>
+<li>vue</li>
+<li>vue组件库</li>
+</ul>
+<p>辅助vue开发的工具：</p>
+<ul>
+<li><code>vue-cli</code> ： 开发工程化项目的工具</li>
+<li><code>vue-devtool</code> ：辅助查看vue数据的</li>
+</ul>
+<h3 id="vue的特性"><a href="#vue的特性" class="headerlink" title="vue的特性"></a>vue的特性</h3><p>基于<code>MVVM</code>模式实现下列功能：</p>
+<ul>
+<li>数据驱动视图</li>
+<li>双向数据绑定</li>
+</ul>
+<blockquote>
+<p>tips：   <code>npm</code> 是包管理工具，方便下载第三方包<code>/</code>工具</p>
+</blockquote>
+<h3 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h3><p>常用的<code>6</code>类：</p>
+<ul>
+<li><p>内容渲染  v-html   v-text</p>
+</li>
+<li><p>属性绑定 v-bind</p>
+</li>
+<li><p>条件渲染 v-if   v-show</p>
+</li>
+<li><p>双向数据 v-model</p>
+</li>
+<li><p>事件绑定  v-on     </p>
+<ul>
+<li>事件修饰符</li>
+</ul>
+</li>
+<li><p>列表渲染  v-for  （必须绑定唯一的<code>key</code>值）</p>
+</li>
+</ul>
+<p>文本插值<code>&#123;&#123;&#125;&#125;</code>  : 辅助渲染<code>vue</code>数据</p>
+<p><code>template</code> 模板标签： 占位，但不渲染自身</p>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ol>
+<li><p>组件基础选项</p>
+<ul>
+<li><code>data</code>  数据<ul>
+<li>在根组件实例中，值可以是对象形式</li>
+<li>在子组件 <code>/</code> 单文件开发中，组件中的<code>data</code>必须是函数形式，返回的对象才是组件内要用的数据</li>
+</ul>
+</li>
+<li><code>computed</code> 计算属性<ul>
+<li>必须有<code>return</code></li>
+<li>惰性求值：组件渲染初始时会执行<code>1</code>次，之后只有当内部依赖的数据发生变化时才会重新触发并计算最新的结果值</li>
+</ul>
+</li>
+<li><code>methods</code> 计算方法<ul>
+<li>事件函数时：<ul>
+<li>第<code>1</code>个形参默认是事件对象</li>
+<li>如果调用时传了实参进来，那么第<code>1</code>个形参就不接收事件对象了</li>
+<li>调用时传入<code>$event</code>事件对象进去，指定形参接收即可</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>wacth</code> 侦听器<ul>
+<li>监听的数据名，就是方法名</li>
+<li>只有侦听的数据发生变化才会触发，不会主动触发</li>
+</ul>
+</li>
+<li><code>components</code> 注册子组件</li>
+<li><code>props</code>  声明传入组件的数据，并接收<ul>
+<li>单向数据流</li>
+<li>校验（只有象征性阻止一样，不会影响结果）</li>
+</ul>
+</li>
+<li><code>mixins</code> 混入</li>
+</ul>
+</li>
+<li><p>生命周期</p>
+<ul>
+<li>beforeCreate &#x2F;  created   创建阶段</li>
+<li>beforeMount &#x2F; mounted   挂载阶段</li>
+<li>beforeUpdate &#x2F;  updated   更新</li>
+<li>beforeDestroy &#x2F;  destroyed  销毁组件</li>
+</ul>
+</li>
+<li><p>动态组件 </p>
+<ul>
+<li><code>component</code>，通过<code>is</code>属性绑定要渲染的组件名称，默认每次切换组件时都会重新创建<code>/</code>渲染组件</li>
+<li><code>keep-alive</code> ：  缓存动态切换的组件</li>
+</ul>
+</li>
+<li><p>过渡组件</p>
+<ul>
+<li>transition</li>
+<li>transition-group </li>
+<li>自定义过渡类名，添加对应的过渡样式</li>
+</ul>
+</li>
+<li><p>插槽</p>
+<ol>
+<li>默认插槽</li>
+<li>具名插槽</li>
+<li>作用域插槽</li>
+</ol>
+</li>
+<li><p>全局API</p>
+<ul>
+<li>extend()</li>
+<li>$mount()</li>
+<li>nextTick()</li>
+<li>$destroy()</li>
+<li>set()</li>
+<li>delete()</li>
+</ul>
+</li>
+<li><p>组件实例属性</p>
+<ul>
+<li>$data</li>
+<li>$props</li>
+<li>$attrs</li>
+<li>$parent   $root    $children</li>
+<li>$set  $delete</li>
+<li>$options</li>
+<li>el</li>
+<li><code>$refs</code> 绑定<code>dom</code>元素，提供给<code>js</code>逻辑去使用</li>
+</ul>
+</li>
+</ol>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><ul>
+<li>配置webpack<ul>
+<li>打包</li>
+<li>定义入口 <code>/</code> 出口</li>
+</ul>
+</li>
+<li>使用<code>webpack</code>第三方插件： 热更新 &#x2F; 动态<code>html</code>文件</li>
+<li>loader ： 编译各种需要打包的文件</li>
+</ul>
+<h2 id="vue-x2F-cli脚手架"><a href="#vue-x2F-cli脚手架" class="headerlink" title="vue&#x2F;cli脚手架"></a>vue&#x2F;cli脚手架</h2><p>注意：文件的路径：  @    improt   require   </p>
+<h2 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h2><ul>
+<li>router-link  <code>/</code>  router-view 组件</li>
+<li>配置路由<ul>
+<li>命名路由</li>
+<li>路由懒加载</li>
+<li>动态路由</li>
+<li>向路由组件内传递参数：props</li>
+<li>命名视图</li>
+<li>重定向 &#x2F; 别名</li>
+<li>编程式导航  &#x2F;  声明式导航</li>
+<li>$router路由对象  &#x2F;  $route 当前路由信息对象</li>
+<li>元数据 meta</li>
+<li>子路由children</li>
+</ul>
+</li>
+<li>导航守卫<ul>
+<li>路由导航守卫</li>
+<li>组件导航守卫</li>
+</ul>
+</li>
+<li>路由的过渡</li>
+<li>路由的滚动行为<ul>
+<li>跳转到锚点   &#x2F; 滚动到锚点位置</li>
+</ul>
+</li>
+</ul>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><ul>
+<li>配置vuex<ul>
+<li>state状态(数据)</li>
+<li>getters 计算属性  （只有使用了Getters时才会触发1次，之后只有内部依赖的state发生变化了才会再次触发重新计算）</li>
+<li>mutations 计算方法（只有它能修改state状态，同步函数）</li>
+<li>actions  计算方法 （异步函数）</li>
+<li>module 模块<ul>
+<li>命名空间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用时的辅助函数<ul>
+<li>mapState</li>
+<li>mapGetters </li>
+<li>mapMutations </li>
+<li>mapActions  </li>
+<li>使用时，通常会用<code>...</code>进行解构，快捷映射到组件内使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="第三方库"><a href="#第三方库" class="headerlink" title="第三方库"></a>第三方库</h2><ul>
+<li><code>Element-ui</code> ： <code>vue</code>组件库<ul>
+<li>全部引入到项目 （打包后项目体积会较大）</li>
+<li>按需引入到项目 （打包后的项目体积会小些）</li>
+</ul>
+</li>
+<li><code>axios</code> : 第三方<code>ajax</code>请求的工具库<ul>
+<li>发起请求</li>
+<li>拦截器</li>
+</ul>
+</li>
+<li><code>ECharts</code> : 图标类库<ul>
+<li>完整引入</li>
+<li>按需引入</li>
+</ul>
+</li>
+</ul>
 
       </section>
 
@@ -165,12 +349,10 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&amp;refer=http%3A%2F%2Fwww.2008php.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652576015&amp;t=5d8b46f9f59c9c1aaca2600fd8963763"></div>
-    
     <div class="card-text">
       
-        <a href="/2022/04/14/linux-sh/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">linux(sh)</h2>
+        <a href="/2022/05/16/vue%E9%A1%B9%E7%9B%AE/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue项目</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -178,6 +360,20 @@
   </article>
 </div>
           
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/05/14/tensorflow%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">tensorflow常用函数</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
           
         </nav>
       
@@ -258,7 +454,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">创建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text">一键部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text">静态本地部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E9%80%A0page"><span class="toc-number">4.</span> <span class="toc-text">创造page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-matter-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">Front-matter 参数类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E9%9F%B3%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">插入图片音频</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86VUE"><span class="toc-number">1.</span> <span class="toc-text">认识VUE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.</span> <span class="toc-text">vue的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">vue指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack"><span class="toc-number">2.</span> <span class="toc-text">webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-x2F-cli%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">3.</span> <span class="toc-text">vue&#x2F;cli脚手架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-router"><span class="toc-number">4.</span> <span class="toc-text">vue-router</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vuex"><span class="toc-number">5.</span> <span class="toc-text">vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">6.</span> <span class="toc-text">第三方库</span></a></li></ol>
   </div>
 </section>
 
@@ -399,70 +595,7 @@
   <!-- aplayer -->
 
 
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: true,
-          loop: true,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
-
-
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: true,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 
