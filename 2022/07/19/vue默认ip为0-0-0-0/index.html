@@ -137,7 +137,9 @@
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <h3 id="vue启动本地部署npm-run-serve"><a href="#vue启动本地部署npm-run-serve" class="headerlink" title="vue启动本地部署npm run serve"></a>vue启动本地部署npm run serve</h3><p>在配置vue项目后一般会在<em>package.json</em>文件中将serve后面加上<code>--open</code><br>之前写vue2项目打开都是自动打开<code>localhost:8080</code><br>写vue3时突然发现创建后打开的是<code>0.0.0.0:8080</code>项目没显示，自己手动改到localhost：8080才能成功<br>感觉每次这样太麻烦<br>所以在vue.config.js文件里加上</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>  <span class="hljs-attr">devServer</span>: &#123;<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">8080</span>,<br>    <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;localhost&#x27;</span>,<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
-<p>#module.exports是全局配置无需导出</p>
+<p>![](</p>
+<p>List item</p>
+<p>1.png)<br><em>刚开始配置svg文件因为设置了两个<code>module.exports =</code>没注意到这里是等于，所以config文件中只能有一个module.exports</em><br>#module.exports是全局配置无需导出</p>
 
       </section>
 
