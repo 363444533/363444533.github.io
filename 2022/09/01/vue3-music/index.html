@@ -24,7 +24,7 @@
 
   
 
-  <title>更新文档 | 星辰大海</title>
+  <title>vue3-music | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202004%2F12%2F20200412095043_fdcqy.jpg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652630183&amp;t=bdaabf5984585fb6177281ce2e416c4a)"></div>
+    <div class="post-image" style="background-image: url(https://pic4.zhimg.com/v2-26e3ff8a795bd84ec55c20cfd8de7e7e_r.jpg?source=1940ef5c)"></div>
   
 
   <!-- navbar -->
@@ -100,16 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">更新文档</h1>
+          <h1 class="title-wrap">vue3-music</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-14T07:44:46.694Z" itemprop="datePublished">2022-04-14</time>
+            <time  class="article-date" datetime="2022-09-01T04:41:51.000Z" itemprop="datePublished">2022-09-01</time>
           </h2>
           <ul class="wrap-list dark">
   
+    <li><a href="/categories/web/">📒 web</a></li>
+  
 </ul>
           <ul class="wrap-list dark">
+  
+    <li><a href="/tags/vue/">🏷️ vue</a></li>
   
 </ul>
         </div>
@@ -133,51 +137,46 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><p><code>hexo new [layout] &quot;post-name&quot;</code> </p>
-<h2 id="一键部署"><a href="#一键部署" class="headerlink" title="一键部署"></a>一键部署</h2><p><code>hexo c &amp;&amp; hexo g hexo d</code>  </p>
-<h2 id="静态本地部署"><a href="#静态本地部署" class="headerlink" title="静态本地部署"></a>静态本地部署</h2><p><code>hexo -g</code><br><code>hexo server</code></p>
-<h2 id="创造page"><a href="#创造page" class="headerlink" title="创造page"></a>创造page</h2><p><code> hexo new page xxx</code></p>
-<h2 id="Front-matter-参数类型"><a href="#Front-matter-参数类型" class="headerlink" title="Front-matter 参数类型"></a>Front-matter 参数类型</h2><p>标题	 <code>title</code><br>布局 	<code>layout</code><br>建立日期 <code>date</code><br>标签  <code>tags</code><br>分类 <code>categories</code><br>分页 <code>post</code><br>音频  <code>aplayer: true</code><br>视频  <code>dplayer: true</code><br>文章壁纸 <code>cover: 地址</code><br>文章上部壁纸 <code>top_img: 地址</code></p>
-<h2 id="插入图片音频"><a href="#插入图片音频" class="headerlink" title="插入图片音频"></a>插入图片音频</h2><p>&#x3D;&#x3D;图片&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  image</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg&quot;</span><br><span class="line">    title=&quot;带描述带图片&quot;</span><br><span class="line">%&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="自取"><a href="#自取" class="headerlink" title="自取"></a>自取</h2><p>vue学完了，使用vue3制作了一个仿网易云的移动应用APP<br>文件放在了github与csdn，上需要的自取<br><a target="_blank" rel="noopener" href="https://github.com/363444533/vue3-music">点击跳转</a><br>下面记录一下遇到的一些问题与学习到的东西</p>
+<p><img src="/2022/09/01/vue3-music/1.png"></p>
+<h2 id="文件打包"><a href="#文件打包" class="headerlink" title="文件打包"></a>文件打包</h2><p>在使用<code>npm run build</code>进行打包的时候，发现打开页面出现了空白，问题出在router下的index.js里<br><img src="/2022/09/01/vue3-music/2.png"><br>需要将createWebHistory改为createWebHashHistory再次打包后页面就正常显示了</p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><img src="/2022/09/01/vue3-music/3.png"><br>在对应元素上加v-loading或v-loadingimg即可触发<br>记得要挂载在main.js里面 <code>app.use(directives)</code></p>
+<h2 id="小图标"><a href="#小图标" class="headerlink" title="小图标"></a>小图标</h2><p>下载使用的<code>svg-sprite-loader</code></p>
+<p>仿app上的图标全是在<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里图标</a>上找的，下载其svg代码放在一个文件夹里</p>
+<p>在vue.config里对其进行配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title function_">chainWebpack</span>(<span class="hljs-params">config</span>)&#123;<br>  config.<span class="hljs-property">module</span>.<span class="hljs-property">rules</span>.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;svg&quot;</span>);<br>  config.<span class="hljs-property">module</span><br>    .<span class="hljs-title function_">rule</span>(<span class="hljs-string">&#x27;svg&#x27;</span>)<br>    .<span class="hljs-property">exclude</span>.<span class="hljs-title function_">add</span>(path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;./src/icons&#x27;</span>))<br>    .<span class="hljs-title function_">end</span>()<br>   config.<span class="hljs-property">module</span><br>    .<span class="hljs-title function_">rule</span>(<span class="hljs-string">&#x27;icons&#x27;</span>)<br>    .<span class="hljs-title function_">test</span>(<span class="hljs-regexp">/\.svg$/</span>)<br>    .<span class="hljs-property">include</span>.<span class="hljs-title function_">add</span>(path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;./src/icons&#x27;</span>))<br>    .<span class="hljs-title function_">end</span>()<br>    .<span class="hljs-title function_">use</span>(<span class="hljs-string">&#x27;svg-sprite-loader&#x27;</span>)<br>    .<span class="hljs-title function_">loader</span>(<span class="hljs-string">&#x27;svg-sprite-loader&#x27;</span>) <br>    .<span class="hljs-title function_">options</span>(&#123;<br>      <span class="hljs-attr">symbolId</span>: <span class="hljs-string">&#x27;icon-[name]&#x27;</span><br>    &#125;)<br>    .<span class="hljs-title function_">end</span>()<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>接着在icon文件夹下的index.js遍历</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>.<span class="hljs-title function_">context</span>(<span class="hljs-string">&quot;./svg&quot;</span>,<span class="hljs-literal">false</span>, <span class="hljs-regexp">/\.svg$/</span>)<br><br>request.<span class="hljs-title function_">keys</span>().<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">src</span> =&gt;</span> &#123;<br>    <span class="hljs-title function_">request</span>(src)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>最后在main.js里全局导入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;@/icons&quot;</span><br>app.<span class="hljs-title function_">component</span>(<span class="hljs-string">&quot;SvgIcon&quot;</span>,<span class="hljs-title class_">SvgIcon</span>)<br></code></pre></td></tr></table></figure>
+
+<p>完成后在组件中可直接使用<br>iconFileName 就是对应icon文件的文件名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>  <span class="hljs-attr">:width</span>=<span class="hljs-string">width</span> <span class="hljs-attr">:height</span>=<span class="hljs-string">height</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">use</span> <span class="hljs-attr">:xlink:href</span>=<span class="hljs-string">&quot;&#x27;#icon-&#x27; + iconFileName&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="带描述带图片" loading="lazy" />
-      <figcaption>带描述带图片</figcaption>
-    </figure>
-  
-
-<p>&#x3D;&#x3D;音频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  aplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3&quot;</span><br><span class="line">    name=&quot;アイロニ&quot;</span><br><span class="line">    artist=&quot;鹿乃&quot;</span><br><span class="line">    cover=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg&quot;</span><br><span class="line">    lrc=&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc&quot;</span><br><span class="line">    lrcType=&quot;3&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
-<p>&#x3D;&#x3D;视频&#x3D;&#x3D;</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  dplayer</span><br><span class="line">    url=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4&quot;</span><br><span class="line">    pic=&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10&quot;</span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
-<div class="dplayer-box" data-url='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4' data-pic='https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10' ></div>
-<p>我的<a target="_blank" rel="noopener" href="https://kyori.xyz/page/2/">主题</a></p>
-
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">white-space</span>: nowrap; //所有的文本都显示在这一行<br><span class="hljs-attribute">overflow</span>: hidden; //超过指定的宽度和高度也隐藏<br><span class="hljs-attribute">text-overflow</span>: ellipsis; //多余的文本用省略号显示;<br>-webkit-line-clamp: <span class="hljs-number">2</span>; //限制为指定的行数<br>-webkit-box-orient: vertical;  //盒子垂直排列其内容。<br>-webkit-box-orient: horizontal;  //盒子水平排列其内容。<br><br><br></code></pre></td></tr></table></figure>
       </section>
 
       
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&amp;refer=http%3A%2F%2Fwww.2008php.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652576015&amp;t=5d8b46f9f59c9c1aaca2600fd8963763"></div>
+      <div class="card-cover" background-image-lazy data-img="https://ts1.cn.mm.bing.net/th/id/R-C.f7f590227439b2486b8efd65d9581524?rik=G6QU%2fMc4xzCQHA&amp;riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f5%2fcf%2fd711458b03.jpg&amp;ehk=T%2bfDFuEGaMKaeIcQS%2fGakRBJ%2fidJ5N21BUdn3I8H1QQ%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0"></div>
     
     <div class="card-text">
       
-        <a href="/2022/04/14/linux-sh/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">linux(sh)</h2>
+        <a href="/2022/07/19/vue%E9%BB%98%E8%AE%A4ip%E4%B8%BA0-0-0-0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">vue默认ip为0.0.0.0</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
@@ -231,7 +230,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>11</span>
+        <span>12</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -258,7 +257,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">创建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text">一键部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2"><span class="toc-number">3.</span> <span class="toc-text">静态本地部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E9%80%A0page"><span class="toc-number">4.</span> <span class="toc-text">创造page</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-matter-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">Front-matter 参数类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E9%9F%B3%E9%A2%91"><span class="toc-number">6.</span> <span class="toc-text">插入图片音频</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8F%96"><span class="toc-number">1.</span> <span class="toc-text">自取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85"><span class="toc-number">2.</span> <span class="toc-text">文件打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E5%9B%BE%E6%A0%87"><span class="toc-number">4.</span> <span class="toc-text">小图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">样式</span></a></li></ol>
   </div>
 </section>
 
@@ -319,7 +318,7 @@
       
         <li class="categorys-list-item">
           <a href="/categories/web/">
-            web (3)
+            web (4)
           </a>
         </li>
       
@@ -405,70 +404,7 @@
   <!-- aplayer -->
 
 
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: true,
-          loop: true,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
-
-
 <!-- dplayer -->
-
-
-<!-- dplayer 视频 start -->
-<script type="text/javascript" src="https://unpkg.com/hls.js@1.0.1/dist/hls.js"></script>
-<script type="text/javascript" src="https://unpkg.com/dplayer@1.25.1/dist/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer-box");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let pic = el.dataset.pic;
-      let subtitle = el.dataset.subtitle;
-
-      let options = {
-        container: el,
-        video: { url: url, pic: pic },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: true,
-        mutex: true,
-      }
-
-      if (subtitle) {
-        options.subtitle = {
-          url: el.dataset.subtitle,
-        }
-      }
-      new DPlayer(options);
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
 
 
 
