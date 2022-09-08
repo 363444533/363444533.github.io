@@ -951,10 +951,11 @@ html.show-mobile-nav .navbar-list {
   background: none;
   text-shadow: none;
   padding: 0;
+  color: #412f13;
 }
 .markdown-body pre,
 .markdown-body .highlight {
-  background: #2d2d2d;
+  background-color: #feeeed;
   overflow: auto;
   color: #ccc;
   padding: 15px 20px;
