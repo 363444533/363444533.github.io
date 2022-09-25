@@ -519,11 +519,11 @@ html.show-mobile-nav .navbar-list {
     justify-content: center;
     gap: 20px;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100vw;
     height: 100vh;
     padding: 20px 0;
-    background: linear-gradient(to right bottom,lightblue,lightgrey);
+    background: linear-gradient(to right bottom, #add8e6, #d3d3d3);
     z-index: 999;
   }
   .navbar-list-item a {
@@ -577,9 +577,10 @@ html.show-mobile-nav .navbar-list {
 }
 .header-container {
   position: relative;
-  background: no-repeat url("../images/background.jpg") ;
+  background: url("../images/bacakground.jpg");
   background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 .header-content {
@@ -599,8 +600,8 @@ html.show-mobile-nav .navbar-list {
   width: 100%;
   height: 100%;
   z-index: -1;
+  background: url("../images/bacakground.jpg");
   background-size: cover;
-  background: no-repeat url("../images/background.jpg") ;
   background-position: center;
   background-repeat: no-repeat;
   z-index: auto;
@@ -952,14 +953,13 @@ html.show-mobile-nav .navbar-list {
   text-shadow: none;
   padding: 0;
   color: #412f13;
-  border-radius: 8px;
 }
 .markdown-body pre,
 .markdown-body .highlight {
   background-color: #feeeed;
   overflow: auto;
-  color: #ccc;
   padding: 15px 20px;
+  border-radius: 8px;
 }
 .markdown-body .highlight .gutter pre,
 .markdown-body .gist .gist-file .gist-data .line-numbers {
@@ -1035,6 +1035,7 @@ html.show-mobile-nav .navbar-list {
   display: flex;
   align-items: flex-start;
   overflow: visible;
+/** -------- */
 }
 .content-container.post-container .article-info .article-nav {
   display: flex;

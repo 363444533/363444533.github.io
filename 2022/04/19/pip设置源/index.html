@@ -142,10 +142,10 @@
         <p>pip默认使用国外的镜像源<br>使用pip下载时很慢<br>这时需要换国内的镜像源</p>
 <p>查看当前默认源<br><code>pip3 config list </code></p>
 <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>在下载时加入参数 <code>-i 镜像源地址</code>   </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jieba</span><br><span class="line">或者</span><br><span class="line">pip install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple jieba<br>或者<br>pip install jieba -i https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></td></tr></table></figure>
 
 <h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>在方法一种每次使用pip下载时都要接参数<br>下面结束一劳永逸的办法<br>修改默认源</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> <span class="keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">pip config <span class="built_in">set</span> install.trusted-host mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">pip config <span class="hljs-built_in">set</span> <span class="hljs-keyword">global</span>.index-url https://pypi.tuna.tsinghua.edu.cn/simple<br>pip config <span class="hljs-built_in">set</span> install.trusted-host mirrors.aliyun.com<br></code></pre></td></tr></table></figure>
 
 <p>第一句代码后面网址接你要换源的网址</p>
 <p>下面介绍几种常用的国内镜像源</p>
@@ -307,6 +307,12 @@
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
+          <a href="/categories/conda/">
+            conda (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
           <a href="/categories/shell/">
             shell (1)
           </a>
@@ -319,14 +325,8 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/conda/">
-            conda (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/">
-            前端 (1)
+          <a href="/categories/web/">
+            web (4)
           </a>
         </li>
       
@@ -337,14 +337,14 @@
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/web/">
-            web (4)
+          <a href="/categories/vue/">
+            vue (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/vue/">
-            vue (1)
+          <a href="/categories/%E5%89%8D%E7%AB%AF/">
+            前端 (1)
           </a>
         </li>
       
