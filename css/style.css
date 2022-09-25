@@ -952,6 +952,7 @@ html.show-mobile-nav .navbar-list {
   text-shadow: none;
   padding: 0;
   color: #412f13;
+  border-radius: 8px;
 }
 .markdown-body pre,
 .markdown-body .highlight {
