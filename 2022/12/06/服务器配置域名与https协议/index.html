@@ -24,7 +24,7 @@
 
   
 
-  <title>tensorflow常用函数 | 星辰大海</title>
+  <title>服务器配置域名与https协议 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://img2.baidu.com/it/u=698293652,2837358523&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPG?w=889&amp;h=500)"></div>
+    <div class="post-image" style="background-image: url(https://xiazai-fd.zol-img.com.cn/t_s960x600/g1/M01/03/06/Cg-4jVONmIiIa6NpAATdgesQtisAAN9YQLYqJcABN2Z899.jpg)"></div>
   
 
   <!-- navbar -->
@@ -100,20 +100,22 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">tensorflow常用函数</h1>
+          <h1 class="title-wrap">服务器配置域名与https协议</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-05-14T05:44:27.000Z" itemprop="datePublished">2022-05-14</time>
+            <time  class="article-date" datetime="2022-12-06T06:19:29.000Z" itemprop="datePublished">2022-12-06</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">📒 深度学习</a></li>
+    <li><a href="/categories/%E5%85%B6%E4%BB%96/">📒 其他</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/tensorflow/">🏷️ tensorflow</a></li>
+    <li><a href="/tags/%E5%9F%9F%E5%90%8D/">🏷️ 域名</a></li>
+  
+    <li><a href="/tags/https/">🏷️ https</a></li>
   
 </ul>
         </div>
@@ -137,57 +139,55 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="tensorflow的常用函数"><a href="#tensorflow的常用函数" class="headerlink" title="tensorflow的常用函数"></a>tensorflow的常用函数</h2><p>* </p>
-<ul>
-<li>强制tensor转化为该数据类型<br><code>tf.cast(张量, dtype=数据类型)</code></li>
-<li>计算张量维度上的最小值<br> <code>tf.reduce_min(张量名) </code></li>
-<li>计算张量维度上元素的最大值<br> <code>tf.reduce_max(张量名)</code></li>
-</ul>
-<p><em>axis&#x3D;0  表示对列操作</em><br><em>axis&#x3D;1 表示对行操作</em></p>
-<ul>
-<li><p>计算张量沿着指定维度的平均值<br> <code>tf.reduce_mean(张量名, axis=操作轴)</code></p>
-</li>
-<li><p>计算张量沿着指定维度的和<br> <code>tf.reduce_sum=(张量名, axis=操作轴)</code></p>
-</li>
-<li><p>将变量标记为”可训练”,被标记的变量会在反向传播中记录梯度信息<br> <code>tf.Variable(初始值)</code></p>
-</li>
-</ul>
-<h3 id="TensorFlow的数学运算"><a href="#TensorFlow的数学运算" class="headerlink" title="TensorFlow的数学运算"></a>TensorFlow的数学运算</h3><ul>
-<li><p>加减乘除</p>
-<ul>
-<li><code>tf.add(张量1,张量2)</code></li>
-<li><code>tf.subtract(张量1,张量2)</code></li>
-<li><code>tf.multiply(张量1,张量2)</code></li>
-<li><code>tf.divide(张量1,张量2)</code></li>
-</ul>
-</li>
-<li><p>平方、次方与开方</p>
-<ul>
-<li><code>tf.square(张量名)</code></li>
-<li><code>tf.pow(张量名,n次方)</code></li>
-<li><code>tf.sqrt(张量名)</code></li>
-</ul>
-</li>
-<li><p>矩阵乘<br>  <code>tf.matmul(矩阵1,矩阵2)</code></p>
-</li>
-<li><p>(特征,标签)配对<br>  <code>tf.data.Dataset.from_tensor_slices((张量一,张量2))</code></p>
-</li>
-</ul>
-<p>  <code>enumerate()</code>是python的内奸函数,可以遍历每个元素</p>
-<ul>
-<li><p>将待转化数据转化为独热编码<br>  <code>tf.one_hot(待转换数据,depth=几分类)</code></p>
-</li>
-<li><p>使输出符合概率分布<br>  <code>tf.nn.softmax(x)</code></p>
-</li>
-<li><p>赋值操作,更新阐述的值并返回  使用前要先使用tf.Variable<br>   <code>w.assign_sub(w要自减的内容)</code>    w.assign_sub(1) &#x3D;&#x3D; (w &#x3D; w-1)</p>
-</li>
-<li><p>返回对应维度最大值的索引<br>   <code>tf.argmax(张量名,axis=操作轴)</code></p>
-</li>
-<li><p>返回一个[0, 1)之间的随机数<br>   <code>np.random.RandomState.rand(维度)</code></p>
-</li>
-<li><p>将两个数组按垂直方向叠加<br><code>np.vstack()</code></p>
-</li>
-</ul>
+        <h3 id="条件要求"><a href="#条件要求" class="headerlink" title="条件要求"></a>条件要求</h3><ol>
+<li>域名</li>
+<li>服务器（安装apache2）</li>
+<li>ssl协议</li>
+</ol>
+<p>这里我购买的都是腾讯云的</p>
+<h3 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h3><p>在腾讯云上买服务器很简单，直接找到自己想要的配置即可，配置服务器系统，打开需要的防火墙</p>
+<p>购买域名，想要买便宜点的就将自己的域名长度弄长一点</p>
+<p>对应需要备案的根据要求一步一步即可</p>
+<h3 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h3><p>对购买的域名进行dns解析</p>
+<p>这里提供解析网站<a target="_blank" rel="noopener" href="https://www.dnspod.cn/products/dns">跳转</a> <a target="_blank" rel="noopener" href="https://www.dnspod.cn/products/dns">https://www.dnspod.cn/products/dns</a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z66nl8"><img src="https://s1.ax1x.com/2022/12/06/z66nl8.png" alt="z66nl8.png"></a></p>
+<p>记录类型选择A 指向ip</p>
+<p>主机记录默认为@ 值指当前域名</p>
+<p>前面可自由添加其他内容则为创造子域名及对应的2级域名</p>
+<p>线路选默认则为所以都能访问，不建议设置其他选项</p>
+<p>ipv4地址 填写你服务器的公网IP地址即可</p>
+<p>TTL建议选长一点有利于访问时的网站的解析速度</p>
+<p>此时你可以通过你的域名访问你的服务器了</p>
+<h3 id="SSL证书申请（在对应服务器的账号下申请）"><a href="#SSL证书申请（在对应服务器的账号下申请）" class="headerlink" title="SSL证书申请（在对应服务器的账号下申请）"></a>SSL证书申请（在对应服务器的账号下申请）</h3><p>腾讯云直接搜索ssl证书进行购买（可以购买免费的）</p>
+<p>填写信息后将对应的内容填写到域名的解析中</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/z66b1f"><img src="https://s1.ax1x.com/2022/12/06/z66b1f.png" alt="z66b1f.png"></a></p>
+<p>此时你的ssl证书申请完成</p>
+<p>点击下载证书</p>
+<h3 id="服务器apache2配置https"><a href="#服务器apache2配置https" class="headerlink" title="服务器apache2配置https"></a>服务器apache2配置https</h3><p>首先服务器打开443端口</p>
+<p>进入apache2的配置文件目录&#x2F;etc&#x2F;apache2&#x2F;sites-available</p>
+<p>找到对应的配置文件，默认为default-ssl.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs 对应配置">#修改为域名<br>ServerName caolei520.work<br><br>DocumentRoot /var/www/html<br><br>#添加<br>SSLCertificateFile      /home/ubuntu/caolei520.work_apache/caolei520.work.crt<br>SSLCertificateKeyFile /home/ubuntu/caolei520.work_apache/caolei520.work.key<br>SSLCertificateChainFile /home/ubuntu/caolei520.work_apache/root_bundle.crt<br><br></code></pre></td></tr></table></figure>
+
+<p>建立软链接</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">sudo a2ensite default-ssl<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="http重定向到https"><a href="#http重定向到https" class="headerlink" title="http重定向到https"></a><strong>http重定向到https</strong></h3><p>修改默认网站配置 &#x2F;etc&#x2F;apache2&#x2F;site-avaliable&#x2F;000-default.conf</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;VirtualHost *:80&gt;<br>...<br>    RewriteEngine On<br>    RewriteCond %&#123;HTTPS&#125; off<br>    RewriteRule (.*) https://%&#123;HTTP_HOST&#125;%&#123;REQUEST_URI&#125;<br>...<br>&lt;/VirtualHost&gt;<br></code></pre></td></tr></table></figure>
+
+<p>保存后执行以下命令</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">sudo a2enmod rewrite<br></code></pre></td></tr></table></figure>
+
+<p>然后再次重启一下apache服务器：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">sudo service apache2 restart<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="node-js使用https模板"><a href="#node-js使用https模板" class="headerlink" title="node.js使用https模板"></a>node.js使用https模板</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><br><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><span class="hljs-keyword">const</span> https = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;https&#x27;</span>);<br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();<br><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PORT</span> = <span class="hljs-number">4000</span>;<br><span class="hljs-keyword">const</span> options = &#123;<br>  <span class="hljs-attr">key</span>: fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;./https/caolei520.work.key&#x27;</span>),<br>  <span class="hljs-attr">cert</span>: fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;./https/caolei520.work.crt&#x27;</span>)<br>&#125;;<br><br>https.<span class="hljs-title function_">createServer</span>(options, app)<br>  .<span class="hljs-title function_">listen</span>(<span class="hljs-variable constant_">PORT</span>, <span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`App listening on port <span class="hljs-subst">$&#123;PORT&#125;</span>!`</span>));<br><br>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>));<br>                                                      <br></code></pre></td></tr></table></figure>
+
 
       </section>
 
@@ -195,32 +195,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://img1.baidu.com/it/u=1197028092,1851839270&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/05/15/vue%E6%80%BB%E7%BB%93/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue总结</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://img0.baidu.com/it/u=2110692174,1219836662&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500"></div>
+      <div class="card-cover" background-image-lazy data-img="https://s1.ax1x.com/2022/11/18/zuZhRK.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2022/05/01/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%85%8D%E7%BD%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue脚手架配置</h2>
+        <a href="/2022/11/18/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">小程序笔记</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -307,7 +291,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tensorflow%E7%9A%84%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">tensorflow的常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TensorFlow%E7%9A%84%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">1.1.</span> <span class="toc-text">TensorFlow的数学运算</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E8%A6%81%E6%B1%82"><span class="toc-number">1.</span> <span class="toc-text">条件要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0"><span class="toc-number">2.</span> <span class="toc-text">购买</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E8%A7%A3%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">DNS解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7%EF%BC%88%E5%9C%A8%E5%AF%B9%E5%BA%94%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%B4%A6%E5%8F%B7%E4%B8%8B%E7%94%B3%E8%AF%B7%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">SSL证书申请（在对应服务器的账号下申请）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8apache2%E9%85%8D%E7%BD%AEhttps"><span class="toc-number">5.</span> <span class="toc-text">服务器apache2配置https</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0https"><span class="toc-number">6.</span> <span class="toc-text">http重定向到https</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node-js%E4%BD%BF%E7%94%A8https%E6%A8%A1%E6%9D%BF"><span class="toc-number">6.1.</span> <span class="toc-text">node.js使用https模板</span></a></li></ol></li></ol>
   </div>
 </section>
 
