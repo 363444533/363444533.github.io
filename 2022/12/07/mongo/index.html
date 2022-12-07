@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+
+  
+    <meta name="keywords" content="博客">
+  
+
+  
+    <meta name="author" content="彦">
+  
+
+  
+
+  
+
+  <title>mongo | 星辰大海</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://www.yulumi.cn/gl/uploads/allimg/201128/161H4HI-2.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          星辰大海
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="http://1.15.101.45/">music</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53107845?spm=1000.2115.3001.5343">CSDN</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">关于我</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">mongo</h1>
+          <h2 class="title-sub-wrap">
+            <strong>彦</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-12-07T08:11:42.000Z" itemprop="datePublished">2022-12-07</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">📒 数据库</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/mongo/">🏷️ mongo</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h1><h2 id="配置Mongodb"><a href="#配置Mongodb" class="headerlink" title="配置Mongodb"></a>配置Mongodb</h2><h3 id="Windows端启动Mongdb服务"><a href="#Windows端启动Mongdb服务" class="headerlink" title="Windows端启动Mongdb服务"></a>Windows端启动Mongdb服务</h3><p>配置环境变量<br>电脑-→属性-→环境变量-→Path中添加MongoDb安装路径一直到bin<br>例<img src="https://img-blog.csdnimg.cn/110b16a0f98d4e8483b581b1a6c6ffa4.png" alt="在这里插入图片描述"><br>启动服务并进行相关配置;<br><code>mongod.exe --bind_ip 127.0.0.1 --logpath D:\MongoDB\dblog\mongodb.log --logappend --dbpath D:\MongoDB\db --port 27017 --service</code></p>
+<ul>
+<li>bind_ip:绑定服务 IP，绑定127.0.0.1，则只能本机访问，不指定默认本地所有 IP ；</li>
+<li>logpath ：配置日志存放的位置；</li>
+<li>logappend ：日志使用追加的方式；</li>
+<li>dbpath ：配置数据存放的位置；</li>
+<li>port ：配置端口号，27017是默认端口；</li>
+<li>service ：以服务方式启动，即后台启动。</li>
+</ul>
+<p><em>可以使用不同的端口、日志文件和数据存放位置启动多个</em></p>
+<h3 id="Linx端启动Mongodb服务"><a href="#Linx端启动Mongodb服务" class="headerlink" title="Linx端启动Mongodb服务"></a>Linx端启动Mongodb服务</h3><ul>
+<li><p>创建数据存放<br>   <code>cd /data</code>  #进入data路径<br>   <code>mkdir mydb</code>  #创建mydb文件夹</p>
+</li>
+<li><p>同理创建日志文件夹存放日志文件<br><code>mkdir /logs</code>  #创建并进入logs文件夹<br><code>cd /logs</code>	<br><code>mkdir mymongo</code> #创建存放日志文件夹</p>
+</li>
+<li><p>配置文件（在<code>/etc</code>下创建配置文件）<br>  <code>/etc/mymongod/mongod.conf</code></p>
+  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">port</span>=<span class="hljs-number">27020</span><br><span class="hljs-attr">dbpath</span>=/data/mydb<br><span class="hljs-attr">logpath</span>=/logs/mymongo/mongod.log<br><span class="hljs-attr">logappend</span>=<span class="hljs-literal">true</span><br><span class="hljs-attr">fork</span>=<span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure></li>
+<li><p>配置文件启动命令<br><code>mongod -f /etc/mymongod/mongod.conf</code></p>
+<h2 id="启动Mongo客户端"><a href="#启动Mongo客户端" class="headerlink" title="启动Mongo客户端"></a>启动Mongo客户端</h2></li>
+<li><p>启动命令<br><code>mongo --port 27020</code>  	</p>
+</li>
+<li><p>关闭mongodb服务</p>
+   <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stata"><br><span class="hljs-keyword">use</span> admin  <br><span class="hljs-keyword">db</span>.shutdownServer()<br></code></pre></td></tr></table></figure></li>
+<li><p>退出客户端<br><code>exit</code>  </p>
+</li>
+<li><p><code>ps -ef | grep mongo</code>  #查看进程</p>
+</li>
+</ul>
+<h2 id="数据库基本操作"><a href="#数据库基本操作" class="headerlink" title="数据库基本操作"></a>数据库基本操作</h2><ul>
+<li><p><code>pgrep mongo -l</code>  #查看是否启动服务</p>
+</li>
+<li><p><code>mongo</code>      #连接本地数据库</p>
+</li>
+<li><p><code>use 数据库名</code>   #创建数据库（有则切换，无则创建）</p>
+</li>
+<li><p><code>show dbs</code>  #查看数据库</p>
+<p>  刚创建的数据库还在内存中，没有持久化到磁盘中<br>  查看可通过<code>db</code></p>
+</li>
+<li><p><code>db.库名.insert（&#123;_id:1,name:&quot;王小明&quot;&#125;）</code> #插入数据</p>
+</li>
+<li><p><code>db.dropDatabase()</code>  #删除数据库（删除必须先进入）</p>
+</li>
+<li><p><code>db.集合名.insert（[&#123;&#125;,&#123;&#125;]）</code>  #添加一个集合 一条数据用{}，多条数据用[]</p>
+</li>
+<li><p><code>db.集合名.find()</code> #查询集合</p>
+<ul>
+<li>db.集合名.find().pretty()    #使查询更为整齐</li>
+<li><code>db.createCollection(&quot;test&quot;, &#123; capped : true, autoIndexId : true, size : 512000, max : 1000 &#125; )</code></li>
+<li>条件查询<ol>
+<li><code>db.stu1.find(&#123;&quot;name&quot;:&quot;李小红&quot;&#125;).pretty()</code>  #等于</li>
+<li><code>db.stu1.find(&#123;&quot;age&quot;:&#123;$lt:18&#125;&#125;).pretty()</code>   #小于</li>
+<li><code>db.stu1.find(&#123;&quot;age&quot;:&#123;$lte:18&#125;&#125;).pretty()</code> #小于等于</li>
+<li><code>db.stu1.find(&#123;&quot;age&quot;:&#123;$gt:18&#125;&#125;).pretty()</code>  #大于</li>
+<li><code>db.stu1.find(&#123;&quot;age&quot;:&#123;$gte:18&#125;&#125;).pretty()</code>  #大于等于</li>
+<li><code>db.stu1.find(&#123;&quot;age&quot;:&#123;$ne:18&#125;&#125;).pretty()</code>  #等于</li>
+<li>在mongdb里and条件与or只需将键值对用<code>,</code>分割</li>
+<li><code>db.集合名.find（&#123;$and:[&quot;userid&quot;:&quot;1005&quot;,&quot;nickname&quot;:&quot;罗密欧&quot;]&#125;).pretty()</code>  #and查询</li>
+<li><code>db.集合名.find（&#123;$or:[&quot;userid&quot;:&quot;1002&quot;,&quot;userid&quot;:&quot;1003&quot;]&#125;).pretty()</code>   #or查询</li>
+<li><code>db.集合名.find(&#123;&lt;key&gt;:null&#125;).pretty()</code>   # 查询字段为null的文档</li>
+<li><code>db.集合名.find(&#123;&lt;key&gt;:/正则表达式/&#125;).pretty（）</code>  #正则查询</li>
+<li><code>db.集合名.find(&#123;&lt;key&gt;:&#123;&lt;key1&gt;:&lt;value1&gt;,&lt;key2&gt;,&lt;value2&gt;&#125;&#125;).pretty()</code>  #嵌套查询（精确）</li>
+<li><code>db.集合名.find(&#123;&lt;key&gt;.&lt;key1&gt;:&lt;value1&gt;&#125;.pretty())</code>   #嵌套查询（点查询）</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>db.集合名.find(&#123;&lt;key&gt;:&#123;$in:[&lt;key&gt;:&lt;value&gt;]&#125;&#125;).pretty()</code> 包含操作符</p>
+</li>
+<li><p><code>db.集合名.find(&#123;&lt;key&gt;:&#123;$nin:[&lt;key&gt;:&lt;value&gt;]&#125;&#125;).pretty()</code> 不包含操作符</p>
+</li>
+<li><p><code>db.集合名.drop()</code> #删除集合</p>
+</li>
+<li><p><code>db.集合名.insert(文档)</code>  #插入文档</p>
+</li>
+<li><p>（update（）用于修改关键键值，save（）修改整条数据）</p>
+</li>
+<li><p><code>db.集合名.update(&#123;旧文档&#125;,&#123;$set:&#123;新文档&#125;&#125;)</code>  #更新文档</p>
+</li>
+<li><p><code>db.集合名.save（&#123;&#125;）</code> #指定_id则更新，否则则插入</p>
+</li>
+<li><p><code>db.集合名.remove(&#123;&#39;age&#39;:20&#125;)</code>  #删除age&#x3D;20的数据</p>
+</li>
+<li><p><code>db.集合名.remove（&#123;&#125;）</code>    #删除全部数据(集合本身不会删除，集合为空)</p>
+</li>
+</ul>
+<h2 id="MongoDB文档的高级查询"><a href="#MongoDB文档的高级查询" class="headerlink" title="MongoDB文档的高级查询"></a>MongoDB文档的高级查询</h2><h3 id="向数据库导入数据和从数据库导出数据"><a href="#向数据库导入数据和从数据库导出数据" class="headerlink" title="向数据库导入数据和从数据库导出数据"></a>向数据库导入数据和从数据库导出数据</h3><p>&#x3D;&#x3D;数据导入工具：mongoimport;&#x3D;&#x3D;</p>
+<blockquote>
+<p>MongoDB自带的数据导入工具，需在未连接客户端时使用<br>需要启动Mongo服务</p>
+</blockquote>
+<ul>
+<li>导入数据<blockquote>
+<p><code>mongoimport -d Testdb1 -c score --type csv --headerline --ignoreBlanks --file test.csv</code></p>
+<ul>
+<li><code> -d Testdb1</code>:   指定将数据导入到 Testdb1 数据库；</li>
+<li><code>-c score</code> ：将数据导入到集合 score ，如果这个集合之前不存在，会自动创建一个（如果省略 –collection 这个参数，那么会自动新建一个以  CSV 文件名为名的集合）；</li>
+<li><code>--headerline</code> ：这个参数很重要，加上这个参数后创建完成后的内容会以 CSV 文件第一行的内容为字段名（导入json文件不需要这个参数）；</li>
+<li><code>--ignoreBlanks</code> ：这个参数可以忽略掉 CSV 文件中的空缺值（导入json文件不需要这个参数）；</li>
+<li><code>--file 1.csv </code>：这里就是 CSV 文件的路径了，需要使用绝对路径。<br>&#x3D;&#x3D;数据导出工具：mongoexport;&#x3D;&#x3D;</li>
+</ul>
+</blockquote>
+</li>
+<li>导出数据<br>  1.导出json格式<blockquote>
+<p><code>mongoexport -d Testdb1 -c score -o /file.json --type json</code></p>
+<ul>
+<li><code> -o /file.json</code> ：输出的文件路径&#x2F;（根目录下）和文件名；</li>
+<li><code>--type json</code> ：输出的格式，默认为 json。</li>
+</ul>
+</blockquote>
+<p>  2.出 csv 格式的文件：</p>
+<blockquote>
+<p><code>mongoexport -d Testdb1 -c score -o /file.json --type csv -f &quot;_id,name,age,sex,major&quot;</code></p>
+<ul>
+<li><code>-f </code>：当输出格式为 csv 时，需要指定输出的字段名。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="聚合操作"><a href="#聚合操作" class="headerlink" title="聚合操作"></a>聚合操作</h3><p>&#x3D;&#x3D;聚合管道操作:aggregate[({},{}…….)]&#x3D;&#x3D; 用于聚合查询所有文档的方法，数组中的每个文档表示一种管道方法！</p>
+<ul>
+<li><p>$group操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;$group:&#123;&lt;key1&gt;:&quot;$&lt;key2&gt;&quot;&#125;&#125;]).pretty()</code>  #&#x3D;&#x3D;分组&#x3D;&#x3D;将以key2为键的文档分组成为一个新的文档，新文档的键位key1</p>
+</blockquote>
+</li>
+<li><p>$limit操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate(&#123;$limit:整型数字&#125;).pretty()</code>  #显示集合中前&#x3D;&#x3D;整形数字&#x3D;&#x3D;条文档</p>
+</blockquote>
+</li>
+<li><p>$match操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;$match:&#123;&lt;key&gt;:&lt;value&gt;&#125;&#125;]).pretty()</code>	#将集合中键key中值为value的文档查询出来</p>
+</blockquote>
+</li>
+<li><p>$sort操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;$sort:&#123;&lt;key&gt;:-1或1&#125;&#125;]).pretty()</code>  #排序查询,1为	升序，-1为降序</p>
+</blockquote>
+</li>
+<li><p>$project操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;$project:&#123;&lt;key&gt;:&lt;value&gt;&#125;&#125;]).pretty()</code> #以key：value的显示规则显示该集合<br><code>db.集合名.aggregate(&#123;$project:&#123;course:1,authoe:1,tags:1,num:&#39;$learning_num&#39;&#125;&#125;)</code><br>0为不显示，非0为显示   上式把learning_num重命名为num</p>
+</blockquote>
+</li>
+<li><p>$skip操作符</p>
+<blockquote>
+<p><code>db.集合名.aggregate(&#123;$skip:整型数字&#125;).pretty()</code> #查询第&#x3D;&#x3D;整型数字&#x3D;&#x3D;后的文档<br><strong><code>$skip</code>与<code>$limit</code>可以组合使用</strong><br><code>db.educoder.aggregate([&#123;$skip:1&#125;,&#123;$limit:2&#125;])</code> 显示第2-3条文档</p>
+<ul>
+<li>$sum表达式	<br><code>&#123;&lt;key3&gt;:&#123;$sum:$&lt;key3&gt;&#125;&#125;</code>  #求和</li>
+</ul>
+</blockquote>
+</li>
+<li><p>$avg表达式</p>
+<blockquote>
+<p><code>&#123;&lt;key3&gt;:&#123;$avg:$&lt;key3&gt;&#125;&#125;</code> #求平均值</p>
+</blockquote>
+</li>
+<li><p>$min表达式</p>
+<blockquote>
+<p><code>&#123;&lt;key3&gt;:&#123;$min:$&lt;key3&gt;&#125;&#125;</code> #求最小值</p>
+</blockquote>
+</li>
+<li><p>$max表达式</p>
+<blockquote>
+<p><code>&#123;&lt;key3&gt;:&#123;$max:$&lt;key3&gt;&#125;&#125;</code> #求最大值	</p>
+</blockquote>
+</li>
+<li><p>$push表达式</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;管道操作符：&#123;&lt;key1&gt;:&quot;$&lt;key2&gt;&quot;,&#123;&lt;key3&gt;:$push:$&lt;key3&gt;&#125;&#125;&#125;])</code>  #字段key3到key3键里</p>
+</blockquote>
+</li>
+<li><p>$first表达式</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;管道操作符：&#123;&lt;key1&gt;:&quot;$&lt;key2&gt;&quot;,&#123;&lt;key3&gt;:$first:$&lt;key3&gt;&#125;&#125;&#125;])</code> #显示分组的第一个文档</p>
+</blockquote>
+</li>
+<li><p>$last表达式</p>
+<blockquote>
+<p><code>db.集合名.aggregate([&#123;管道操作符：&#123;&lt;key1&gt;:&quot;$&lt;key2&gt;&quot;,&#123;&lt;key3&gt;:$last:$&lt;key3&gt;&#125;&#125;&#125;])</code> #显示分组的最后一个文档</p>
+</blockquote>
+</li>
+<li><p>$not表达式</p>
+<blockquote>
+<p><code>db.集合名.find(&#123;age:&#123;$not:&#123;$gte:20&#125;&#125;&#125;)</code>  #条件取反	，查询不满足条件的文档</p>
+</blockquote>
+</li>
+<li><p>$unwind表达式</p>
+<blockquote>
+<p><code>db.集合名.aggregate(&#123;$unwind:&#39;$tags&#39;&#125;)</code>  #拆分查询  将$tags字段分为多条，每条包含数组里的一个值</p>
+<ul>
+<li>$addToSet	表达式<br>在结果文档中插入值到一个数组中，但不创建副本</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">db.haicoder.aggregate([<br>   &#123;<br>       <span class="hljs-string">&#x27;$group&#x27;</span>: &#123;<span class="hljs-string">&#x27;_id&#x27;</span>: <span class="hljs-string">&#x27;$id&#x27;</span>, <span class="hljs-string">&#x27;score&#x27;</span>: &#123;<span class="hljs-string">&#x27;$addToSet&#x27;</span>: <span class="hljs-string">&#x27;$score&#x27;</span>&#125;&#125;<br>   &#125;<br>]);<br></code></pre></td></tr></table></figure>
+<h2 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h2><p>&#x3D;&#x3D;游标&#x3D;&#x3D;是不是查询结果，而是查询的返回资源，或者接口，通过这个接口，可以逐条读取。就像fopen打开文件，，得到一个资源一样，通过资源，可以一行一行的读文件。</p>
+</li>
+</ul>
+<p><em><strong>使用循环插入数据</strong></em><br>首先插入10000条数据到集合 items，因为 mongodb 底层是 javascript 引擎，所以我们可以使用 js 的语法来插入数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10000</span>;i++)db.<span class="hljs-property">items</span>.<span class="hljs-title function_">insert</span>(&#123;<span class="hljs-attr">_id</span>:i,<span class="hljs-attr">text</span>:<span class="hljs-string">&quot;Hello MongoDB&quot;</span>+i&#125;)<br></code></pre></td></tr></table></figure>
+<p><strong>声明游标</strong><br>定义一个变量来保存这个游标，find 的查询结果（_id&lt;&#x3D;5）赋值给了游标 cursor 变量,代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> cursor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>(&#123;<span class="hljs-attr">_id</span>:&#123;<span class="hljs-attr">$lte</span>:<span class="hljs-number">5</span>&#125;&#125;)<br></code></pre></td></tr></table></figure>
+<p><strong>打印游标中的数据信息</strong><br>四种方法打印</p>
+<ol>
+<li><code>printjson(cursor.next()) </code> 打印下一条数据（读取完最后一条数据后，再使用会报错）</li>
+<li>使用 js 的 while 语法来循环打印 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"> <span class="hljs-keyword">var</span> currsor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>(&#123;<span class="hljs-attr">_id</span>:&#123;<span class="hljs-attr">$lte</span>:<span class="hljs-number">5</span>&#125;&#125;)<br> <span class="hljs-keyword">while</span>(curror.<span class="hljs-title function_">hasNext</span>())&#123;<br><span class="hljs-title function_">printjson</span>(curror.<span class="hljs-title function_">next</span>(););<br>&#125;<br></code></pre></td></tr></table></figure>
+ 查看时只显示20条数据<br> 全部查看需设置<code>DBQuery.shellBatchSize = 1000</code></li>
+<li>使用 for 循环打印<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> currsor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>(&#123;<span class="hljs-attr">_id</span>:&#123;<span class="hljs-attr">$lte</span>:<span class="hljs-number">5</span>&#125;&#125;);cursor.<span class="hljs-title function_">hasNext</span>();)&#123;<br><span class="hljs-title function_">printjson</span>(curror.<span class="hljs-title function_">next</span>(););<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li>使用 forEach 打印<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> currsor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>(&#123;<span class="hljs-attr">_id</span>:&#123;<span class="hljs-attr">$lte</span>:<span class="hljs-number">5</span>&#125;&#125;)<br>cursor.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>)&#123;<br><span class="hljs-title function_">printjson</span>(curror.<span class="hljs-title function_">next</span>(););<br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p> <strong>游标的使用场景</strong><br> 假设每页有10行，我们查询第701页，可以配合 skip() 和 limit() 来实现<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"> <span class="hljs-keyword">var</span> cursor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>().<span class="hljs-title function_">skip</span>(<span class="hljs-number">7000</span>).<span class="hljs-title function_">limit</span>(<span class="hljs-number">10</span>);<br>cursor.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>)&#123;<br><span class="hljs-title function_">printjson</span>(curror.<span class="hljs-title function_">next</span>(););<br>&#125;)<br></code></pre></td></tr></table></figure><br> 只取出其中一个<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"> <span class="hljs-keyword">var</span> cursor=db.<span class="hljs-property">items</span>.<span class="hljs-title function_">find</span>().<span class="hljs-title function_">skip</span>(<span class="hljs-number">7000</span>).<span class="hljs-title function_">limit</span>(<span class="hljs-number">10</span>);<br><span class="hljs-title function_">printjson</span>(curror.<span class="hljs-title function_">toArray</span>()[<span class="hljs-number">3</span>]);<br></code></pre></td></tr></table></figure></p>
+<h2 id="索引基本操作"><a href="#索引基本操作" class="headerlink" title="索引基本操作"></a>索引基本操作</h2><ul>
+<li><p><strong>创建索引(单字段索引)</strong><br><code>db.person.createIndex(&#123;key:1&#125;)</code></p>
+<ol>
+<li>key:要创建索引的建;</li>
+<li>如果为1，则为按照升序创建，-1为降序创建<br>  <img src="https://img-blog.csdnimg.cn/0d206631f7574216907e9ce373cfd869.png" alt="在这里插入图片描述"></li>
+</ol>
+</li>
+<li><p><strong>查询索引</strong><br>查询集合索引<br><code>db.person.getIndexes()</code><br>查询系统全部索引<br><code>db.system.indexes.find()</code></p>
+</li>
+<li><p><strong>删除索引</strong></p>
+<ul>
+<li>通过指定索引名称删除该索引：<code>db.person.dropIndex(&quot;areIdx&quot;)</code> </li>
+<li>通过指定集合删除集合中的全部索引:<br><code>db.person.dropIndexes()</code><br>注意：默认索引_id无法被删除</li>
+</ul>
+</li>
+</ul>
+<h3 id="常见索引的创建"><a href="#常见索引的创建" class="headerlink" title="常见索引的创建"></a>常见索引的创建</h3><ul>
+<li><strong>创建复合索引</strong></li>
+</ul>
+<p>与单字段索引的方法类似，选取多个键一同作为索引，中间以逗号隔开:</p>
+<p><code>db.person.createindex(&#123;age:1,name:1&#125;)</code></p>
+<ul>
+<li><strong>创建多Key索引</strong></li>
+</ul>
+<p>当索引的字段为数组时，创建出的索引为多key索引,多key索引回为数组的每个元素建立一条索引，</p>
+<p>比如person集合加入一个habit字段(数组)用于描述兴趣爱好</p>
+<p><code>&#123;name : &#39;王小明&#39;, age : 19, habbit: [&#39;football&#39;, &#39;runnning&#39;]&#125;</code></p>
+<p>需要查询有相同爱好的人可以利用habbit字段的多key索引</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">person</span>.<span class="hljs-title function_">createIndex</span>( &#123;<span class="hljs-attr">habbit</span>: <span class="hljs-number">1</span>&#125; )     <span class="hljs-comment">// 升序创建多key索引</span><br>db.<span class="hljs-property">person</span>.<span class="hljs-title function_">find</span>(&#123;<span class="hljs-attr">habbit</span>: <span class="hljs-string">&#x27;football&#x27;</span>&#125;)     <span class="hljs-comment">//查找喜欢足球的人</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>创建哈希索引</strong></li>
+</ul>
+<p>创建命令如下:</p>
+<p><code>db.person.createIndex(&#123;_id:&#39;hashed&#39;&#125;)</code></p>
+<ul>
+<li><strong>创建文本索引</strong></li>
+</ul>
+<p>假设有文章集合collection:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<br><span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;enjoy the mongodb articles on educoder&#x27;</span>, <span class="hljs-comment">//文章标题</span><br><span class="hljs-attr">tags</span>: [          <span class="hljs-comment">//标签</span><br>   <span class="hljs-string">&#x27;mongodb&#x27;</span>,<br>   <span class="hljs-string">&#x27;educoder&#x27;</span><br>]<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>则创建文本索引命令如下:</p>
+<p><code>db.collection.createIndex(&#123;title:&#39;text&#39;&#125;)</code> 				</p>
+<ol>
+<li><p>创建全文索引的字段必须为string格式</p>
+</li>
+<li><p>每个集合只支持一个文本索引</p>
+</li>
+</ol>
+<p>也可以创建多个字段text</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">collection</span>.<span class="hljs-title function_">createIndex</span>(<br> &#123;<br>    <span class="hljs-attr">title</span>:<span class="hljs-string">&#x27;text&#x27;</span>,<br>    tags：<span class="hljs-string">&#x27;text&#x27;</span><br> &#125;<br>)<br></code></pre></td></tr></table></figure>
+
+<p>利用title的索引搜索含有educoder.net的文章</p>
+<p><code>db.collection.find(&#123;$text:&#123;$search:&#39;educoder.net&#39;&#125;&#125;)</code></p>
+<ul>
+<li>search后的关键词可以有多个，关键词之间的分隔符可以是多种字符，例如空格、下划线、逗号、加号等，但不能是<code>-</code>和<code>\</code>，因为这两个符号会有其他用途。搜索的多个关键字是 or 的关系，除非你的关键字包含<code>-</code>；</li>
+<li>匹配时不是完整的单词匹配，相似的词也可以匹配到；</li>
+</ul>
+<p>删除文本索引：</p>
+<ul>
+<li><p>通过命令获取索引名：</p>
+<p><code>db.collection.getIndexes()</code></p>
+</li>
+<li><p>删除索引:</p>
+<p><code>db.collection.dropIndex(&#39;title_text&#39;)</code></p>
+</li>
+</ul>
+<h3 id="有趣的地理索引"><a href="#有趣的地理索引" class="headerlink" title="有趣的地理索引"></a>有趣的地理索引</h3><ul>
+<li><p><strong>GeoJson数据</strong></p>
+<p>不是所有的文档都可以创建地理位置索引，只有拥有特定格式的文档菜可以创建</p>
+<p>如果使用的2dsphere索引，则应该插入GeoJson数据</p>
+<p>GeoJson格式：<code> &#123; type: &#39;GeoJSON type&#39; , coordinates: &#39;coordinates&#39; &#125;</code></p>
+<ul>
+<li><p>type: 指类型，可以是Point、LineString、Polygon等;</p>
+</li>
+<li><p>coordinates:指的是一个坐标数组</p>
+</li>
+<li><p>插入数据</p>
+</li>
+<li><blockquote>
+<pre><code class="javascript">db.locations.insert(&#123;_id:1,name:&#39;长沙站&#39;,location:&#123;type:&#39;Point&#39;,coordinates:[113.018987,28.201215]&#125;&#125;)
+db.locations.insert(&#123;_id:2,name:&#39;湖南师范大学&#39;,location：&#123;type:&#39;Point&#39;,coordinates:[112.946045,28.170968]&#125;&#125;)
+db.locations.insert(&#123;_id:3,name:&#39;中南大学&#39;,location:&#123;type:&#39;Point&#39;,coordinates:[112.932175,28.178291]&#125;&#125;)
+4. `db.locations.insert(&#123;_id:4,name:&#39;湖南女子学院&#39;,location:&#123;type:&#39;Point&#39;,coordinates:[113.014675,28.121163]&#125;&#125;)
+5. `db.locations.insert(&#123;_id:5,name:&quot;湖南农业大学&quot;,location:&#123;type:&#39;Point&#39;,coordinates:[113.090852,28.187461]&#125;&#125;)
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs php"><br>* **创建地理位置索引**<br><br> `db.locations.<span class="hljs-title function_ invoke__">createIndex</span>(&#123;<span class="hljs-attr">location</span>:<span class="hljs-string">&#x27;2dsphere&#x27;</span>&#125;)`<br><br> * <span class="hljs-number">2</span>d ：平面坐标索引，适用于基于平面的坐标计算，也支持球面距离计算，不过官方推荐使用 <span class="hljs-number">2</span>dsphere 索引；<br> * <span class="hljs-number">2</span>dsphere ：几何球体索引，适用于球面几何运算；<br> * 默认情况下，地理位置索引会假设值的范围是从−<span class="hljs-number">180</span>到<span class="hljs-number">180</span>（根据经纬度设置）。<br><br> <br><br>* **地理位置索引的使用**<br><br>查询命令:<br><br> ```javascript<br> db.<span class="hljs-title function_ invoke__">runCommand</span>(&#123;<br>     <span class="hljs-attr">geoNear</span>:<span class="hljs-string">&#x27;locations&#x27;</span>,<br>     <span class="hljs-attr">near</span>:&#123;<span class="hljs-attr">type</span>:<span class="hljs-string">&#x27;Point&#x27;</span>,<span class="hljs-attr">coordinates</span>:[<span class="hljs-number">113.018987</span>,<span class="hljs-number">28.201215</span>]&#125;,<br>     <span class="hljs-attr">spherical</span>:<span class="hljs-literal">true</span>,<br>     <span class="hljs-attr">minDistance</span>:<span class="hljs-number">1000</span>,<br>     <span class="hljs-attr">maxDistance</span>:<span class="hljs-number">8000</span><br>     &#125;)<br></code></pre></td></tr></table></figure>
+</code></pre>
+</blockquote>
+</li>
+<li><p>geoNear ：我们要查询的集合名称；</p>
+</li>
+<li><p>near ：就是基于那个点进行搜索，这里是我们的搜索点“长沙站”；</p>
+</li>
+<li><p>spherical ：是个布尔值，如果为 true，表示将计算实际的物理距离，比如两点之间有多少 km，若为 false，则会基于点的单位进行计算 ；</p>
+</li>
+<li><p>minDistance ：搜索的最小距离，这里的单位是米 ；</p>
+</li>
+<li><p>maxDistance ：搜索的最大距离。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p> <img src="https://img-blog.csdnimg.cn/52f680d10844472db4d862991ac3d3c0.png" alt="在这里插入图片描述"></p>
+<h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h2><h3 id="MongoDB-查询优化原则"><a href="#MongoDB-查询优化原则" class="headerlink" title="MongoDB 查询优化原则"></a>MongoDB 查询优化原则</h3><h5 id="查询优化原则"><a href="#查询优化原则" class="headerlink" title="查询优化原则"></a>查询优化原则</h5><ul>
+<li><p>在查询条件、排序条件、统计条件的字段上选择创建索引，可以显著提高查询效率；</p>
+</li>
+<li><p>用 $or 时把匹配最多结果的条件放在最前面，用 $and 时把匹配最少结果的条件放在最前面；</p>
+</li>
+<li><p>使用 limit() 限定返回结果集的大小，减少数据库服务器的资源消耗，以及网络传输的数据量；</p>
+</li>
+<li><p>尽量少用 $in，而是分解成一个一个的单一查询。尤其是在分片上，$in 会让你的查询去每一个分片上查一次，如果实在要用的话，先在每个分片上建索引；</p>
+</li>
+<li><p>尽量不用模糊匹配查询，用其它精确匹配查询代替，比如 $in 、$nin；</p>
+</li>
+<li><p>查询量大、并发大的情况，通过前端加缓存解决；</p>
+</li>
+<li><p>能不用安全模式的操作就不用安全模式，这样客户端没必要等待数据库返回查询结果以及处理异常，快了一个数量级；</p>
+</li>
+<li><p>MongoDB 的智能查询优化，判断粒度为 query 条件，而 skip 和 limit 都不在其判断之中，当分页查询最后几页时，先用 order 反向排序；</p>
+</li>
+<li><p>尽量减少跨分片查询，balance 均衡次数少；</p>
+</li>
+<li><p>只查询要使用的字段，而不查询所有字段；</p>
+</li>
+<li><p>更新字段的值时，使用 $inc 比 update 效率高；</p>
+<p><code>$inc</code>操作符用于将字段的值增加到指定的数量或将字段增加给定的值。类似于自增自减操作</p>
+<ul>
+<li><p>此运算符接受正值和负值。</p>
+</li>
+<li><p>如果给定的字段不存在，则此运算符将创建字段并设置该字段的值。</p>
+</li>
+<li><p>如果将此运算符与空值字段一起使用，则此运算符将生成错误。</p>
+</li>
+<li><p>它是单个文档中的原子操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 将quantity减2，metrics.orders内嵌文档字段加1</span><br>db.<span class="hljs-property">products</span>.<span class="hljs-title function_">update</span>(<br>   &#123; <span class="hljs-attr">sku</span>: <span class="hljs-string">&quot;abc123&quot;</span> &#125;,<br>   &#123; <span class="hljs-attr">$inc</span>: &#123; <span class="hljs-attr">quantity</span>: -<span class="hljs-number">2</span>, <span class="hljs-string">&quot;metrics.orders&quot;</span>: <span class="hljs-number">1</span> &#125; &#125;<br>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>apped collections 比普通 collections 的读写效率高；</p>
+</li>
+<li><p>server-side processing 类似于 SQL 查询的存储过程，可以减少网络通讯的开销；</p>
+</li>
+<li><p>必要时使用 hint() 强制使用某个索引查询；</p>
+<p> hint() 来强迫 MongoDB 使用一个特定的索引</p>
+<p><code>db_name.table_name.find(&#123;query&#125;).hint(&#123;&quot;index_name&quot;:1&#125;);</code></p>
+</li>
+<li><p>如果有自己的主键列，则使用自己的主键列作为 id，这样可以节约空间，也不需要创建额外的索引；</p>
+</li>
+<li><p>使用 explain ，根据 exlpain plan 进行优化；</p>
+</li>
+<li><p>范围查询的时候尽量用 $in、$nin 代替；</p>
+</li>
+<li><p>查看数据库查询日志，具体分析的效率低的操作；</p>
+</li>
+<li><p>mongodb 有一个数据库优化工具 database profiler，能够检测数据库操作的性能。可以发现 query 或者 write 操作中执行效率低的，从而针对这些操作进行优化；</p>
+</li>
+<li><p>尽量把更多的操作放在客户端，当然这就是 mongodb 设计的理念之一。</p>
+</li>
+</ul>
+<hr>
+<h3 id="MongoDB-的-Profiling-工具"><a href="#MongoDB-的-Profiling-工具" class="headerlink" title="MongoDB 的 Profiling 工具"></a>MongoDB 的 Profiling 工具</h3><blockquote>
+<p><strong>Profiling 工具</strong></p>
+</blockquote>
+<p>Profiling 是 Mongo 自带的一种分析工具来检测并追踪影响性能的慢查询。</p>
+<p>慢查询日志一般作为优化步骤里的第一步</p>
+<h4 id="优化步骤："><a href="#优化步骤：" class="headerlink" title="优化步骤："></a><strong>优化步骤：</strong></h4><ol>
+<li>用慢查询日志（system.profile）找到超过50ms 的语句；</li>
+<li>然后再通过 .explain() 解析影响行数，分析为什么超过50ms；</li>
+<li>决定是不是需要添加索引。</li>
+</ol>
+<h4 id="Profiling-级别说明："><a href="#Profiling-级别说明：" class="headerlink" title="Profiling 级别说明："></a><strong>Profiling 级别说明：</strong></h4><ul>
+<li>0：关闭，不收集任何数据；</li>
+<li>1：收集慢查询数据，默认是&#x3D;&#x3D;100&#x3D;&#x3D;毫秒；</li>
+<li>2：收集所有数据。</li>
+</ul>
+<h4 id="全局开启-Profiling"><a href="#全局开启-Profiling" class="headerlink" title="全局开启 Profiling"></a><strong>全局开启</strong> Profiling</h4><blockquote>
+<p>启用 Profiling 工具</p>
+</blockquote>
+<p>方法一:  </p>
+<ul>
+<li><p>mongod 启动时加上以下参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">mongod --profile=<span class="hljs-number">1</span>  --slowms=<span class="hljs-number">50</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>方法二:</p>
+<ul>
+<li><p>在配置文件里添加两行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">profile = <span class="hljs-number">1</span><br>slowms = <span class="hljs-number">50</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>mongo shell 中启动配置</strong></p>
+<ul>
+<li><p>查看状态</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-title function_">getProfilingStatus</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看级别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-title function_">getProfilingLevel</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>设置级别</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-title function_">setProfilingLevel</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">//设置级别为1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>设置级别和时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-title function_">getProfilingLevel</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)   <span class="hljs-comment">//设置级别为1，时间为50ms</span><br></code></pre></td></tr></table></figure>
+
+<p>&#x3D;&#x3D;注意&#x3D;&#x3D;:</p>
+<ol>
+<li>配置操作在 test 集合下面的话，只对该集合里的操作有效，要是需要对整个实例有效，则需要在所有的集合下设置或则在开启的时候开启参数；</li>
+<li>每次设置之后返回给你的结果是修改之前的状态（包括级别、时间参数）。</li>
+</ol>
+</li>
+</ul>
+<h4 id="关闭-Profiling-工具"><a href="#关闭-Profiling-工具" class="headerlink" title="关闭 Profiling 工具"></a><strong>关闭 Profiling 工具</strong></h4><p>只需要将收集慢查询数据的时间设置为0就可以关闭</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-title function_">setProfilingLevel</span>(<span class="hljs-number">0</span>) <br></code></pre></td></tr></table></figure>
+
+<h4 id="慢查询分析"><a href="#慢查询分析" class="headerlink" title="慢查询分析"></a><strong>慢查询分析</strong></h4><ul>
+<li><p>首先，在 test 数据库启用 Profiling 工具：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use test<br>db.<span class="hljs-title function_">setProfilingLevel</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>)     # 设置级别为<span class="hljs-number">1</span>，时间为50ms，意味着只有超过50ms的操作才会记录到慢查询日志中<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>然后在 test 数据库的 items 集合中循环插入100万条数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">1000000</span>;i++)db.<span class="hljs-property">items</span>.<span class="hljs-title function_">insert</span>(&#123;<span class="hljs-attr">_id</span>:i,<span class="hljs-attr">text</span>:<span class="hljs-string">&quot;Hello MongoDB&quot;</span>+i&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>返回所有结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>().<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>结果显示为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<br>      <span class="hljs-string">&quot;op&quot;</span> : <span class="hljs-string">&quot;insert&quot;</span>,     #操作类型，有insert、query、update、remove、getmore、command<br>      <span class="hljs-string">&quot;ns&quot;</span> : <span class="hljs-string">&quot;test.items&quot;</span>,     #操作的集合<br>      <span class="hljs-string">&quot;command&quot;</span> : &#123;<br>              <span class="hljs-string">&quot;insert&quot;</span> : <span class="hljs-string">&quot;items&quot;</span>,<br>              <span class="hljs-string">&quot;ordered&quot;</span> : <span class="hljs-literal">true</span>,<br>              <span class="hljs-string">&quot;$db&quot;</span> : <span class="hljs-string">&quot;test&quot;</span><br>      &#125;,<br>      <span class="hljs-string">&quot;ninserted&quot;</span> : <span class="hljs-number">1</span>,<br>      <span class="hljs-string">&quot;keysInserted&quot;</span> : <span class="hljs-number">1</span>,<br>      <span class="hljs-string">&quot;numYield&quot;</span>: <span class="hljs-number">0</span>,     #该操作为了使其他操作完成而放弃的次数。通常来说，当他们需要访问还没有完全读入内存中的数据时，操作将放弃。这使得在<span class="hljs-title class_">MongoDB</span>为了放弃操作进行数据读取的同时，还有数据在内存中的其他操作可以完成<br>      <span class="hljs-string">&quot;locks&quot;</span>: &#123;     #锁信息，R：全局读锁；W：全局写锁；r：特定数据库的读锁；w：特定数据库的写锁<br>              <span class="hljs-string">&quot;Global&quot;</span> : &#123;<br>                      <span class="hljs-string">&quot;acquireCount&quot;</span> : &#123;<br>                              <span class="hljs-string">&quot;r&quot;</span> : <span class="hljs-title class_">NumberLong</span>(<span class="hljs-number">1</span>),<br>                              <span class="hljs-string">&quot;w&quot;</span> : <span class="hljs-title class_">NumberLong</span>(<span class="hljs-number">1</span>)<br>                      &#125;<br>              &#125;,<br>              <span class="hljs-string">&quot;Database&quot;</span> : &#123;<br>                      <span class="hljs-string">&quot;acquireCount&quot;</span> : &#123;<br>                              <span class="hljs-string">&quot;w&quot;</span> : <span class="hljs-title class_">NumberLong</span>(<span class="hljs-number">1</span>)<br>                      &#125;<br>              &#125;,<br>              <span class="hljs-string">&quot;Collection&quot;</span> : &#123;<br>                      <span class="hljs-string">&quot;acquireCount&quot;</span> : &#123;<br>                              <span class="hljs-string">&quot;w&quot;</span> : <span class="hljs-title class_">NumberLong</span>(<span class="hljs-number">1</span>)<br>                      &#125;<br>              &#125;<br>      &#125;,<br>      <span class="hljs-string">&quot;responseLength&quot;</span> : <span class="hljs-number">45</span>,     #返回字节长度，如果这个数字很大，考虑值返回所需字段<br>      <span class="hljs-string">&quot;protocol&quot;</span> : <span class="hljs-string">&quot;op_msg&quot;</span>,<br>      <span class="hljs-string">&quot;millis&quot;</span> : <span class="hljs-number">60</span>,     #消耗的时间（毫秒）<br>      <span class="hljs-string">&quot;ts&quot;</span> : <span class="hljs-title class_">ISODate</span>(<span class="hljs-string">&quot;2018-12-07T08:19:11.997Z&quot;</span>),     #该命令在何时执行<br>      <span class="hljs-string">&quot;client&quot;</span> : <span class="hljs-string">&quot;127.0.0.1&quot;</span>,     #链接ip或则主机<br>      <span class="hljs-string">&quot;appName&quot;</span> : <span class="hljs-string">&quot;MongoDB Shell&quot;</span>,<br>      <span class="hljs-string">&quot;allUsers&quot;</span> : [ ],<br>      <span class="hljs-string">&quot;user&quot;</span> : <span class="hljs-string">&quot;&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="profile-部分字段解释："><a href="#profile-部分字段解释：" class="headerlink" title="profile 部分字段解释："></a><strong>profile 部分字段解释：</strong></h4><ul>
+<li>op ：操作类型；</li>
+<li>ns ：被查的集合；</li>
+<li>commond ：命令的内容；</li>
+<li>docsExamined ：扫描文档数；</li>
+<li>nreturned ：返回记录数；</li>
+<li>millis ：耗时时间，单位毫秒；</li>
+<li>ts ：命令执行时间；</li>
+<li>responseLength ：返回内容长度。</li>
+</ul>
+<h4 id="常用的慢日志查询命令"><a href="#常用的慢日志查询命令" class="headerlink" title="常用的慢日志查询命令"></a><strong>常用的慢日志查询命令</strong></h4><ul>
+<li><p>返回最近的10条记录：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>().<span class="hljs-title function_">limit</span>(<span class="hljs-number">10</span>).<span class="hljs-title function_">sort</span>(&#123; ts : -<span class="hljs-number">1</span> &#125;).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>返回所有的操作，除 command 类型的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>( &#123; <span class="hljs-attr">op</span>: &#123; $ne : <span class="hljs-string">&#x27;command&#x27;</span>&#125; &#125;).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>返回特定集合：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>( &#123; ns : <span class="hljs-string">&#x27;test.items&#x27;</span> &#125; ).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>返回大于5毫秒慢的操作：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>(&#123; millis : &#123; $gt : <span class="hljs-number">5</span> &#125; &#125; ).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>从一个特定的时间范围内返回信息：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>(<br>                &#123;<br>                 ts : &#123;<br>                       $gt : <span class="hljs-keyword">new</span> <span class="hljs-title class_">ISODate</span>(<span class="hljs-string">&quot;2018-12-09T08:00:00Z&quot;</span>),<br>                       $lt : <span class="hljs-keyword">new</span> <span class="hljs-title class_">ISODate</span>(<span class="hljs-string">&quot;2018-12-10T03:40:00Z&quot;</span>)<br>                      &#125;<br>                &#125;<br>               ).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>特定时间，限制用户，按照消耗时间排序：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>(<br>                    &#123;<br>                      ts : &#123;<br>                            $gt : <span class="hljs-keyword">new</span> <span class="hljs-title class_">ISODate</span>(<span class="hljs-string">&quot;2018-12-09T08:00:00Z&quot;</span>) ,<br>                            $lt : <span class="hljs-keyword">new</span> <span class="hljs-title class_">ISODate</span>(<span class="hljs-string">&quot;2018-12-10T03:40:00Z&quot;</span>)<br>                           &#125;<br>                    &#125;,<br>                    &#123; user : <span class="hljs-number">0</span> &#125;<br>                   ).<span class="hljs-title function_">sort</span>( &#123; millis : -<span class="hljs-number">1</span> &#125; ).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看最新的 Profile 记录：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">profile</span>.<span class="hljs-title function_">find</span>().<span class="hljs-title function_">sort</span>(&#123;<span class="hljs-attr">$natural</span>:-<span class="hljs-number">1</span>&#125;).<span class="hljs-title function_">limit</span>(<span class="hljs-number">1</span>).<span class="hljs-title function_">pretty</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>显示5个最近的事件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">show profile<br></code></pre></td></tr></table></figure>
+
+<hr>
+</li>
+</ul>
+<h2 id="Python-访问MongoDB"><a href="#Python-访问MongoDB" class="headerlink" title="Python 访问MongoDB"></a>Python 访问MongoDB</h2><h3 id="python连接MongoDB写入数据"><a href="#python连接MongoDB写入数据" class="headerlink" title="python连接MongoDB写入数据"></a>python连接MongoDB写入数据</h3><h4 id="pip工具"><a href="#pip工具" class="headerlink" title="pip工具"></a><strong>pip工具</strong></h4><p>&#x3D;&#x3D;pip 是一个通用的 Python 包管理工具，提供了对 Python 包的查找、下载、安装、卸载的功能。&#x3D;&#x3D;</p>
+<p>pymongo是MongoDB的一种接口</p>
+<p>一般采用pip安装</p>
+<p>也可以使用easy_install、源码等安装</p>
+<p>安装命令：<code>pip install pymongo</code></p>
+<p>查看安装信息： <code>pip show pymongo</code></p>
+<h4 id="测试PyMongo"><a href="#测试PyMongo" class="headerlink" title="测试PyMongo"></a>测试PyMongo</h4><ol>
+<li><p><strong>导入pymongo库</strong></p>
+<p><code>import pymongo</code></p>
+</li>
+<li><p><strong>使用MongoClient对象创建与数据库服务器的连接</strong></p>
+<p>&#x3D;&#x3D;创建MongoClient实例后，就可以访问服务器中的任何数据。&#x3D;&#x3D;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// host域名  </span><br><span class="hljs-comment">// port端口号</span><br>client=pymonogo.<span class="hljs-title class_">MongoClient</span>(host=<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>,port=<span class="hljs-number">12717</span>)<br><span class="hljs-comment">// 连接具体的mongod服务器或副本集 </span><br>client=<span class="hljs-title class_">MongoClient</span>(host=<span class="hljs-string">&#x27;10.90.9.102&#x27;</span>,port=<span class="hljs-number">12718</span>)<br>client=<span class="hljs-title class_">MongoClient</span>(host=<span class="hljs-string">&#x27;10.90.9.101:27018,10.90.9.102: 12718,10.90.9.103:27018&#x27;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>访问数据库</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 三种方法访问数据库</span><br>mydb = client[<span class="hljs-string">&quot;runoobdb&quot;</span>]  <span class="hljs-comment">//client是我们创建的实例  runobdb数据库可以看作client的属性</span><br><span class="hljs-comment">// 也可以用点的方式访问</span><br>db = client.<span class="hljs-property">myDB</span><br><span class="hljs-comment">// 或者通过函数方法访问</span><br>db = client.<span class="hljs-title function_">get_database</span>(<span class="hljs-string">&quot;myDB&quot;</span>)<br><br><span class="hljs-comment">// list_collection_names()函数可以返回该数据库集合列表</span><br><span class="hljs-comment">//判断是db否含有test3集合，如果有则删除</span><br><span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;test3&quot;</span> <span class="hljs-keyword">in</span> db.<span class="hljs-title function_">list_collection_names</span>()):<br>	db.<span class="hljs-title function_">drop_collection</span>(<span class="hljs-string">&quot;test3&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>&#x3D;&#x3D;如果不存在数据库，则系统会自动创建数据库&#x3D;&#x3D;<br>&#x3D;&#x3D;在 MongoDB 中，数据库只有在内容插入后才会创建!&#x3D;&#x3D;可以理解为当python中创建数据库后只有插入数据（创建集合并插入文档）后，mongodb才会根据内容创建数据库</p>
+</li>
+<li><p><strong>集合操作</strong></p>
+</li>
+</ol>
+<p>(1).插入文档</p>
+<p>   需要先获取集合，并使用集合的insert_one()方法或insert_many()方法插入文档</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 插入内容可以先保存在变量里</span><br>mydict = &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;RUNOOB&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;10000&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.runoob.com&quot;</span> &#125;<br>x = mycol.<span class="hljs-title function_">insert_one</span>(mydict)   <span class="hljs-comment">// 插入单条文档</span><br><span class="hljs-comment">//insert_many()插入多条文档</span><br>mylist = [<br>  &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Taobao&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;100&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.taobao.com&quot;</span> &#125;,<br>  &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;QQ&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;101&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.qq.com&quot;</span> &#125;,<br>  &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Facebook&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;10&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.facebook.com&quot;</span> &#125;,<br>  &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;知乎&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;103&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.zhihu.com&quot;</span> &#125;,<br>  &#123; <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Github&quot;</span>, <span class="hljs-string">&quot;alexa&quot;</span>: <span class="hljs-string">&quot;109&quot;</span>, <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://www.github.com&quot;</span> &#125;<br>]<br>x = mycol.<span class="hljs-title function_">insert_many</span>(mylist) <span class="hljs-comment">//该方法返回一个insertmanyresult对象，该对象具有一个属性inserted_ids,用于保存插入文档的ID</span><br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li><p>查询操作</p>
+<p>&#x3D;&#x3D;find()&#x3D;&#x3D;方法来查询指定字段的数据，将要返回的字段对应值设置为 1。</p>
+</li>
+</ol>
+<h2 id="MongoDB数据库安全"><a href="#MongoDB数据库安全" class="headerlink" title="MongoDB数据库安全"></a>MongoDB数据库安全</h2><h4 id="创建管理员用户"><a href="#创建管理员用户" class="headerlink" title="创建管理员用户"></a>创建管理员用户</h4><p><strong>管理员用户</strong>：负责创建和管理其他用户的用户</p>
+<blockquote>
+<p>切换到<code>admin</code>数据库（<code>admin</code>数据库是一个具有特殊权限的数据库，用户需要访问它以便执行某些管理命令）；</p>
+</blockquote>
+<p><code>use admin</code></p>
+<p><strong>创建管理员用户</strong>：</p>
+<ol>
+<li><code>db.createUser(&#123;user:&quot;abc&quot;,pwd:&quot;123&quot;,roles:[&#123;role:&quot;root&quot;,db:&quot;admin&quot;&#125;]&#125;)</code></li>
+</ol>
+<blockquote>
+<ul>
+<li>user: 创建的管理员用户名</li>
+<li>pwd：管理员用户的密码</li>
+<li>roles：权限与数据库</li>
+</ul>
+</blockquote>
+<p>验证管理员创建成功</p>
+<p><code>db.auth(&quot;abc&quot;,&quot;123&quot;)</code></p>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a><strong>查看用户</strong></h4><p><code>show users</code> 只能查看当前库下用户</p>
+<p><code>db.system.users.find().pretty()</code>  全局查看所有用户（要在admin下使用）</p>
+<p>使用管理员用户查看普通用户itcastUser的信息</p>
+<p><code>db.getUser(&quot;itcastUser&quot;)</code></p>
+<p>使用管理员用户查看普通用户itcastUser的权限</p>
+<p><code>db.getUsser（“itcastUser”，&#123;showPrivileges：true&#125;）</code></p>
+<h4 id="启用身份验证"><a href="#启用身份验证" class="headerlink" title="启用身份验证"></a><strong>启用身份验证</strong></h4><p>身份验证默认为&#x3D;&#x3D;禁用&#x3D;&#x3D;，启动MongoDB数据库服务器服务mongo时使用参数&#x3D;&#x3D;<code>--auth</code>&#x3D;&#x3D;来启动身份验证(身份验证前必须保证自己至少拥有一个管理员用户)</p>
+<p>如果在admin数据库中没有用户，mongod启动时添加了–auth参数，需要先杀死进程，然后重启服务进程</p>
+<ul>
+<li><code>ps -ef | grep mongod</code></li>
+<li><code>kill 服务进程号</code></li>
+<li><code>mongod 参数： --noauth</code></li>
+</ul>
+<ol>
+<li><p>关闭现在有的数据库服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use admin<br>db.<span class="hljs-title function_">shutdownServer</span>()<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>重新启动mongod服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">mongod --auth --port <span class="hljs-number">27017</span> --dbpath /data/db --logpath /tmp/mongodb.<span class="hljs-property">log</span> --fork<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>auth: 开启身份验证</li>
+<li>dbpath：指定数据存放路径</li>
+<li>logpath：指定日志文件输出路径</li>
+<li>fork：后台运行</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p><strong>管理员登陆数据库</strong></p>
+<ul>
+<li><p>在命令行连接数据库（必须use admin）</p>
+<p><code>mongo -uabc -p123 admin</code></p>
+<blockquote>
+<ul>
+<li>-u 后面接用户名</li>
+<li>-p 后面接密码</li>
+</ul>
+</blockquote>
+</li>
+<li><p>受限情况下验证身份</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use admin<br>db.<span class="hljs-title function_">auth</span>(<span class="hljs-string">&quot;abc&quot;</span>,<span class="hljs-string">&quot;123&quot;</span>)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除管理员用户</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">db.<span class="hljs-property">system</span>.<span class="hljs-property">users</span>.<span class="hljs-title function_">remove</span>(&#123;<span class="hljs-attr">user</span>:<span class="hljs-string">&quot;abc&quot;</span>&#125;) <br><span class="hljs-comment">// user为需要删除的管理员用户</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="按需求创建普通用户"><a href="#按需求创建普通用户" class="headerlink" title="按需求创建普通用户"></a>按需求创建普通用户</h4><table>
+<thead>
+<tr>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Read</code></td>
+<td>允许用户读取指定数据库</td>
+</tr>
+<tr>
+<td><code>readWrite</code></td>
+<td>允许用户读写指定数据库</td>
+</tr>
+<tr>
+<td><code>dbAdmin</code></td>
+<td>允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</td>
+</tr>
+<tr>
+<td><code>userAdmin</code></td>
+<td>允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</td>
+</tr>
+<tr>
+<td><code>clusterAdmin</code></td>
+<td>只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。</td>
+</tr>
+<tr>
+<td><code>readAnyDatabase</code></td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读权限</td>
+</tr>
+<tr>
+<td><code>readWriteAnyDatabase</code></td>
+<td>只在admin数据库中可用，赋予用户所有数据库的读写权限</td>
+</tr>
+<tr>
+<td><code>userAdminAnyDatabase</code></td>
+<td>只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</td>
+</tr>
+<tr>
+<td><code>dbAdminAnyDatabase</code></td>
+<td>只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>只在admin数据库中可用。超级账号，超级权限</td>
+</tr>
+</tbody></table>
+<p><strong>创建普通用户</strong></p>
+<ul>
+<li><p>创建用户</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//用户user1，密码：user，拥有数据库test的读写权限</span><br>ue test<br>db.<span class="hljs-title function_">createUser</span>(&#123;<span class="hljs-attr">user</span>:<span class="hljs-string">&quot;user1&quot;</span>,<span class="hljs-attr">pwd</span>:<span class="hljs-string">&quot;user1&quot;</span>,<span class="hljs-attr">roles</span>:[&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;readWrite&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;test&quot;</span>&#125;]&#125;)<br><span class="hljs-comment">// readWrite读写权限</span><br><br><span class="hljs-comment">//user2，密码：user2，对数据库test2有读写权限，对数据库test有只读权限。</span><br>use test2<br>db.<span class="hljs-title function_">createUser</span>(&#123;<span class="hljs-attr">user</span>:<span class="hljs-string">&quot;user2&quot;</span>,<span class="hljs-attr">pwd</span>:<span class="hljs-string">&quot;user2&quot;</span>,<span class="hljs-attr">roles</span>:[&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;readWrite&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;test2&quot;</span>&#125;,&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;read&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;test&quot;</span>&#125;]&#125;)<br><span class="hljs-comment">//read 只读权限</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除普通用户</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use test2<br>db.<span class="hljs-title function_">dropUser</span>(<span class="hljs-string">&quot;user2&quot;</span>) <span class="hljs-comment">//在当前数据库使用</span><br><span class="hljs-comment">//使用管理员用户删除普通用户中的readAnyDatabse</span><br>db.<span class="hljs-property">revokeRolesFromUser</span>（<span class="hljs-string">&quot;user2&quot;</span>,[&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;readAnyDatabase&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;admin&quot;</span>&#125;]）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>修改用户信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 使用管理员用户将普通用户itcastUser角色修改为readAnyDatabase</span><br>db.<span class="hljs-title function_">updateUser</span>(<span class="hljs-string">&quot;itcastUser&quot;</span>,&#123;<span class="hljs-attr">roles</span>:[&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;read&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;admin&quot;</span>&#125;,&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;readAnyDatabase&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;admin&quot;</span>&#125;]&#125;)<br><span class="hljs-comment">//使用管理员用户itcastAdmin为普通用户itcastUser添加readWrite角色</span><br>db.<span class="hljs-title function_">grantRolesToUser</span>(<span class="hljs-string">&quot;itcastUser&quot;</span>,[&#123;<span class="hljs-attr">role</span>:<span class="hljs-string">&quot;readWrite&quot;</span>,<span class="hljs-attr">db</span>:<span class="hljs-string">&quot;admin&quot;</span>&#125;])<br><span class="hljs-comment">//修改用户密码</span><br><span class="hljs-comment">//需要具有userAdmin或userAdminAnyDatabase或root的用户才能执行</span><br>db.<span class="hljs-title function_">changeUserPassword</span>(<span class="hljs-string">&quot;itcastUser&quot;</span>,<span class="hljs-string">&quot;itcastuser&quot;</span>)<br>db.<span class="hljs-title function_">updateUser</span>(<span class="hljs-string">&quot;itcastUser&quot;</span>,&#123;<span class="hljs-string">&quot;pwd&quot;</span>:<span class="hljs-string">&quot;itcastuser&quot;</span>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="数据库限制访问"><a href="#数据库限制访问" class="headerlink" title="数据库限制访问"></a><strong>数据库限制访问</strong></h4><p><strong>限制 IP 访问</strong>，需要重启数据库服务 mongod 时，启用相应的功能</p>
+<ol>
+<li><p>关闭服务（先用默认方法启动数据库：mongo ）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use admin            <span class="hljs-comment">//进入admin数据库</span><br>db.<span class="hljs-title function_">shutdownServer</span>()  <span class="hljs-comment">//关闭服务</span><br>exit                 <span class="hljs-comment">//退出数据库</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务（只有本机 IP 可以连接数据库）：</p>
+<p><code>mongod --dbpath /data/db --logpath /tmp/mongodb.log --bind_ip 127.0.0.1 --fork</code></p>
+<ul>
+<li>binf_ip ：限制连接的网络接口，可以设置多个，以逗号隔开。</li>
+</ul>
+</li>
+</ol>
+<p><strong>限制端口访问</strong></p>
+<p>当按照以上方法启动 mongod 时，默认情况下他会等待所有在端口27017上的入站连接，可以用 -port 修改该设置。也需要重新启动 mongod 服务，方法同上。</p>
+<ol>
+<li><p>关闭服务（先用默认方法启动数据库：mongo ）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use admin            <span class="hljs-comment">//进入admin数据库</span><br>db.<span class="hljs-title function_">shutdownServer</span>()  <span class="hljs-comment">//关闭服务</span><br>exit                 <span class="hljs-comment">//退出数据库</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务（只有本机 IP 可以连接数据库，且限制只能端口20000连接）：</p>
+<p><code>mongod -port 20000 --dbpath /data/db --logpath /tmp/mongodb.log --bind_ip 127.0.0.1 --fork</code></p>
+</li>
+<li><p>连接数据库：</p>
+<p><code>mongo 127.0.0.1:20000</code></p>
+<p>设置了端口后如果不加端口连接会被拒绝访问</p>
+</li>
+</ol>
+<h2 id="MongoDB-复制集-amp-分片"><a href="#MongoDB-复制集-amp-分片" class="headerlink" title="MongoDB 复制集 &amp; 分片"></a>MongoDB 复制集 &amp; 分片</h2><h3 id="MongoDB-架构"><a href="#MongoDB-架构" class="headerlink" title="MongoDB 架构"></a>MongoDB 架构</h3><h5 id="复制集"><a href="#复制集" class="headerlink" title="复制集"></a>复制集</h5><ul>
+<li>备份数据 数据库的数据只有一份的话是极不安全的，一旦数据所在的电脑坏掉，我们的数据就彻底丢失了，所以要有一个备份数据的机制。</li>
+<li>故障自动转移 部署了复制集，当主节点挂了后，集群会自动投票再从节点中选举出一个新的主节点，继续提供服务。而且这一切都是自动完成的，对运维人员和开发人员是透明的。当然，发生故障了还是得人工及时处理，不要过度依赖复制集，万一都挂了，那就连喘息的时间都没有了。</li>
+<li>在某些特定的场景下提高读性能 默认情况下，读和写都只能在主节点上进行。 下面是 MongoDB 的客户端支持5种复制集读选项：<ul>
+<li>primary ：默认模式，所有的读操作都在复制集的主节点进行的；</li>
+<li>primaryPreferred ：在大多数情况时，读操作在主节点上进行，但是如果主节点不可用了，读操作就会转移到从节点上执行；</li>
+<li>secondary ：所有的读操作都在复制集的从节点上执行；</li>
+<li>secondaryPreferred ：在大多数情况下，读操作都是在从节点上进行的，但是当从节点不可用了，读操作会转移到主节点上进行；</li>
+<li>nearest ：读操作会在复制集中网络延时最小的节点上进行，与节点类型无关。</li>
+</ul>
+</li>
+</ul>
+<p>复制集结构，如图1所示：</p>
+<p><img src="https://data.educoder.net/api/attachments/208438" alt="预览大图"></p>
+<h5 id="副本集成员状态"><a href="#副本集成员状态" class="headerlink" title="副本集成员状态"></a>副本集成员状态</h5><table>
+<thead>
+<tr>
+<th align="center">状态码</th>
+<th align="center">状态名称</th>
+<th align="center">状态介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">STARTUP</td>
+<td align="center">成员刚启动时处于此状态</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">PRIMARY</td>
+<td align="center">成员处于主节点的状态</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">SECONDARY</td>
+<td align="center">成员处于副节点的状态</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">RECOVERING</td>
+<td align="center">成员正在执行启动自检，数据回滚或同步过程结束时也会短暂处于次状态</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">STARTUP2</td>
+<td align="center">成员处于初始化同步过程</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">UNKNOWN</td>
+<td align="center">成员处于未知状态</td>
+</tr>
+</tbody></table>
+<p><strong>查看副本集成员状态</strong></p>
+<p><code>rs.status（)</code></p>
+<p><strong>查看MongoDB运行状态</strong></p>
+<p><code>ps -ef | grep mongodb</code></p>
+<h5 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h5><p>&#x3D;&#x3D;分片&#x3D;&#x3D;（sharding）是指将数据库拆分，使其分散在不同的机器上的过程。将数据分散到不同的机器上，不需要功能强大的服务器就可以存储更多的数据和处理更大的负载。基本思想就是将集合切成小块，这些块分散到若干片里，每个片只负责总数据的一部分，最后通过一个均衡器来对各个分片进行均衡（数据迁移）。通过一个名为 mongos 的路由进程进行操作，mongos 知道数据和片的对应关系（通过配置服务器）。</p>
+<p>什么时候使用分片：</p>
+<ul>
+<li>机器的磁盘不够用了，使用分片解决磁盘空间的问题；</li>
+<li>单个 mongod 已经不能满足写数据的性能要求，通过分片让写压力分散到各个分片上面，使用分片服务器自身的资源；</li>
+<li>想把大量数据放到内存里提高性能，通过分片使用分片服务器自身的资源。</li>
+</ul>
+<p>分片结构，如图2所示：</p>
+<p><img src="https://data.educoder.net/api/attachments/209067" alt="预览大图"></p>
+<blockquote>
+<ul>
+<li>Shard ：用于存储实际的数据块，实际生产环境中一个 shard server 角色可由几台机器组个一个 replica set 承担，防止主机单点故障；</li>
+<li>Config Server ：mongod 实例，存储了整个 ClusterMetadata，其中包括 chunk 信息；</li>
+<li>Query Routers ：前端路由，客户端由此接入，且让整个集群看上去像单一数据库，前端应用可以透明使用。</li>
+</ul>
+</blockquote>
+<h3 id="MongoDB-复制集搭建"><a href="#MongoDB-复制集搭建" class="headerlink" title="MongoDB 复制集搭建"></a>MongoDB 复制集搭建</h3><h5 id="配置文件设置"><a href="#配置文件设置" class="headerlink" title="配置文件设置"></a>配置文件设置</h5><p>因为我们要启动三个 mongodb 服务，所以要准备三个数据存放位置，三个日志文件，三个配置文件。</p>
+<ul>
+<li><p>数据存放位置；</p>
+<p>在 &#x2F;data 路径下创建文件夹 db1、db2 和 db3 来存放三个服务的数据。</p>
+</li>
+<li><p>日志文件；</p>
+<p>在 &#x2F;logs 路径下创建文件夹 mongo 存放日志文件 mongod1.log、mongod2.log 和 mongod3.log（文件不用创建，到时候会自动生成，但路径即文件夹必须提前创建好）。</p>
+</li>
+<li><p>配置文件。</p>
+<p>在 &#x2F;etc&#x2F;mongod 路径下新建三个配置文件，使用配置文件启动 mongod 服务（在之前的实训中我们都是用命令启动的）。</p>
+</li>
+</ul>
+<p>mongodx.conf 内容如下：   x(对应1、2、3)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript">port=2700x    #配置端口号<br>dbpath=<span class="hljs-regexp">/data/</span>dbx     #配置数据存放的位置<br>logpath=<span class="hljs-regexp">/logs/m</span>ongo/mongodx.<span class="hljs-property">log</span>     #配置日志存放的位置<br>logappend=<span class="hljs-literal">true</span>     #日志使用追加的方式<br>fork=<span class="hljs-literal">true</span>     #设置在后台运行<br>replSet=<span class="hljs-variable constant_">YOURMONGO</span>     #配置复制集名称，该名称要在所有的服务器一致<br></code></pre></td></tr></table></figure>
+
+<p>配置文件启动命令</p>
+<p><code>mongod -f /etc/mongod/mongodx.conf</code></p>
+<h5 id="配置主从节点"><a href="#配置主从节点" class="headerlink" title="配置主从节点"></a>配置主从节点</h5><p>三个端口的服务全部启动成功后，需要进入其中一个进行配置节点。 设置27019为 arbiter 节点。</p>
+<ul>
+<li><p>进入端口号为27018的进行配置，连接数据库：mongo –port 27018；</p>
+</li>
+<li><p>选择数据库 admin；</p>
+</li>
+<li><p>输入配置要求如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">config = &#123;<br>  <span class="hljs-attr">_id</span>:<span class="hljs-string">&quot;YOURMONGO&quot;</span>,<br>  <span class="hljs-attr">members</span>:[<br>      &#123;<span class="hljs-attr">_id</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">host</span>:<span class="hljs-string">&#x27;127.0.0.1:27018&#x27;</span>&#125;,<br>      &#123;<span class="hljs-attr">_id</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">host</span>:<span class="hljs-string">&#x27;127.0.0.1:27019&#x27;</span>,<span class="hljs-attr">arbiterOnly</span>:<span class="hljs-literal">true</span>&#125;,<br>      &#123;<span class="hljs-attr">_id</span>:<span class="hljs-number">2</span>,<span class="hljs-attr">host</span>:<span class="hljs-string">&#x27;127.0.0.1:27020&#x27;</span>&#125;,<br>  ]<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>使用 rs.initiate（config）进行初始化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">rs.<span class="hljs-title function_">initiate</span>(config)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://data.educoder.net/api/attachments/209380" alt="预览大图"></p>
+<p>此为主节点</p>
+<p><img src="https://data.educoder.net/api/attachments/209378" alt="预览大图"></p>
+<p>此为主从节点</p>
+<ul>
+<li><p>使用&#x3D;&#x3D;rs.status()&#x3D;&#x3D; 查看状态。</p>
+</li>
+<li><p>验证复制集同步</p>
+<p>在主数据库插入数据，然后去从数据库查看数据是否一致。</p>
+<p>连接主数据库：mongo –port 27018；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use testdb.<span class="hljs-property">person</span>.<span class="hljs-title function_">insert</span>(&#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;王小明&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">20</span>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>连接从数据库：mongo –port 27020； </p>
+<p>从库查询数据需要设置 slaveOk 为 true；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript">use test<br>rs.<span class="hljs-title function_">slaveOk</span>(<span class="hljs-literal">true</span>)<br>db.<span class="hljs-property">person</span>.<span class="hljs-title function_">find</span>()<br></code></pre></td></tr></table></figure>
+
+<h5 id="切换-Primary-节点到指定的节点"><a href="#切换-Primary-节点到指定的节点" class="headerlink" title="切换 Primary 节点到指定的节点"></a>切换 Primary 节点到指定的节点</h5><p>在实际应用中，如果想指定某服务器或端口作为主节点，而不是随机选举一个主节点，可以通过以下方法改变 Primary 节点：</p>
+<ul>
+<li><p>先进入主节点中进行操作：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">mongo <span class="hljs-comment">--port 27018</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看目前的节点状态：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">rs.conf()     #查看配置rs.status()   #查看状态<br></code></pre></td></tr></table></figure>
+
+<p>其中 priority : 是优先级，默认为 1，优先级 0 为被动节点，不能成为活跃节点。优先级不为 0 则按照由大到小选出活跃节点。</p>
+</li>
+</ul>
+<p>因为默认的都是1，所以只需要把给定的服务器的 priority 加到最大即可。让27020成为主节点，操作如下： 现进入目前的主节点进行操作如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">cfg=rs.<span class="hljs-title function_">conf</span>()cfg.<span class="hljs-property">members</span>[<span class="hljs-number">2</span>].<span class="hljs-property">priority</span>=<span class="hljs-number">2</span>     #修改priority,members[<span class="hljs-number">2</span>]即对应<span class="hljs-number">27020</span>端口rs.<span class="hljs-title function_">reconfig</span>(cfg)     #重新加载配置文件，强制了副本集进行一次选举，优先级高的成为<span class="hljs-title class_">Primary</span>。在这之间整个集群的所有节点都是secondaryrs.<span class="hljs-title function_">status</span>()<br></code></pre></td></tr></table></figure>
+
+<p>这样，给定的服务器或端口就成为了主节点。</p>
+<p>&#x3D;&#x3D;移除&#x3D;&#x3D;服务器nosql02中的隐藏节点</p>
+<p><code>rs.remove（“nosql102:27017”）</code></p>
+<h3 id="MongoDB-分片集搭建"><a href="#MongoDB-分片集搭建" class="headerlink" title="MongoDB 分片集搭建"></a>MongoDB 分片集搭建</h3><h5 id="配置文件设置-1"><a href="#配置文件设置-1" class="headerlink" title="配置文件设置"></a>配置文件设置</h5><ul>
+<li><p>同复制集一样，我们要准备目录存放我们的数据和日志：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mkdir -p <span class="hljs-regexp">/data/</span>shard1<span class="hljs-regexp">/dbmkdir -p /</span>logs<span class="hljs-regexp">/shard1/</span>logmkdir -p <span class="hljs-regexp">/data/</span>shard2<span class="hljs-regexp">/dbmkdir -p /</span>logs<span class="hljs-regexp">/shard2/</span>logmkdir -p <span class="hljs-regexp">/data/</span>shard3<span class="hljs-regexp">/dbmkdir -p /</span>logs<span class="hljs-regexp">/shard3/</span>logmkdir -p <span class="hljs-regexp">/data/</span>config<span class="hljs-regexp">/dbmkdir -p /</span>logs<span class="hljs-regexp">/config/</span>logmkdir -p <span class="hljs-regexp">/logs/m</span>ongs/log<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件 (新建在 &#x2F;etc&#x2F;mongo 目录下)；</p>
+<p>mongod1.conf 内容如下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">dbpath=<span class="hljs-regexp">/data/</span>shard1<span class="hljs-regexp">/dblogpath=/</span>logs<span class="hljs-regexp">/shard1/</span>log/mongodb.logport=<span class="hljs-number">10001</span>shardsvr=truefork=<span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>
+
+<p>mongod2.conf 内容如下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">dbpath=<span class="hljs-regexp">/data/</span>shard2<span class="hljs-regexp">/dblogpath=/</span>logs<span class="hljs-regexp">/shard2/</span>log/mongodb.logport=<span class="hljs-number">10002</span>shardsvr=truefork=<span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>
+
+<p>mongod3.conf 内容如下：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gradle">dbpath=<span class="hljs-regexp">/data/</span>shard3<span class="hljs-regexp">/dblogpath=/</span>logs<span class="hljs-regexp">/shard3/</span>log/mongodb.logport=<span class="hljs-number">10003</span>shardsvr=truefork=<span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>
+
+<p>其中 shardsvr 是用来开启分片的。</p>
+</li>
+<li><p>从配置文件启动 mongod 服务：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mongod -f <span class="hljs-regexp">/etc/m</span>ongo<span class="hljs-regexp">/mongod1.confmongod -f /</span>etc<span class="hljs-regexp">/mongo/m</span>ongod2.confmongod -f <span class="hljs-regexp">/etc/m</span>ongo/mongod3.conf<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="config-节点"><a href="#config-节点" class="headerlink" title="config 节点"></a>config 节点</h5><ul>
+<li><p>配置启动节点服务：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">mongod <span class="hljs-params">--dbpath</span> <span class="hljs-string">/data/config/db</span> <span class="hljs-params">--logpath</span> <span class="hljs-string">/logs/config/log/mongodb.log</span> <span class="hljs-params">--port</span> 10004 <span class="hljs-params">--configsvr</span> <span class="hljs-params">--replSet</span> cs <span class="hljs-params">--fork</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>连接 route 节点：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mongo</span> localhost:<span class="hljs-number">10004</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>输入以下命令：</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqf">use admincfg = &#123;  <span class="hljs-variable">_id</span>:<span class="hljs-string">&#x27;cs&#x27;</span>,  configsvr:<span class="hljs-literal">true</span>,  <span class="hljs-built_in">members</span>:[      &#123;<span class="hljs-variable">_id</span>:<span class="hljs-number">0</span>,host:<span class="hljs-string">&#x27;localhost:10004&#x27;</span>&#125;   ]&#125;rs.initiate(cfg)<br></code></pre></td></tr></table></figure>
+
+<p>运行效果如图1所示，说明设置成功：</p>
+</li>
+</ul>
+<p><img src="https://data.educoder.net/api/attachments/209178" alt="图1"> 图 1</p>
+<h5 id="route-节点"><a href="#route-节点" class="headerlink" title="route 节点"></a>route 节点</h5><ul>
+<li><p>配置启动节点服务：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">mongos <span class="hljs-params">--configdb</span> cs/localhost<span class="hljs-function">:10004</span> <span class="hljs-params">--logpath</span> <span class="hljs-string">/logs/mongs/log/mongodb.log</span> <span class="hljs-params">--port</span> 10005 <span class="hljs-params">--fork</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>连接上 route 节点：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">mongo</span> localhost:<span class="hljs-number">10005</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>添加分片：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c">sh.addShard(&#x27;localhost:<span class="hljs-number">1000</span>1&#x27;)sh.addShard(&#x27;localhost:<span class="hljs-number">1000</span>2&#x27;)sh.addShard(&#x27;localhost:<span class="hljs-number">1000</span>3&#x27;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看集群的状态：分片摘要信息、数据库摘要信息、集合摘要信息等；</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs fortran">sh.<span class="hljs-keyword">status</span>()<br></code></pre></td></tr></table></figure>
+
+<p>运行效果如图 2 所示，说明设置成功：</p>
+<p><img src="https://data.educoder.net/api/attachments/209185" alt="图2"> 图 2</p>
+</li>
+</ul>
+<h5 id="分片验证"><a href="#分片验证" class="headerlink" title="分片验证"></a>分片验证</h5><ul>
+<li><p>连接 route 节点：mongo localhost:10005；</p>
+<p>数据量太小可能导致分片失败，这是因为 chunksize 默认的大小是 64MB（ chunkSize 来制定块的大小，单位是 MB ），使用以下代码把 chunksize 改为 1MB 后，插入数据，便可以分片成功。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stata"><span class="hljs-keyword">use</span> configdb.settings.<span class="hljs-keyword">save</span>( &#123; _id:<span class="hljs-string">&quot;chunksize&quot;</span>, value: 1 &#125; )<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>对集合使用的数据库启用分片：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">sh.enable<span class="hljs-constructor">Sharding(<span class="hljs-string">&quot;test&quot;</span>)</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>添加索引：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">db<span class="hljs-selector-class">.user</span><span class="hljs-selector-class">.ensureIndex</span>(&#123; <span class="hljs-string">&quot;uid&quot;</span> : <span class="hljs-number">1</span>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>分片：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sh.shardCollection(<span class="hljs-string">&quot;test.user&quot;</span>,&#123;<span class="hljs-string">&quot;uid&quot;</span> : 1&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>插入10万条数据（大概需要40s 左右）：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">testfor</span>(<span class="hljs-title">i</span>=0;i&lt;<span class="hljs-number">100000</span>;i++)&#123;db.user.<span class="hljs-title function_ invoke__">insert</span>(&#123;<span class="hljs-attr">uid</span>:i,<span class="hljs-attr">username</span>:<span class="hljs-string">&#x27;test-&#x27;</span>+i&#125;)&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>再次运行 sh.status() 会多出内容，显示分片的情况。</p>
+</li>
+<li><p>去各个节点查看数据分布情况：</p>
+<p>以下分别是在端口10001、10002和10003查询的文档条数，加起来正好10万条。</p>
+<pre><code>                                                                ![图4](https://data.educoder.net/api/attachments/209310) 
+
+                                                                ![图5](https://data.educoder.net/api/attachments/209311) 
+</code></pre>
+<p><img src="https://data.educoder.net/api/attachments/209312" alt="图6"></p>
+</li>
+</ul>
+<h2 id="数据备份和恢复"><a href="#数据备份和恢复" class="headerlink" title="数据备份和恢复"></a>数据备份和恢复</h2><h3 id="数据备份"><a href="#数据备份" class="headerlink" title="数据备份"></a>数据备份</h3><h3 id="mongodump备份工具"><a href="#mongodump备份工具" class="headerlink" title="mongodump备份工具"></a>mongodump备份工具</h3><h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>指明数据库宿主机的IP</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>指明数据库的用户名</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>指明数据库的密码</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>指明数据库的名字</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>指明collection的名字</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>指明到要导出的文件名</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>指明导出数据的过滤条件</td>
+</tr>
+<tr>
+<td>–authenticationDatabase</td>
+<td>验证数据的名称</td>
+</tr>
+<tr>
+<td>–gzip</td>
+<td>备份时压缩</td>
+</tr>
+<tr>
+<td>–oplog</td>
+<td>use oplog for taking a point-in-time snapshot</td>
+</tr>
+</tbody></table>
+<h5 id="使用mongodump备份数据"><a href="#使用mongodump备份数据" class="headerlink" title="使用mongodump备份数据"></a>使用mongodump备份数据</h5><p>备份操作无需进入客户端</p>
+<ul>
+<li><p>全库备份</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongodump -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27300</span> -uroot -proot --authenticationDatabase admin  -o /home/mongod<br>#备份本地<span class="hljs-number">27300</span>端口中root用户的所有数据库到/home/mongod目录下<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>单个数据备份</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongodump -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27300</span> -uroot -proot --authenticationDatabase admin  -d test -o /home/mongod/test<br>#备份本地<span class="hljs-number">27300</span>端口中root用户的test数据库到/home/mongod/test目录下<br></code></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li><p>集合备份</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongodump -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27300</span> -uroot -proot --authenticationDatabase admin  -d test -c haha -o /home/mongod/test/haha#备份<span class="hljs-number">27300</span>端口中root用户的test数据库的haha集合到/home/mongod/test/haha目录下<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>压缩备份库</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongodump -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27300</span> -uroot -proot --authenticationDatabase admin  -d test -o /home/mongod/test1 --gzip#压缩备份本地<span class="hljs-number">27300</span>端口中root用户的test数据库到/home/mongod/test1目录下<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>压缩备份集合</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongodump -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27300</span> -uroot -proot --authenticationDatabase admin  -d test -c haha -o /home/mongod/test1/haha --gzip#压缩备份<span class="hljs-number">27300</span>端口中root用户的test数据库的haha集合到/home/mongod/test1/haha目录下<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="数据恢复"><a href="#数据恢复" class="headerlink" title="数据恢复"></a>数据恢复</h3><h5 id="mongorestore-恢复工具"><a href="#mongorestore-恢复工具" class="headerlink" title="mongorestore 恢复工具"></a>mongorestore 恢复工具</h5><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>指明数据库宿主机的IP</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>指明数据库的用户名</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>指明数据库的密码</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>指明数据库的名字</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>指明collection的名字</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>指明到要导出的文件名</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>指明导出数据的过滤条件</td>
+</tr>
+<tr>
+<td>–authenticationDatabase</td>
+<td>验证数据的名称</td>
+</tr>
+<tr>
+<td>–gzip</td>
+<td>备份时压缩</td>
+</tr>
+<tr>
+<td>–oplog</td>
+<td>use oplog for taking a point-in-time snapshot</td>
+</tr>
+<tr>
+<td>–drop</td>
+<td>恢复的时候把之前的集合drop掉</td>
+</tr>
+</tbody></table>
+<h5 id="使用-mongorestore-恢复数据"><a href="#使用-mongorestore-恢复数据" class="headerlink" title="使用 mongorestore 恢复数据"></a>使用 mongorestore 恢复数据</h5><ul>
+<li><p>全库备份中恢复单库（基于之前的全库备份）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongorestore -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27017</span> -uroot -proot --authenticationDatabase admin -d test --drop  /home/mongod#从/home/mongod目录下恢复全部数据库的数据到本地<span class="hljs-number">27300</span>端口中root用户中（基于第一关的备份，下同）<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>恢复 test  库</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongorestore -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27017</span> -uroot -proot --authenticationDatabase admin -d test /home/mongod/test#从/home/mongod/test目录下恢复名为test的单个数据库的数据到本地<span class="hljs-number">27300</span>端口中root用户中的test数据库<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>恢复 test 库下的 haha  集合</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">mongorestore -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27017</span> -uroot -proot --authenticationDatabase admin -d test -c haha /home/mongod/test/haha/haha.bson#从/home/mongod/test/haha目录下恢复集合的数据到本地<span class="hljs-number">27300</span>端口中root用户的test数据库的haha集合中<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>–drop 参数实践恢复</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"># 恢复单库mongorestore -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27017</span> -uroot -proot --authenticationDatabase admin -d test --drop /home/mongod/test# 恢复单表mongorestore -h <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">27017</span> -uroot -proot --authenticationDatabase admin -d test -c vast --drop /home/mongod/test/haha/haha.bson<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://xiazai-fd.zol-img.com.cn/t_s960x600/g1/M01/03/06/Cg-4jVONmIiIa6NpAATdgesQtisAAN9YQLYqJcABN2Z899.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2022/12/06/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">服务器配置域名与https协议</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "8UYCdiuNKObGOVDow8Elw3Le-gzGzoHsz",
+        appKey: "llUTPaqANJpKij6CSsCjvxX9",
+        avatar: "mm",
+        placeholder: "随便说点什么叭～",
+        notify: true,
+        visitor: true,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/images/avatar.gif" class="soft-size--round soft-style--box" alt="星辰大海">
+    
+    
+      <h2>星辰大海</h2>
+    
+    
+      <p>不忘初心,方得始终!</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>20</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        11
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        16
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEMongodb"><span class="toc-number">1.</span> <span class="toc-text">配置Mongodb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows%E7%AB%AF%E5%90%AF%E5%8A%A8Mongdb%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">Windows端启动Mongdb服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linx%E7%AB%AF%E5%90%AF%E5%8A%A8Mongodb%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.</span> <span class="toc-text">Linx端启动Mongodb服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8Mongo%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">2.</span> <span class="toc-text">启动Mongo客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">数据库基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB%E6%96%87%E6%A1%A3%E7%9A%84%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">MongoDB文档的高级查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE%E5%92%8C%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">向数据库导入数据和从数据库导出数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E6%93%8D%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">聚合操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%A0%87"><span class="toc-number">5.</span> <span class="toc-text">游标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">6.</span> <span class="toc-text">索引基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">6.1.</span> <span class="toc-text">常见索引的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E8%B6%A3%E7%9A%84%E5%9C%B0%E7%90%86%E7%B4%A2%E5%BC%95"><span class="toc-number">6.2.</span> <span class="toc-text">有趣的地理索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96"><span class="toc-number">7.</span> <span class="toc-text">数据库优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E5%8E%9F%E5%88%99"><span class="toc-number">7.1.</span> <span class="toc-text">MongoDB 查询优化原则</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96%E5%8E%9F%E5%88%99"><span class="toc-number">7.1.0.1.</span> <span class="toc-text">查询优化原则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-%E7%9A%84-Profiling-%E5%B7%A5%E5%85%B7"><span class="toc-number">7.2.</span> <span class="toc-text">MongoDB 的 Profiling 工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">7.2.1.</span> <span class="toc-text">优化步骤：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Profiling-%E7%BA%A7%E5%88%AB%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">7.2.2.</span> <span class="toc-text">Profiling 级别说明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%BC%80%E5%90%AF-Profiling"><span class="toc-number">7.2.3.</span> <span class="toc-text">全局开启 Profiling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%97%AD-Profiling-%E5%B7%A5%E5%85%B7"><span class="toc-number">7.2.4.</span> <span class="toc-text">关闭 Profiling 工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%85%A2%E6%9F%A5%E8%AF%A2%E5%88%86%E6%9E%90"><span class="toc-number">7.2.5.</span> <span class="toc-text">慢查询分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#profile-%E9%83%A8%E5%88%86%E5%AD%97%E6%AE%B5%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-number">7.2.6.</span> <span class="toc-text">profile 部分字段解释：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%85%A2%E6%97%A5%E5%BF%97%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4"><span class="toc-number">7.2.7.</span> <span class="toc-text">常用的慢日志查询命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-%E8%AE%BF%E9%97%AEMongoDB"><span class="toc-number">8.</span> <span class="toc-text">Python 访问MongoDB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E8%BF%9E%E6%8E%A5MongoDB%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">8.1.</span> <span class="toc-text">python连接MongoDB写入数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pip%E5%B7%A5%E5%85%B7"><span class="toc-number">8.1.1.</span> <span class="toc-text">pip工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95PyMongo"><span class="toc-number">8.1.2.</span> <span class="toc-text">测试PyMongo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E5%85%A8"><span class="toc-number">9.</span> <span class="toc-text">MongoDB数据库安全</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"><span class="toc-number">9.0.1.</span> <span class="toc-text">创建管理员用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%94%A8%E6%88%B7"><span class="toc-number">9.0.2.</span> <span class="toc-text">查看用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"><span class="toc-number">9.0.3.</span> <span class="toc-text">启用身份验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E9%9C%80%E6%B1%82%E5%88%9B%E5%BB%BA%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="toc-number">9.0.4.</span> <span class="toc-text">按需求创建普通用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%99%90%E5%88%B6%E8%AE%BF%E9%97%AE"><span class="toc-number">9.0.5.</span> <span class="toc-text">数据库限制访问</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB-%E5%A4%8D%E5%88%B6%E9%9B%86-amp-%E5%88%86%E7%89%87"><span class="toc-number">10.</span> <span class="toc-text">MongoDB 复制集 &amp; 分片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-%E6%9E%B6%E6%9E%84"><span class="toc-number">10.1.</span> <span class="toc-text">MongoDB 架构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E9%9B%86"><span class="toc-number">10.1.0.1.</span> <span class="toc-text">复制集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E6%88%90%E5%91%98%E7%8A%B6%E6%80%81"><span class="toc-number">10.1.0.2.</span> <span class="toc-text">副本集成员状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%89%87"><span class="toc-number">10.1.0.3.</span> <span class="toc-text">分片</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-%E5%A4%8D%E5%88%B6%E9%9B%86%E6%90%AD%E5%BB%BA"><span class="toc-number">10.2.</span> <span class="toc-text">MongoDB 复制集搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="toc-number">10.2.0.1.</span> <span class="toc-text">配置文件设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E8%8A%82%E7%82%B9"><span class="toc-number">10.2.0.2.</span> <span class="toc-text">配置主从节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%87%E6%8D%A2-Primary-%E8%8A%82%E7%82%B9%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E8%8A%82%E7%82%B9"><span class="toc-number">10.2.0.3.</span> <span class="toc-text">切换 Primary 节点到指定的节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MongoDB-%E5%88%86%E7%89%87%E9%9B%86%E6%90%AD%E5%BB%BA"><span class="toc-number">10.3.</span> <span class="toc-text">MongoDB 分片集搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE-1"><span class="toc-number">10.3.0.1.</span> <span class="toc-text">配置文件设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#config-%E8%8A%82%E7%82%B9"><span class="toc-number">10.3.0.2.</span> <span class="toc-text">config 节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#route-%E8%8A%82%E7%82%B9"><span class="toc-number">10.3.0.3.</span> <span class="toc-text">route 节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%89%87%E9%AA%8C%E8%AF%81"><span class="toc-number">10.3.0.4.</span> <span class="toc-text">分片验证</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D"><span class="toc-number">11.</span> <span class="toc-text">数据备份和恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD"><span class="toc-number">11.1.</span> <span class="toc-text">数据备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodump%E5%A4%87%E4%BB%BD%E5%B7%A5%E5%85%B7"><span class="toc-number">11.2.</span> <span class="toc-text">mongodump备份工具</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">11.2.0.1.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8mongodump%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE"><span class="toc-number">11.2.0.2.</span> <span class="toc-text">使用mongodump备份数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D"><span class="toc-number">11.3.</span> <span class="toc-text">数据恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#mongorestore-%E6%81%A2%E5%A4%8D%E5%B7%A5%E5%85%B7"><span class="toc-number">11.3.0.1.</span> <span class="toc-text">mongorestore 恢复工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-mongorestore-%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="toc-number">11.3.0.2.</span> <span class="toc-text">使用 mongorestore 恢复数据</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>星辰大海的博客网站</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/conda/">
+            conda (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/shell/">
+            shell (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/web/">
+            web (6)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/python/">
+            python (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+            深度学习 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/vue/">
+            vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/">
+            前端 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%85%B6%E4%BB%96/">
+            其他 (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/sql/">
+            sql (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/ubuntu/">
+            ubuntu (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (2)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/css/" style="font-size: 10px;" class="tags-cloud-0">css</a> <a href="/tags/ftp/" style="font-size: 10px;" class="tags-cloud-0">ftp</a> <a href="/tags/https/" style="font-size: 10px;" class="tags-cloud-0">https</a> <a href="/tags/linux/" style="font-size: 10px;" class="tags-cloud-0">linux</a> <a href="/tags/mongo/" style="font-size: 10px;" class="tags-cloud-0">mongo</a> <a href="/tags/mysql/" style="font-size: 10px;" class="tags-cloud-0">mysql</a> <a href="/tags/node/" style="font-size: 10px;" class="tags-cloud-0">node</a> <a href="/tags/pip/" style="font-size: 10px;" class="tags-cloud-0">pip</a> <a href="/tags/python/" style="font-size: 10px;" class="tags-cloud-0">python</a> <a href="/tags/redis/" style="font-size: 10px;" class="tags-cloud-0">redis</a> <a href="/tags/tensorflow/" style="font-size: 10px;" class="tags-cloud-0">tensorflow</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a> <a href="/tags/webpack/" style="font-size: 10px;" class="tags-cloud-0">webpack</a> <a href="/tags/%E5%85%B6%E4%BB%96/" style="font-size: 10px;" class="tags-cloud-0">其他</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">域名</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;" class="tags-cloud-0">小程序</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+          <a href="https://www.jianshu.com/u/f8df3038f00c" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg t="1662021295604" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3415">
+    <path d="M716.8 76.8a230.4 230.4 0 0 1 230.4 230.4v409.6a230.4 230.4 0 0 1-230.4 230.4H307.2a230.4 230.4 0 0 1-230.4-230.4V307.2a230.4 230.4 0 0 1 230.4-230.4h409.6m0-76.8H307.2A307.2 307.2 0 0 0 0 307.2v409.6a307.2 307.2 0 0 0 307.2 307.2h409.6a307.2 307.2 0 0 0 307.2-307.2V307.2A307.2 307.2 0 0 0 716.8 0z" p-id="3416"></path>
+    <path d="M335.616 322.048a489.728 489.728 0 0 1-48.384 68.352L232.96 355.328a366.848 366.848 0 0 0 78.08-128l61.44 13.568-9.728 25.6H512v55.808h-76.8a300.288 300.288 0 0 1 29.44 48.64l-56.32 21.504a535.296 535.296 0 0 0-39.424-70.144z m-61.952 143.36h63.744v332.8h-63.744z m79.104-97.792a628.48 628.48 0 0 1 73.728 76.8l-47.104 32.512A768 768 0 0 0 307.2 396.544z m45.056 122.368h235.264v241.92h-235.264z m60.672 94.464h114.944v-43.008h-114.944z m114.944 94.72V634.88h-114.944v44.288zM636.672 793.6l-15.36-57.856 54.016 2.048c12.8 0 19.2-8.96 19.2-25.6v-261.12h-223.744v-58.368H757.76V729.6c0 43.264-23.296 65.024-70.144 65.024z m-39.168-471.552a491.008 491.008 0 0 1-37.632 59.648l-54.016-35.072a338.432 338.432 0 0 0 63.232-119.808l60.928 13.568c-4.096 11.52-6.912 20.224-8.704 25.6h169.728v55.808h-88.064a332.8 332.8 0 0 1 27.136 43.776l-56.576 21.504a533.504 533.504 0 0 0-37.376-65.28z" p-id="3417"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://m.weibo.cn/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://github.com/363444533" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">彦</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function() {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      let script = document.createElement("script")
+
+      script.onload = function() {
+        gtag('js', new Date());
+        gtag('config', "UA-165681463-1");
+      }
+
+      script.src = "https://www.googletagmanager.com/gtag/js?id=UA-165681463-1"
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(script, s);
+    })()
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  <!-- Baidu Analytics START -->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?77cce6624f1114785af5e77d00cbf93c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- Baidu Analytics End -->
+
+  
+
+
+  <!-- Tencent Analytics START -->
+  <script>
+      var _mtac = {"performanceMonitor":1};
+      (function() {
+        if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+          return console.log("本地调试");
+        }
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "66537616");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+      })();
+  </script>
+  <!-- Tencent Analytics End -->
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/miku.model.json"},"display":{"superSample":2,"width":220,"height":440,"position":"right","hOffset":-40,"vOffset":-80},"mobile":{"show":true,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
