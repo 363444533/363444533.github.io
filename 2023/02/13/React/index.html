@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+
+  
+    <meta name="keywords" content="博客">
+  
+
+  
+    <meta name="author" content="彦">
+  
+
+  
+
+  
+
+  <title>React | 星辰大海</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.QFdwl07_aviM1ch2KpyyFgHaEo?w=310&amp;h=193&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          星辰大海
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://caolei520.work/happy/">烟花展</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53107845?spm=1000.2115.3001.5343">CSDN</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">关于我</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">React</h1>
+          <h2 class="title-sub-wrap">
+            <strong>彦</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2023-02-13T12:40:58.000Z" itemprop="datePublished">2023-02-13</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/react/">📒 react</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/web/">🏷️ web</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="react介绍"><a href="#react介绍" class="headerlink" title="react介绍"></a>react介绍</h2><h3 id="react特点"><a href="#react特点" class="headerlink" title="react特点"></a>react特点</h3><ol>
+<li><p>虚拟DOM + diff 算法，尽量减少与真实DOM操作</p>
+</li>
+<li><p>声明式编码</p>
+<p>在react定义函数，无需接触真实DOM和事件系统，完整最终目标（界面），通过封装API实现目标界面</p>
+</li>
+<li><p>组件化</p>
+<p>将页面想象为一颗树，树上的每一个节点，我们都可以开发出一个独立的可复用的小组件</p>
+<p>每个小组件都有自己独立的css，html，js，img</p>
+<p>可以通过搭积木（组件）方式完成整个页面</p>
+</li>
+</ol>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p><strong>官网</strong>–&gt; <a target="_blank" rel="noopener" href="https://react.docschina.org/docs/add-react-to-a-website.html#add-react-in-one-minute">react起步</a></p>
+<p><strong>crossorigin</strong> 用于跨域</p>
+<p>注意切换使用版本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//容器</span><br>&lt;div id=<span class="hljs-string">&quot;root&quot;</span>&gt;&lt;/div&gt;<br><span class="hljs-comment">//cdn方式引入核心库 </span><br><span class="hljs-comment">//可以将下列几个网址里的包下载后引入项目</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/react@18/umd/react.development.js&quot;</span> <span class="hljs-attr">crossorigin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="hljs-comment">//用于操作DOM</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/react-dom@18/umd/react-dom.development.js&quot;</span> <span class="hljs-attr">crossorigin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="hljs-comment">//引入jsx语法</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://unpkg.com/babel-standalone@6/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="hljs-comment">//代码书写位置 type=必须写</span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"> 	   <span class="hljs-comment">//传入真实DOM节点，通过ReactDOM.createRoot将react元素渲染到页面中</span></span></span><br><span class="language-javascript"><span class="language-xml"> 		<span class="hljs-keyword">let</span> app = <span class="hljs-title class_">ReactDOM</span>.<span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;root&quot;</span>))</span></span><br><span class="language-javascript"><span class="language-xml">		app.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>123<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>虚拟DOM是真实DOM的映射；</p>
+<p>虚拟DOM:将真实DOM映射成树型结构的js对象来描述真实DOM结构；</p>
+<p>树结构中的js对象包含了对应的真实DOM信息；</p>
+<p>真实DOM和虚拟DOM的区别</p>
+<ol>
+<li>虚拟DOM内容少，真实DOM有许多不需要用的内容。导致运行时间需要更多</li>
+<li>虚拟DOM最终仍会转换为真实DOM</li>
+</ol>
+<p>虚拟DOM的好处</p>
+<ol>
+<li>配合diff算法，提高运行速度</li>
+</ol>
+<h3 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h3><h4 id="定义虚拟DOM"><a href="#定义虚拟DOM" class="headerlink" title="定义虚拟DOM"></a>定义虚拟DOM</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//不需要引号</span><br><span class="hljs-comment">//jsx支持多行，需要换行最好添加括号，防止发生错误</span><br><span class="hljs-comment">//虚拟DOM只能有一个根标签</span><br><span class="hljs-keyword">let</span> color = <span class="hljs-string">&quot;green&quot;</span><br><span class="hljs-keyword">let</span> vNode = (<br>	<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&quot;<span class="hljs-attr">green</span>&quot;&#125;&#125;&gt;</span>虚拟DOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:color&#125;&#125;</span>&gt;</span>虚拟DOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>)<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="React元素属性名使用小驼峰写法"><a href="#React元素属性名使用小驼峰写法" class="headerlink" title="React元素属性名使用小驼峰写法"></a>React元素属性名使用小驼峰写法</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs jsx">&lt;p style=&#123;&#123;<span class="hljs-attr">fontSize</span>:<span class="hljs-string">&quot;50px&quot;</span>&#125;&#125;&gt;虚拟<span class="hljs-variable constant_">DOM</span>&lt;/p&gt;<br><span class="hljs-comment">//写font-size会报错</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="class被className替代"><a href="#class被className替代" class="headerlink" title="class被className替代"></a>class被className替代</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">&lt;p className=<span class="hljs-string">&#x27;box&#x27;</span>&gt;虚拟<span class="hljs-variable constant_">DOM</span>&lt;/p&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="标签必须闭合"><a href="#标签必须闭合" class="headerlink" title="标签必须闭合"></a>标签必须闭合</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx">&lt;img src=<span class="hljs-string">&#x27;&#x27;</span> /&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="嵌入js表达式，字符串模板写法"><a href="#嵌入js表达式，字符串模板写法" class="headerlink" title="嵌入js表达式，字符串模板写法${}"></a>嵌入js表达式，字符串模板写法<code>$&#123;&#125;</code></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//js表达式可以理解为会返回出值的js语句</span><br><span class="hljs-comment">//if swich等叫做语句，不是js表达式</span><br>&lt;div&gt;&#123;name&#125;&lt;/div&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;小米&quot;</span>,<span class="hljs-string">&quot;华为&quot;</span>,<span class="hljs-string">&quot;三星&quot;</span>，<span class="hljs-string">&quot;苹果&quot;</span>]<br><span class="hljs-keyword">let</span> demo = <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    &#123;</span><br><span class="language-xml">            arr.map((item，index)=&gt;&#123;</span><br><span class="language-xml">                return <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">            &#125;)</span><br><span class="language-xml">        &#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>jsx能自动遍历数组，进行展示</li>
+<li>添加dom节点，一般使用map，filter或者自己封装的有返回值的函数</li>
+<li>添加节点不设置key属性会报错，默认会以索引为key值</li>
+<li>不支持对象循环</li>
+</ul>
+<h4 id="类组件与函数组件"><a href="#类组件与函数组件" class="headerlink" title="类组件与函数组件"></a>类组件与函数组件</h4><ul>
+<li><p>类组件</p>
+<p>重点不在类，hooks（vue组合式函数）</p>
+<p>Class类 this指向组件实例</p>
+<p>类组件如何创建</p>
+<p>事件绑定（合成事件）</p>
+<ul>
+<li>小驼峰写法</li>
+<li>类组件默认为严格模式 <code>&#39;use strict&#39; </code>（window指向为undefind）</li>
+<li>解决办法<ol>
+<li>使用箭头函数定义事件函数</li>
+<li>使用bind(this)绑定 <code>&lt;button onClick=&#123;this.change.bind(this)&#125;&gt;点击&lt;/button&gt;</code></li>
+</ol>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//组件名规范</span><br><span class="hljs-comment">//大驼峰写法（首字母大写）</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyLuYao</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.component</span>&#123;<br>    <span class="hljs-comment">//构造函数里存放数据，必须要super()</span><br>    <span class="hljs-comment">//constructor()&#123;</span><br>    <span class="hljs-comment">//   super()</span><br>    <span class="hljs-comment">//   this.state = &#123; name:&#x27;Lisa&#x27;, age:18 &#125;</span><br>    <span class="hljs-comment">//&#125;</span><br>    <span class="hljs-comment">//简写 会自动放到constructor中 </span><br>    state = &#123; <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;Lisa&#x27;</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">18</span> &#125;<br>    <span class="hljs-comment">//定义事件</span><br>    <span class="hljs-comment">//change()&#123;</span><br>    <span class="hljs-comment">//    console.log(this) //指向undifind</span><br>    <span class="hljs-comment">//&#125;</span><br>    change = <span class="hljs-function">() =&gt;</span>&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">this</span>) <span class="hljs-comment">//指向MyLuyao</span><br>        <span class="hljs-comment">//修改state数据必须使用this.state修改</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123; <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;马老师&#x27;</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">8</span> &#125;)<br>    &#125;<br>    <span class="hljs-comment">//必须用render写虚拟DOM并return</span><br>    <span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>      <span class="hljs-keyword">return</span> (<br>            <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&quot;<span class="hljs-attr">green</span>&quot;&#125;&#125;&gt;</span>虚拟DOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:color&#125;&#125;</span>&gt;</span>虚拟DOM<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">              	<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;this.change&#125;</span>&gt;</span>点击<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>        ) <br>    &#125;<br>&#125;<br><span class="hljs-comment">//渲染</span><br>app.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyLuYao</span> /&gt;</span></span>)<br></code></pre></td></tr></table></figure>
+
+<p>向子组件传值</p>
+<ol>
+<li><p>子组件通过this.props接收</p>
+</li>
+<li><p>不允许修改父组件传递的数据</p>
+</li>
+<li><p>传递的数据只能为字符串与js表达式</p>
+</li>
+<li><p>&#96;&#96;&#96;jsx</p>
+<MyLuYao name="杨幂" age={1+2}/>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs xml"><br><br>##### 类组件 - 核心属性<br><br>检测父组件传递的数据类型是否为对应的<br><br>需要额外引入第三方库PropTypes <br><br>```jsx<br>//文档网址 https://www.npmjs.com/package/prop-types<br>//压缩版本可能不会提示报错<br><span class="hljs-comment">&lt;!-- development version --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- production version --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+<p>可以直接传节点过去</p>
+<h5 id="类组默认值"><a href="#类组默认值" class="headerlink" title="类组默认值"></a>类组默认值</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">MyLuYao</span>.<span class="hljs-property">defaultProps</span> = &#123; <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;jake&#x27;</span> &#125;<br><span class="hljs-comment">//可以简写到类里</span><br><span class="hljs-keyword">static</span> defaultProps = &#123; <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;jake&#x27;</span> &#125;<br><span class="hljs-keyword">static</span> propTypes = &#123;&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="类组件的ref属性"><a href="#类组件的ref属性" class="headerlink" title="类组件的ref属性"></a>类组件的ref属性</h5><p> React.createRef() 创建ref获取DOM节点或者类组件实例</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">RefClass</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createRef</span>()<br><br>&lt;<span class="hljs-title class_">MyJiuWei</span> ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">RefClass</span>&#125; /&gt;<br></code></pre></td></tr></table></figure>
+
+<p>获取input框里的数据</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//React不存在双向绑定</span><br><span class="hljs-comment">//通过ref或者事件获取</span><br>&lt;input ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">myRef</span>&#125;&gt;&lt;/input&gt; <br><span class="hljs-comment">//数据存在this.myRef.current</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><p>文档地址 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/events.html">https://zh-hans.reactjs.org/docs/events.html</a></p>
+<p>写法：使用小驼峰写法（原生js+on）</p>
+<ul>
+<li><code>e.stopPropagation</code> 阻止事件冒泡</li>
+<li><code>e.preventDefault</code> 阻止默认事件</li>
+</ul>
+<p>传递数据和事件对象</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//通过在函数上写（）表示函数直接执行 .bind绑定是函数不会立即执行需要进行触发</span><br>&lt;button key=&#123;item&#125; onClick-&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">add</span>.<span class="hljs-title function_">bind</span>(<span class="hljs-variable language_">this</span>,index)&#125;&gt;点击删除&#123;item&#125;&lt;/button&gt;<br><br><span class="hljs-comment">//柯里化函数:调用函数，函数里面返回一个函数</span><br>add = <span class="hljs-function">(<span class="hljs-params">index</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function">()=&gt;</span>&#123;<br>        <span class="hljs-keyword">let</span> &#123; arr &#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>        arr.<span class="hljs-title function_">splice</span>(index,<span class="hljs-number">1</span>)<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123;<span class="hljs-attr">arr</span>:arr&#125;)<br>    &#125;<br>&#125;<br><br>&lt;button key=&#123;item&#125; onClick-&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">add</span>(index)&#125;&gt;点击删除&#123;item&#125;&lt;/button&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>冒泡</strong></p>
+<p>事件处理函数在冒泡阶段被触发</p>
+<p>如需注册捕获事件处理函数，则应该为事件名添加Captrue</p>
+<p>捕获事件： 从外向里触发</p>
+<p>冒泡事件:    从里向外触发</p>
+<h5 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a><strong>插槽</strong></h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//通过props传入虚拟dom可以直接使用</span><br>&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">props</span>.<span class="hljs-property">dom</span>&#125;<br><span class="hljs-comment">//通过子组件双标签包裹位置书写虚拟DOM，选择在子组件位置进行渲染</span><br><span class="hljs-comment">//子组件的props属性中会自动出现childen属性</span><br><span class="hljs-comment">//可以自由改变位置</span><br>&lt;div&gt;&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">props</span>.<span class="hljs-property">children</span>&#125;&lt;/div&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;this.props.children[1]&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;this.props.children[2]&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs jsx">state = &#123;<br>    <span class="hljs-attr">dom1</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>MyLuyao的DOM<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>    <span class="hljs-attr">dom2</span>: <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Myheixng的DOM<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br>    <span class="hljs-attr">bol</span>:<span class="hljs-literal">true</span><br>&#125;<br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> &#123;dom1,dom1,bol&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>    <span class="hljs-keyword">let</span> dom ;<br>    <span class="hljs-keyword">if</span>(dom)&#123;<br>        dom = dom1<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        dom = dom2<br>    &#125;<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    &#123;bol ? dom1 : dom1&#125;</span><br><span class="language-xml">    &#123;dom&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h5 id="通信"><a href="#通信" class="headerlink" title="通信"></a><strong>通信</strong></h5><p>父传子数据:通过props</p>
+<p>子传递父数据: 在父组件定义A函数，将函数传递给子函数，子组件接受A函数,</p>
+<p>子组件中调用A函数并传递给父组件</p>
+<h5 id="深度传递数据"><a href="#深度传递数据" class="headerlink" title="深度传递数据"></a>深度传递数据</h5><p>创建上下文对象（创建数据对象）</p>
+<p><code>const &#123;createContext&#125; = React</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Lisa</span> = <span class="hljs-title function_">createContext</span>()<br></code></pre></td></tr></table></figure>
+
+<p>确定传递数据位置，内制类组件（createContext函数返回值.Provider）</p>
+<p>value&#x3D;{} 用于传递数据</p>
+<p>后代组件接受数据，<code>static contextType = createText</code></p>
+<p>this.context</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsx">&lt;<span class="hljs-title class_">Lisa</span>.<span class="hljs-property">Provider</span> value=&#123;info&#125;&gt;<br><br>&lt;/<span class="hljs-title class_">Lisa</span>.<span class="hljs-property">Provider</span>&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>文档 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html">https://zh-hans.reactjs.org/docs/react-component.html</a></p>
+<p><img src="/2023/02/13/React/smzq.png" alt="生命周期文档"></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//在调用render前执行</span><br><span class="hljs-comment">//必需要返回一个对象来更新state，返回null表示不做任何操作</span><br><span class="hljs-comment">//作业:根据父级传递的参数来更新state</span><br><span class="hljs-keyword">static</span> <span class="hljs-title function_">getDerivedStateFromProps</span>(<span class="hljs-params">props,state</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(prop, state, <span class="hljs-string">&quot;render处理虚拟DOM之前调用&quot;</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span><br>&#125; <br><span class="hljs-comment">//设置类组件是否允许页面更新（默认允许）,必须设置返回值</span><br><span class="hljs-title function_">shouldCoponentUpdate</span>(<span class="hljs-params">nextProps, nextState</span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <br>&#125;<br><span class="hljs-comment">//提交虚拟DOM至页面前执行（渲染输出前执行）设置的返回值将会传递给componentDidUpdata生命周期函数作为形参</span><br><span class="hljs-title function_">getSnapshotBeforeUpdata</span>(<span class="hljs-params">prevProps, prevState</span>)&#123;<br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-attr">qwq</span>:<span class="hljs-number">132456</span>&#125;<br>&#125;<br><span class="hljs-comment">//更新页面之后触发</span><br><span class="hljs-title function_">componentDidUpdata</span>(<span class="hljs-params">prevProps, prevState, snapshot</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(prevProps, prevState, snapshot)<br>&#125;<br><span class="hljs-comment">//挂载完成之后触发</span><br><span class="hljs-title function_">componentDidMount</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;页面挂载完成后触发&quot;</span>)；<br>&#125;<br><span class="hljs-comment">//卸载时触发</span><br><span class="hljs-title function_">componentWillUnmount</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;卸载触发&quot;</span>)；<br>&#125;<br><span class="hljs-comment">//更新，渲染返回虚拟dom；</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h4><ul>
+<li>找出新旧虚拟节点之间的差距，目的尽可能做到节点复用</li>
+<li>根节点对比元素相同则引用，不相同则拆除重新创建新的DOM</li>
+<li>元素类型相同，属性不同则修改属性</li>
+<li>组件相同:组件更新时，组件实例保持不见，数据变化</li>
+<li>循环中key的唯一值，用于虚拟DOM，使用Key时会基于key值得变化来进行渲染</li>
+<li>当循环中存在插入删除操作时不要以索引为key值，因为diff算法会以key值来进行对比，但每次更新后key值会发生改变，所以会发生混乱</li>
+<li>虚拟DOM比较时不会比较内容，只会比较标签属性类名等，input里的value不会进行比较</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>首字母大写</p>
+<p>创建函数组件，函数组件需要返回虚拟DOM</p>
+<ul>
+<li>没有this，是严格模式</li>
+<li>组件首标签属性进行数据传递至子组件 </li>
+<li>函数组件通过形参进行接受父组件传递的参数</li>
+<li>类型限制方法与类组件一样使用Child.propTypes&#x3D;{} 必须写在外面，没有简写</li>
+<li>默认值也一样</li>
+<li>函数Ref:用于获取组件DOM节点（元素节点）或者</li>
+<li>函数事件，与类组件事件使用方法一样</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> &#123; useRef &#125; = <span class="hljs-title class_">React</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Demo</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-comment">//定义数据，不是响应式数据</span><br>    <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">45</span>]<br>	<span class="hljs-comment">//创建Ref容器获取DOM节点</span><br>    <span class="hljs-keyword">let</span> <span class="hljs-title class_">Input</span> = <span class="hljs-title function_">useRef</span>();<br>    <span class="hljs-comment">//定义函数事件</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">getInfo</span> = (<span class="hljs-params"></span>)=&gt;&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Input</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    	Demo内容</span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;Input&#125;/</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;getinfo&#125;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">Child</span> <span class="hljs-attr">arr</span>=<span class="hljs-string">&#123;arr&#125;/</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Child</span>(<span class="hljs-params">Props</span>)&#123;<br>    <span class="hljs-keyword">let</span> &#123;arr&#125; = <span class="hljs-title class_">Props</span><br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        二代组件</span><br><span class="language-xml">     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br><span class="hljs-title class_">Child</span>.<span class="hljs-property">propTypes</span>=&#123;<br>    <span class="hljs-attr">arr</span>: <span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">array</span><br>&#125;<br><span class="hljs-title class_">Child</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>    <span class="hljs-attr">arr</span>: <span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">array</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>获取子组件节点(ref)转发</p>
+<ul>
+<li>通过React.forwardRef(A函数)执行；返回值是函数组件名，并且传递A函数；</li>
+<li>A函数将作为函数内容</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Child</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">forwardRef</span>(<span class="hljs-function">(<span class="hljs-params">props,ref</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">let</span> &#123;arr&#125; = <span class="hljs-title class_">Props</span><br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">        二代组件</span><br><span class="language-xml">     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;)<br><br><span class="hljs-comment">//父组件</span><br>&lt;input ref=&#123;<span class="hljs-title class_">Input</span>&#125;/&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>函数数据: useState函数创建响应式数据</p>
+<p>useState（初始数据） 可以不传</p>
+<p>返回值是一个数组[对应初始数据，修改数据的函数]</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">let</span> [arr,setState] = <span class="hljs-title function_">useState</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>])<br><span class="hljs-comment">// arr   [1,2,3,4]</span><br><span class="hljs-comment">//arr 与setState可以自己取名</span><br><span class="hljs-title function_">setState</span>([<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>深层传递</p>
+<p>使用 <code>React.createContext</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> &#123;createContext,useContext&#125; = <span class="hljs-title class_">React</span><br><span class="hljs-keyword">const</span> <span class="hljs-title class_">Lisa</span> = <span class="hljs-title function_">createContext</span>()<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Demo</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> [info,] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">123</span>)<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Lisa.Provider</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;info&#125;</span>&gt;</span></span><br><span class="language-xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">MyLu1</span> /&gt;</span>  </span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">Lisa.Provider</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">MyLu1</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> val = <span class="hljs-title function_">useContext</span>(lisa)<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">            &#123;val&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://desk-fd.zol-img.com.cn/t_s960x600c5/g1/M0B/03/06/ChMljl402K6IOTZbAARWayFg6S4AAQJPwFhuRIABFaD752.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2023/02/19/python-requests%E6%A8%A1%E5%9D%97/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">python-requests模块</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="https://pic3.zhimg.com/v2-58d652598269710fa67ec8d1c88d8f03_r.jpg?source=1940ef5c"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2023/02/05/es6/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">es6</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+    <div class="valine-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <div id="valine_thread" class="valine-thread"></div>
+    </div>
+    <script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script type="text/javascript" src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script type="text/javascript">
+      new Valine({
+        el: "#valine_thread",
+        appId: "8UYCdiuNKObGOVDow8Elw3Le-gzGzoHsz",
+        appKey: "llUTPaqANJpKij6CSsCjvxX9",
+        avatar: "mm",
+        placeholder: "随便说点什么叭～",
+        notify: true,
+        visitor: true,
+        pageSize: 10,
+      });
+    </script>
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/images/avatar.gif" class="soft-size--round soft-style--box" alt="星辰大海">
+    
+    
+      <h2>星辰大海</h2>
+    
+    
+      <p>不忘初心,方得始终!</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>25</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        13
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        21
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">react介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">react特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsx"><span class="toc-number">1.3.</span> <span class="toc-text">jsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.3.1.</span> <span class="toc-text">定义虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E5%90%8D%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%A9%BC%E5%B3%B0%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">React元素属性名使用小驼峰写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E8%A2%ABclassName%E6%9B%BF%E4%BB%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text">class被className替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BF%85%E9%A1%BB%E9%97%AD%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">标签必须闭合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5js%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">嵌入js表达式，字符串模板写法${}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">类组件与函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">类组默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%9A%84ref%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.2.</span> <span class="toc-text">类组件的ref属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.7.3.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">1.3.7.4.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">1.3.7.5.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.7.6.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.7.7.</span> <span class="toc-text">深度传递数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.8.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.9.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.10.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>星辰大海的博客网站</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/categories/conda/">
+            conda (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/shell/">
+            shell (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/web/">
+            web (8)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/python/">
+            python (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+            深度学习 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/vue/">
+            vue (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/">
+            前端 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%85%B6%E4%BB%96/">
+            其他 (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/sql/">
+            sql (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/ubuntu/">
+            ubuntu (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+            数据库 (2)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+            小程序 (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/categories/react/">
+            react (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/css/" style="font-size: 15px;" class="tags-cloud-5">css</a> <a href="/tags/es6/" style="font-size: 10px;" class="tags-cloud-0">es6</a> <a href="/tags/ftp/" style="font-size: 10px;" class="tags-cloud-0">ftp</a> <a href="/tags/https/" style="font-size: 10px;" class="tags-cloud-0">https</a> <a href="/tags/js/" style="font-size: 10px;" class="tags-cloud-0">js</a> <a href="/tags/linux/" style="font-size: 10px;" class="tags-cloud-0">linux</a> <a href="/tags/mongo/" style="font-size: 10px;" class="tags-cloud-0">mongo</a> <a href="/tags/mysql/" style="font-size: 10px;" class="tags-cloud-0">mysql</a> <a href="/tags/node/" style="font-size: 10px;" class="tags-cloud-0">node</a> <a href="/tags/pip/" style="font-size: 10px;" class="tags-cloud-0">pip</a> <a href="/tags/python/" style="font-size: 15px;" class="tags-cloud-5">python</a> <a href="/tags/redis/" style="font-size: 10px;" class="tags-cloud-0">redis</a> <a href="/tags/tensorflow/" style="font-size: 10px;" class="tags-cloud-0">tensorflow</a> <a href="/tags/uniapp/" style="font-size: 10px;" class="tags-cloud-0">uniapp</a> <a href="/tags/vue/" style="font-size: 20px;" class="tags-cloud-10">vue</a> <a href="/tags/web/" style="font-size: 10px;" class="tags-cloud-0">web</a> <a href="/tags/webpack/" style="font-size: 10px;" class="tags-cloud-0">webpack</a> <a href="/tags/%E5%85%B6%E4%BB%96/" style="font-size: 10px;" class="tags-cloud-0">其他</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">域名</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 10px;" class="tags-cloud-0">小程序</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 10px;" class="tags-cloud-0">爬虫</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+          <a href="https://www.jianshu.com/u/f8df3038f00c" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg t="1662021295604" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3415">
+    <path d="M716.8 76.8a230.4 230.4 0 0 1 230.4 230.4v409.6a230.4 230.4 0 0 1-230.4 230.4H307.2a230.4 230.4 0 0 1-230.4-230.4V307.2a230.4 230.4 0 0 1 230.4-230.4h409.6m0-76.8H307.2A307.2 307.2 0 0 0 0 307.2v409.6a307.2 307.2 0 0 0 307.2 307.2h409.6a307.2 307.2 0 0 0 307.2-307.2V307.2A307.2 307.2 0 0 0 716.8 0z" p-id="3416"></path>
+    <path d="M335.616 322.048a489.728 489.728 0 0 1-48.384 68.352L232.96 355.328a366.848 366.848 0 0 0 78.08-128l61.44 13.568-9.728 25.6H512v55.808h-76.8a300.288 300.288 0 0 1 29.44 48.64l-56.32 21.504a535.296 535.296 0 0 0-39.424-70.144z m-61.952 143.36h63.744v332.8h-63.744z m79.104-97.792a628.48 628.48 0 0 1 73.728 76.8l-47.104 32.512A768 768 0 0 0 307.2 396.544z m45.056 122.368h235.264v241.92h-235.264z m60.672 94.464h114.944v-43.008h-114.944z m114.944 94.72V634.88h-114.944v44.288zM636.672 793.6l-15.36-57.856 54.016 2.048c12.8 0 19.2-8.96 19.2-25.6v-261.12h-223.744v-58.368H757.76V729.6c0 43.264-23.296 65.024-70.144 65.024z m-39.168-471.552a491.008 491.008 0 0 1-37.632 59.648l-54.016-35.072a338.432 338.432 0 0 0 63.232-119.808l60.928 13.568c-4.096 11.52-6.912 20.224-8.704 25.6h169.728v55.808h-88.064a332.8 332.8 0 0 1 27.136 43.776l-56.576 21.504a533.504 533.504 0 0 0-37.376-65.28z" p-id="3417"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://m.weibo.cn/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-weibo" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M385.682429 733.696q11.995429-19.456 6.290286-39.424t-25.746286-28.598857q-19.456-7.972571-41.691429-0.585143t-34.304 26.258286q-12.580571 19.456-7.460571 39.131429t24.576 28.891429 42.569143 1.462857 35.693714-27.136zM439.442429 664.576q4.534857-7.460571 1.974857-15.140571t-10.020571-10.605714q-7.972571-2.852571-16.310857 0.292571t-12.288 10.605714q-9.728 17.700571 7.460571 25.746286 7.972571 2.852571 16.603429-0.292571t12.580571-10.605714zM538.843572 725.723429q-25.746286 58.294857-90.258286 85.723429t-128 6.875429q-61.147429-19.456-84.260571-72.265143t3.730286-107.154286q26.843429-53.174857 86.601143-79.433143t120.32-10.825143q63.414857 16.603429 90.550857 68.315429t1.462857 108.836571zM717.165858 634.294857q-5.12-54.857143-50.834286-97.133714t-119.149714-62.317714-156.891429-11.995429q-127.414857 13.165714-211.163429 80.822857t-75.702857 151.113143q5.12 54.857143 50.834286 97.133714t119.149714 62.317714 156.891429 11.995429q127.414857-13.165714 211.163429-80.822857t75.702857-151.113143zM893.147572 636.562286q0 38.838857-21.138286 79.725714t-62.317714 78.262857-96.256 67.145143-129.170286 47.396571-154.550857 17.700571-157.110857-19.163429-137.435429-53.174857-98.011429-86.308571-37.156571-114.029714q0-65.682286 39.716571-139.995429t112.859429-147.456q96.548571-96.548571 195.145143-134.875429t140.873143 4.022857q37.156571 36.571429 11.410286 119.442286-2.267429 7.972571-0.585143 11.410286t5.705143 4.022857 8.265143-0.292571 7.68-1.974857l3.437714-1.170286q79.433143-33.718857 140.580571-33.718857t87.405714 34.889143q25.746286 35.986286 0 101.741714-1.170286 7.460571-2.56 11.410286t2.56 7.168 6.875429 4.315429 9.728 3.437714q32.548571 10.313143 58.88 26.843429t45.714286 46.592 19.456 66.56zM850.871001 279.990857q23.990857 26.843429 31.158857 62.025143t-3.730286 67.145143q-4.534857 13.165714-16.822857 19.456t-25.453714 2.267429q-13.165714-4.534857-19.456-16.822857t-2.267429-25.453714q11.410286-35.986286-13.677714-63.414857t-61.147429-19.968q-13.677714 2.852571-25.746286-4.534857t-14.262857-21.138286q-2.852571-13.677714 4.534857-25.453714t21.138286-14.555429q34.304-7.460571 68.022857 3.145143t57.709714 37.449143zM954.295001 186.88q49.737143 54.857143 64.292571 127.122286t-7.68 138.020571q-5.12 15.433143-19.456 22.820571t-29.696 2.267429-22.820571-19.456-2.852571-29.696q16.018286-46.884571 5.705143-98.304t-45.714286-90.258286q-35.401143-39.424-84.553143-54.564571t-98.889143-4.827429q-16.018286 3.437714-29.696-5.412571t-17.115429-24.868571 5.412571-29.403429 24.868571-16.822857q70.290286-14.848 139.410286 6.582857t118.857143 76.873143z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://github.com/363444533" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2023 <a href="/" target="_blank">彦</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function() {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      let script = document.createElement("script")
+
+      script.onload = function() {
+        gtag('js', new Date());
+        gtag('config', "UA-165681463-1");
+      }
+
+      script.src = "https://www.googletagmanager.com/gtag/js?id=UA-165681463-1"
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(script, s);
+    })()
+  </script>
+  <!-- Google Analytics End -->
+
+  
+
+
+  <!-- Baidu Analytics START -->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?77cce6624f1114785af5e77d00cbf93c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- Baidu Analytics End -->
+
+  
+
+
+  <!-- Tencent Analytics START -->
+  <script>
+      var _mtac = {"performanceMonitor":1};
+      (function() {
+        if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+          return console.log("本地调试");
+        }
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "66537616");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+      })();
+  </script>
+  <!-- Tencent Analytics End -->
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/miku.model.json"},"display":{"superSample":2,"width":220,"height":440,"position":"right","hOffset":-40,"vOffset":-80},"mobile":{"show":true,"scale":0.7},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

@@ -24,7 +24,7 @@
 
   
 
-  <title>linux(sh) | 星辰大海</title>
+  <title>python-requests模块 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&amp;refer=http%3A%2F%2Fwww.2008php.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1652576015&amp;t=5d8b46f9f59c9c1aaca2600fd8963763)"></div>
+    <div class="post-image" style="background-image: url(https://desk-fd.zol-img.com.cn/t_s960x600c5/g1/M0B/03/06/ChMljl402K6IOTZbAARWayFg6S4AAQJPwFhuRIABFaD752.jpg)"></div>
   
 
   <!-- navbar -->
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">linux(sh)</h1>
+          <h1 class="title-wrap">python-requests模块</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-14T12:11:40.000Z" itemprop="datePublished">2022-04-14</time>
+            <time  class="article-date" datetime="2023-02-19T02:03:26.000Z" itemprop="datePublished">2023-02-19</time>
           </h2>
           <ul class="wrap-list dark">
-  
-    <li><a href="/categories/shell/">📒 shell</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/linux/">🏷️ linux</a></li>
+    <li><a href="/tags/python/">🏷️ python</a></li>
+  
+    <li><a href="/tags/%E7%88%AC%E8%99%AB/">🏷️ 爬虫</a></li>
   
 </ul>
         </div>
@@ -137,80 +137,99 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="inux-sh"><a href="#inux-sh" class="headerlink" title="inux (sh)"></a>inux (sh)</h1><hr>
-<p><code>echo</code>用于字符串的输出<br><code>echo -e</code>开启转义<br><code>echo</code>  `<code>data</code>`    显示命令结果 结果当显示当前日期<br><code>read 变量名</code>   读取键盘的值<br>使用变量<code>echo $&#123;变量名&#125;</code><br>声明只读变量 <code>readonly 变量名</code><br>删除变量<code>unset 变量名</code><br>shell数组声明是用的（）里面的值用空格分开<br>例：<code>array = (1 2 3 4 5)</code><br>获取数组长度用@来获取  <code>echo $&#123;array[@]&#125;</code><br>单行注释  <code>#</code><br>多行注释</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">:&lt;&lt;<span class="hljs-string">EOF  </span><br><span class="hljs-string">注释内容...</span><br><span class="hljs-string">注释内容...</span><br><span class="hljs-string">注释内容...</span><br><span class="hljs-string">EOF</span><br></code></pre></td></tr></table></figure>
+        <h2 id="requests"><a href="#requests" class="headerlink" title="requests"></a>requests</h2><p>requests是python内置的一个模块，主要用来发送http请求</p>
+<p>爬取网页源代码基本使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 发送请求</span><br>x = requests.get(<span class="hljs-string">&#x27;https://www.taobao.com/&#x27;</span>)<br><br><span class="hljs-comment"># 返回网页内容</span><br><span class="hljs-built_in">print</span>(x.text)<br></code></pre></td></tr></table></figure>
 
-<p><code>expr</code>是一种计算工具 使用运算时前面应该加上expr<br>在``里包括着  例：<code>val=</code>`<code>expr 2 + 2</code>`<br>**  注意 乘号前面必须加反斜线</p>
-<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><blockquote>
+<h3 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h3><h4 id="定制请求头"><a href="#定制请求头" class="headerlink" title="定制请求头"></a>定制请求头</h4><p>一般请求头放在get请求里一起发送，目的是设置访问者身份，防止403错误</p>
+<p>还可以设置请求时间，若请求超时则自动停止并抛出错误</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">requests.get(url,headers=hearders,timeout = <span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li><p><code>-eq</code> 检测两个数是否相等</p>
+<li><p>请求头通用格式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">headers = &#123;<br>    <span class="hljs-string">&#x27;user-agent&#x27;</span>:<span class="hljs-string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36&#x27;</span>，<br>    <span class="hljs-string">&#x27;accept&#x27;</span>:<span class="hljs-string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&#x27;</span><br>&#125;<br><span class="hljs-comment"># 有些网站需要携带cookie</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="传递请求参数"><a href="#传递请求参数" class="headerlink" title="传递请求参数"></a>传递请求参数</h4><ul>
+<li><p>get请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">params = &#123;<span class="hljs-string">&#x27;length&#x27;</span>: <span class="hljs-number">5</span> &#125;<br>r = requests.get(url,headers=hearders,timeout = <span class="hljs-number">1</span>, params = params)<br></code></pre></td></tr></table></figure>
 </li>
-<li><p><code>-ne</code> 检测两个数是否不相等</p>
+<li><p>post请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">data = &#123;<span class="hljs-string">&#x27;length&#x27;</span>: <span class="hljs-number">5</span> &#125;<br>r = requests.post(url,headers=hearders,timeout = <span class="hljs-number">1</span>, data = data)<br></code></pre></td></tr></table></figure>
 </li>
-<li><p><code>-gt</code>  检测左边是否大于右边</p>
-</li>
-<li><p><code>-lt</code>   检测左边是否小于右边</p>
-</li>
-<li><p><code>-ge</code> 检测左边是否大于等于右边</p>
-</li>
-<li><p><code>le</code>   检测左边是否小于等于右边</p>
+<li><p>区别</p>
+<p>get请求的传参叫 params 而post请求里传参叫data</p>
+<p>params参数会拼接到url后面 而data不会</p>
 </li>
 </ul>
-</blockquote>
-<h3 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h3><blockquote>
+<h4 id="设置代理ip"><a href="#设置代理ip" class="headerlink" title="设置代理ip"></a>设置代理ip</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">proxy = &#123;<span class="hljs-string">&#x27;http&#x27;</span>: <span class="hljs-string">&quot;180.106.16.132:8118&quot;</span>&#125;<br>r = requests.get(url,headers=hearders,proxies = proxy)<br><br>//设置proxy数组，使用random随机数来控制每次请求的代理ip<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>requests中处理异常的库叫 <code>exception</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#导入</span><br><span class="hljs-keyword">from</span> requests <span class="hljs-keyword">import</span> exceptions<br><span class="hljs-keyword">try</span>:<br>    response = requests.get(url,timeout=<span class="hljs-number">5</span>)<br>    response.raise_for_status() <span class="hljs-comment">#判断返回结果是否为200，如果不是则抛出http错误</span><br><span class="hljs-keyword">except</span> exceptions.Timeout <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;超时错误:&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(e))<br><span class="hljs-keyword">except</span> exceptions.HTTPError <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;http请求错误:&#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(e))<br><span class="hljs-keyword">except</span>:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;其他错误&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="Beautiful-Soup对象"><a href="#Beautiful-Soup对象" class="headerlink" title="Beautiful Soup对象"></a>Beautiful Soup对象</h2><p>自动将输入文档转为Unicode</p>
+<p>自动将输出文档转为utf-8</p>
+<ol>
+<li><p>导入bs4库</p>
+<p><code>from bs4 import BeautifulSoup</code></p>
+</li>
+<li><p>创建对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#保存爬取的网页源代码</span><br>html = r.text<br><span class="hljs-comment">#创建BeautifulSoup对象</span><br>soup = BeautifulSoup(html)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>此时soup就是转化过后的DOM树结构</p>
+</li>
+</ol>
+<h3 id="BeautifulSoup对象中的方法"><a href="#BeautifulSoup对象中的方法" class="headerlink" title="BeautifulSoup对象中的方法"></a>BeautifulSoup对象中的方法</h3><p>以下soup代表上面创建的对象</p>
+<ol>
+<li><p><code>soup.title</code></p>
+</li>
+<li><p><code>soup.head</code></p>
+</li>
+<li><p><code>soup.p.attrs</code> 输出p标签的所有属性</p>
+</li>
+<li><p><code>soup.p[&#39;class&#39;]</code> 或者 <code>soup.p.get(&#39;class&#39;)</code> 获取p标签类名</p>
+</li>
+<li><p><code>soup.p.string</code> 获取标签类文字</p>
+</li>
+<li><p><code>soup.head.contents</code> contents遍历子节点 返回列表</p>
+</li>
+<li><p><code>soup.stripped_strings</code>  去除 多于空白尼内容</p>
+</li>
+<li><p><code>soup.parent</code>   获取父节点</p>
+</li>
+<li><p><code>soup.parents</code>  获取所有父亲节点</p>
+</li>
+<li><p><code>soup.find_all</code>   搜索当前tag的所有子节点，并判断是否符合</p>
+<p>传字符串过滤  如获取b标签  soup.find_all(‘b’)</p>
+<p>可以传正则 re.compile(“^b”)   所有以b开头的标签</p>
+<p>传列表   or的关系</p>
+<p>传attrs参数   如找属性data值为value的 <code>soup.find_all(attrs=&#123;&quot;data&quot;:&quot;value&quot;&#125;)</code></p>
+<p>find_all 默认搜索所有子孙节点  加上recursive&#x3D;False</p>
+<p>find_all(id&#x3D;’ele’)</p>
+<p>class需要加_     <code>,</code>用来分隔多个条件 and的关系</p>
+<p><code>find_all(&quot;a&quot;,class_=&quot;ele&quot;)</code></p>
+</li>
+<li><p>css选择器<code>select</code></p>
 <ul>
-<li><p><code>!</code>  非运算</p>
+<li><p><code>soup.select(&#39;a&#39;)</code></p>
 </li>
-<li><p><code>-o</code> 或运算</p>
+<li><p><code>soup.select(&#39;.ele&#39;)</code></p>
 </li>
-<li><p><code>-a</code>  与运算</p>
+<li><p><code>soup.select(&#39;#ele&#39;)</code></p>
+</li>
+<li><p>组合查找用空格隔开，可以直接用&gt;等css选择器</p>
+</li>
+<li><p>属性查找与标签不需要空格</p>
+<p><code>soup.select(a[class=&quot;ele&quot;])</code></p>
+</li>
+<li><p>使用get_text()获取其内容</p>
 </li>
 </ul>
-</blockquote>
-<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><blockquote>
-<ul>
-<li><p><code>&amp;&amp;</code></p>
 </li>
-<li><p><code>||</code></p>
-</li>
-</ul>
-</blockquote>
-<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h3><blockquote>
-<ul>
-<li><p><code>=</code>   检测两个字符串是否相等</p>
-</li>
-<li><p><code>!=</code>  检测两个字符串是否不相等</p>
-</li>
-<li><p><code>-Z</code>  检测字符串长度是否为0</p>
-</li>
-<li><p><code>-n</code>  检测字符串长度是否不为 0</p>
-</li>
-<li><p><code>$</code>   检测字符串是否为空</p>
-</li>
-</ul>
-</blockquote>
-<h3 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h3><p><img src="https://img-blog.csdnimg.cn/573dfd78f9ab40eeaf6c3fa74d0380e3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAV0Hnu4jnu5PogIU=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="与其他语言相似 与echo不同的是需要用\n 换行"></p>
-<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><blockquote>
-<h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">if #判断条件<br>then  #成立就执行<br>else #不成立则执行 如果没有代码就不写else<br>fi   #结束<br></code></pre></td></tr></table></figure>
-
-<p>多种判断条件的</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">if<br>then<br>elif<br>then<br>else<br>fi<br></code></pre></td></tr></table></figure>
-
-<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">for 变量 in 列表 <br>do<br>done<br></code></pre></td></tr></table></figure>
-
-<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">while 判断条件<br>do<br>done<br>```shell<br>while 可以用来循环读取键盘信息  <br>`while read X` 将键盘输入的值定义为X 按ctrl+D停止循环<br>无限循环`while :`或`while true`<br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">### until循环</span></span><br>```shell<br><span class="hljs-meta prompt_">#</span><span class="language-bash">与<span class="hljs-keyword">while</span>循环相反 当判断条件为<span class="hljs-literal">true</span>时才跳出循环</span><br>until 判断条件<br>do<br>done<br></code></pre></td></tr></table></figure>
-
-<h4 id="case…esac"><a href="#case…esac" class="headerlink" title="case…esac"></a>case…esac</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">只有在遇到;;时跳出 等价于<span class="hljs-built_in">break</span></span> <br>case 值 in<br>    1) echo <br>    ;;<br>    2) echo<br>    ;;<br>    3) echo<br>    ;;<br>    .<br>    .<br>    .<br>    *) echo<br>    ;;<br>esac<br></code></pre></td></tr></table></figure>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>可以带function</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">function funname()&#123;<br>    echo &quot;hello shell&quot;<br>    return `expr 1 + 1`<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>也可以不带function定义</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">demoFun()&#123;<br>    echo &quot;hello shell&quot;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>不带return时函数以最后一句结果为返回值</p>
-</blockquote>
+</ol>
 
       </section>
 
@@ -218,22 +237,22 @@
       
         <nav class="article-nav">
           
+          
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F052420110515%2F200524110515-11-1200.jpg&amp;refer=http%3A%2F%2Fimg.jj20.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653021535&amp;t=246728005d6a808669d62916a53bf81d"></div>
+      <div class="card-cover" background-image-lazy data-img="https://tse3-mm.cn.bing.net/th/id/OIP-C.QFdwl07_aviM1ch2KpyyFgHaEo?w=310&amp;h=193&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7"></div>
     
     <div class="card-text">
       
-        <a href="/2022/04/19/pip%E8%AE%BE%E7%BD%AE%E6%BA%90/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">pip设置源</h2>
+        <a href="/2023/02/13/React/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">React</h2>
         </a>
       
-      <div class="card-text--row">Newer</div>
+      <div class="card-text--row">Older</div>
     </div>
   </article>
 </div>
-          
           
         </nav>
       
@@ -314,7 +333,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">布尔运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">逻辑运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">4.</span> <span class="toc-text">字符串运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#printf"><span class="toc-number">5.</span> <span class="toc-text">printf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.1.</span> <span class="toc-text">if语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">6.2.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#while%E8%AF%AD%E5%8F%A5"><span class="toc-number">6.3.</span> <span class="toc-text">while语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#case%E2%80%A6esac"><span class="toc-number">6.4.</span> <span class="toc-text">case…esac</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">函数</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#requests"><span class="toc-number">1.</span> <span class="toc-text">requests</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">1.1.1.</span> <span class="toc-text">定制请求头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">传递请求参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86ip"><span class="toc-number">1.1.3.</span> <span class="toc-text">设置代理ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">1.1.4.</span> <span class="toc-text">异常处理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Beautiful-Soup%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">Beautiful Soup对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BeautifulSoup%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">BeautifulSoup对象中的方法</span></a></li></ol></li></ol>
   </div>
 </section>
 
