@@ -327,6 +327,130 @@
 <p>使用 <code>React.createContext</code></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">const</span> &#123;createContext,useContext&#125; = <span class="hljs-title class_">React</span><br><span class="hljs-keyword">const</span> <span class="hljs-title class_">Lisa</span> = <span class="hljs-title function_">createContext</span>()<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Demo</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> [info,] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">123</span>)<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">Lisa.Provider</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&#123;info&#125;</span>&gt;</span></span><br><span class="language-xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">MyLu1</span> /&gt;</span>  </span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">Lisa.Provider</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">MyLu1</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">let</span> val = <span class="hljs-title function_">useContext</span>(lisa)<br>    <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">            &#123;val&#125;</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>    )<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
+<h2 id="脚手架"><a href="#脚手架" class="headerlink" title="脚手架"></a>脚手架</h2><p><code>npx create-react-app my-app</code>   my-app是你要创建的项目名</p>
+<h4 id="认识脚手架目录"><a href="#认识脚手架目录" class="headerlink" title="认识脚手架目录"></a>认识脚手架目录</h4><ul>
+<li><p><code>node_modules</code> 下载依赖位置</p>
+</li>
+<li><p><code>public</code>  		静态资源文件夹</p>
+<ul>
+<li><p><code>favicon.icon</code>		图标</p>
+</li>
+<li><p><code>index.html</code>           模板</p>
+<p>%PUBLIC_URL%       public地址</p>
+</li>
+<li><p><code>manifest.json</code>      移动端配置</p>
+</li>
+<li><p><code>robots.txt</code>             爬虫协议</p>
+</li>
+</ul>
+</li>
+<li><p><code>src</code>				源码文件夹</p>
+<ul>
+<li>index.js         入口文件（项目启动文件）</li>
+<li>index.css        全局css</li>
+<li>App.js             App组件</li>
+<li>App.css         App的css样式文件</li>
+<li>App.test.js     测试文件</li>
+<li>reportWebVitals.js    组件性能分析文件 (可以删除，index.js引入了的，记得删除引入)</li>
+<li>setupTests.js                 组件测试文件</li>
+</ul>
+</li>
+<li><p><code>.gitingore</code>		git（项目版本管理器）配置文件</p>
+</li>
+</ul>
+<p><strong>补充:</strong></p>
+<p>jsx后缀为react组件</p>
+<p>css后缀为逻辑文件（等等）</p>
+<p>js后缀为逻辑文件（等等）</p>
+<p>快捷创建指令 rfc 创建函数组件</p>
+<p>-使用注意</p>
+<p>最好创建组件的方式  –&gt;创建一个component文件夹里面创造组件文件夹里面包含组件jsx和css文件</p>
+<p>css权重很重要</p>
+<p>使用sass必须打分号</p>
+<p><code>npm i sass -d</code></p>
+<p>sass与scss less不一样</p>
+<p>scss和less一样</p>
+<p>-d开发环境   打包后不需要的包</p>
+<p>-s生产环境	打包后需要存在的包</p>
+<p>react中img不能直接使用图片需要使用require引入且必须添加alt属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">src = &#123;require(&#x27;地址&#x27;)&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h3><p>快捷目录(文件路径), 一个符号代表某文件夹 通过修改<code>node_modules\react-scripts\config\webpage.config.js</code>文件源码设置别名, “@”:path.resolve(“src”)</p>
+<p>搜索alias里添加别名</p>
+<h4 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h4><p>代理:跨域请求</p>
+<p><code>npm i axios</code></p>
+<p>前端跨域是由于浏览器同源策略，后端是不会出现跨域</p>
+<p>当后端不处理跨域时，前端解决办法：前端通过脚手架创建的服务器环境代理请求目标后端地址</p>
+<p><strong>流程</strong>：</p>
+<p>前端  –&gt;   脚手架服务器    –&gt; 目标后端</p>
+<p><strong>使用方法:</strong></p>
+<ol>
+<li><p>在src目录下创建   setupProxy.js</p>
+</li>
+<li><p>下载跨域插件  <code>http-proxy-middleware</code></p>
+</li>
+<li><p>编写 <code>setupProxy.js</code>文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; createProxyMiddleware  &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;http-proxy-middleware&quot;</span>);<br><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">app</span>)&#123;<br>    app.<span class="hljs-title function_">use</span>(<br>        <span class="hljs-title function_">createProxyMiddleware</span>(<br>            <span class="hljs-string">&quot;/api&quot;</span>, <span class="hljs-comment">// 代理名称</span><br>            &#123;<br>                <span class="hljs-attr">target</span>:<span class="hljs-string">&quot;http://localhost:5000&quot;</span>, <span class="hljs-comment">// 后端地址</span><br>                <span class="hljs-attr">changeOrigin</span>:<span class="hljs-literal">true</span>,      <br>                <span class="hljs-attr">pathRewrite</span>:&#123;<span class="hljs-string">&quot;^/api&quot;</span>:<span class="hljs-string">&quot;&quot;</span>&#125;  <span class="hljs-comment">// 请求中将/api替换成空</span><br>            &#125;<br>        ),<br>    )<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>axios请求中通过&#x2F;api请求</p>
+</li>
+</ol>
+<h2 id="Hoos"><a href="#Hoos" class="headerlink" title="Hoos"></a>Hoos</h2><h3 id="通信-1"><a href="#通信-1" class="headerlink" title="通信"></a>通信</h3><p>父子 字符 兄弟 深层 全局通信（任意组件之间通信）</p>
+<p>需要下载插件 （<code>npm i pubsub-js</code>）</p>
+<p>pubsub-js （全局通信） 订阅（获取发布的数据） 与发布（发送数据）</p>
+<p>用的地方需要引入</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> <span class="hljs-title class_">PubSub</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;pubsubjs&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>订阅信息</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">PubSub</span>.<span class="hljs-title function_">subscribe</span>(<span class="hljs-string">&#x27;接受数据名&#x27;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">msg,data</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg + <span class="hljs-string">&#x27;数据名&#x27;</span>)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data + <span class="hljs-string">&#x27;数据&#x27;</span>)<br><br>&#125;)<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>发布信息</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title class_">PubSub</span>.<span class="hljs-title function_">publish</span>(<span class="hljs-string">&#x27;发送数据名&#x27;</span>,<span class="hljs-string">&#x27;数据&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="函数组件api"><a href="#函数组件api" class="headerlink" title="函数组件api"></a>函数组件api</h3><ol>
+<li><p>useState（参数或函数）</p>
+</li>
+<li><p>useEffect函数</p>
+<ul>
+<li><p>处理副作用函数</p>
+</li>
+<li><p><code>引入import&#123; useState, useEffect &#125; from &#39;react&#39;</code></p>
+</li>
+<li><p>useEffect第二个参数 依赖项（选择函数执行时机）</p>
+<p>空数组只在首次渲染完成后执行</p>
+<p>参数编写，每次重新渲染都会执行</p>
+<p>根据依赖性确定函数执行 参数值发生改变会重新执行</p>
+<p>定时器必须放在这里面，不然每次执行都会创建新的定时器</p>
+<ul>
+<li>主要写的内容（函数副作用）   定时器 ajax 操作DOM节点 修改外部数据</li>
+</ul>
+</li>
+<li><p>第一个函数参数的返回值中return 清除副作用</p>
+<p>例如 </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">return</span> （）=&gt;&#123;<br>    <span class="hljs-built_in">clearInterval</span>(time)<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h3 id="函数组件的渲染机制"><a href="#函数组件的渲染机制" class="headerlink" title="函数组件的渲染机制"></a>函数组件的渲染机制</h3><p>useState初始值只在第一次执行生效</p>
+<p>每次更新useState就会重新渲染一次</p>
+<p><strong>补充：</strong>函数组件没有生命周期</p>
+<h3 id="函数组件发送ajax请求"><a href="#函数组件发送ajax请求" class="headerlink" title="函数组件发送ajax请求"></a>函数组件发送ajax请求</h3><p>引入</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-title function_">useEffect</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>   axios，<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;url&#x27;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">data</span>=&gt;</span>&#123;<br>    <span class="hljs-title function_">setList</span>(data.<span class="hljs-property">data</span>)  <br>    <span class="hljs-comment">//由于函数组件的渲染机制会一直反复渲染，所以axios函数需要写在useEffect函数里面</span><br>&#125;) <br>&#125;,[])<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="useCallback性能优化"><a href="#useCallback性能优化" class="headerlink" title="useCallback性能优化"></a>useCallback性能优化</h3><p>背景：每次重新渲染时，函数会重新创建</p>
+<p>优化方案：</p>
+<p>导入 <code>import useCallback from &#39;react&#39;</code></p>
+<ul>
+<li>不会执行useCallback（回调函数） 不会创建新函数，指向函数地址</li>
+</ul>
 
       </section>
 
@@ -446,7 +570,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">react介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">react特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsx"><span class="toc-number">1.3.</span> <span class="toc-text">jsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.3.1.</span> <span class="toc-text">定义虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E5%90%8D%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%A9%BC%E5%B3%B0%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">React元素属性名使用小驼峰写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E8%A2%ABclassName%E6%9B%BF%E4%BB%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text">class被className替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BF%85%E9%A1%BB%E9%97%AD%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">标签必须闭合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5js%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">嵌入js表达式，字符串模板写法${}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">类组件与函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">类组默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%9A%84ref%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.2.</span> <span class="toc-text">类组件的ref属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.7.3.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">1.3.7.4.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">1.3.7.5.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.7.6.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.7.7.</span> <span class="toc-text">深度传递数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.8.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.9.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.10.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">react介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">react特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsx"><span class="toc-number">1.3.</span> <span class="toc-text">jsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.3.1.</span> <span class="toc-text">定义虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E5%90%8D%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%A9%BC%E5%B3%B0%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">React元素属性名使用小驼峰写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E8%A2%ABclassName%E6%9B%BF%E4%BB%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text">class被className替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BF%85%E9%A1%BB%E9%97%AD%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">标签必须闭合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5js%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">嵌入js表达式，字符串模板写法${}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">类组件与函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">类组默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%9A%84ref%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.2.</span> <span class="toc-text">类组件的ref属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.7.3.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">1.3.7.4.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">1.3.7.5.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.7.6.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.7.7.</span> <span class="toc-text">深度传递数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.8.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.9.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.10.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.0.1.</span> <span class="toc-text">认识脚手架目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%AB%E5%90%8D"><span class="toc-number">2.1.</span> <span class="toc-text">别名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">2.1.1.</span> <span class="toc-text">设置代理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoos"><span class="toc-number">3.</span> <span class="toc-text">Hoos</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1-1"><span class="toc-number">3.1.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6api"><span class="toc-number">3.2.</span> <span class="toc-text">函数组件api</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="toc-number">3.3.</span> <span class="toc-text">函数组件的渲染机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81ajax%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.</span> <span class="toc-text">函数组件发送ajax请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useCallback%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">useCallback性能优化</span></a></li></ol></li></ol>
   </div>
 </section>
 
