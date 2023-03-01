@@ -104,7 +104,7 @@
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-02-13T12:40:58.000Z" itemprop="datePublished">2023-02-13</time>
+            <time  class="article-date" datetime="2023-02-27T12:40:58.000Z" itemprop="datePublished">2023-02-27</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -280,7 +280,7 @@
 
 
 <h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><p>文档 <a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html">https://zh-hans.reactjs.org/docs/react-component.html</a></p>
-<p><img src="/2023/02/13/React/smzq.png" alt="生命周期文档"></p>
+<p><img src="/2023/02/27/React/smzq.png" alt="生命周期文档"></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-comment">//在调用render前执行</span><br><span class="hljs-comment">//必需要返回一个对象来更新state，返回null表示不做任何操作</span><br><span class="hljs-comment">//作业:根据父级传递的参数来更新state</span><br><span class="hljs-keyword">static</span> <span class="hljs-title function_">getDerivedStateFromProps</span>(<span class="hljs-params">props,state</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(prop, state, <span class="hljs-string">&quot;render处理虚拟DOM之前调用&quot;</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span><br>&#125; <br><span class="hljs-comment">//设置类组件是否允许页面更新（默认允许）,必须设置返回值</span><br><span class="hljs-title function_">shouldCoponentUpdate</span>(<span class="hljs-params">nextProps, nextState</span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <br>&#125;<br><span class="hljs-comment">//提交虚拟DOM至页面前执行（渲染输出前执行）设置的返回值将会传递给componentDidUpdata生命周期函数作为形参</span><br><span class="hljs-title function_">getSnapshotBeforeUpdata</span>(<span class="hljs-params">prevProps, prevState</span>)&#123;<br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-attr">qwq</span>:<span class="hljs-number">132456</span>&#125;<br>&#125;<br><span class="hljs-comment">//更新页面之后触发</span><br><span class="hljs-title function_">componentDidUpdata</span>(<span class="hljs-params">prevProps, prevState, snapshot</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(prevProps, prevState, snapshot)<br>&#125;<br><span class="hljs-comment">//挂载完成之后触发</span><br><span class="hljs-title function_">componentDidMount</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;页面挂载完成后触发&quot;</span>)；<br>&#125;<br><span class="hljs-comment">//卸载时触发</span><br><span class="hljs-title function_">componentWillUnmount</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;卸载触发&quot;</span>)；<br>&#125;<br><span class="hljs-comment">//更新，渲染返回虚拟dom；</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;<br></code></pre></td></tr></table></figure>
 
 
@@ -451,12 +451,184 @@
 <ul>
 <li>不会执行useCallback（回调函数） 不会创建新函数，指向函数地址</li>
 </ul>
+<h3 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h3><p>-&gt; 缓存数据，计算数据进行缓存</p>
+<p>useMemo函数执行回调函数，并且将执行结果缓存返回</p>
+<p>导入 <code>import useMemo from &#39;react&#39;</code></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jsx"><span class="hljs-keyword">let</span> num = <span class="hljs-title function_">useMemo</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;index &lt; <span class="hljs-number">10</span>; index++)&#123;<br>        num += index<br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">return</span> num<br>,[]&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h3><blockquote>
+<p>维护多个state数据，单个state数据相互直接依赖，实现数据管理</p>
+</blockquote>
+<p>执行流程</p>
+<ol>
+<li>初始化执行，不会执行参数（回调函数）</li>
+<li>执行完成返回数组<ul>
+<li>第一项为传入的初始值</li>
+<li>第二项为函数，函数用于触发传入的回调函数操作</li>
+</ul>
+</li>
+</ol>
+<p><code>const [state, dispatch] = useReducer(reducer,initState)</code></p>
+<ul>
+<li><p>reducer</p>
+<ul>
+<li><p>操作函数，用于操作initState</p>
+</li>
+<li><p>需要传2个参数 </p>
+</li>
+<li><p>&#96;&#96;&#96;jsx<br>const reducer&#x3D;(state,type)&#x3D;&gt;{}</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br><span class="hljs-bullet">  -</span> 参数1为传入数据,参数2为dispatch函数提交的数据<br><br><span class="hljs-bullet">  -</span> return 数据 不能返回原数据地址（即state）<br><br><span class="hljs-bullet">-</span> initState<br><br><span class="hljs-bullet">  -</span> 初始的State数据 <br><br><span class="hljs-bullet">-</span> state <br><br><span class="hljs-bullet">  -</span> 数据<br><br><span class="hljs-bullet">-</span> dispatch<br><br><span class="hljs-bullet">  -</span> 用于触发reducer函数<br><br><span class="hljs-code">`const [data, dispatch] = useReducer(reducer,父级数据，函数处理自身数据与父级数据)`</span><br><br>第三个参数可以理解为把父级数据与自身数据整合<br><br><br><br><span class="hljs-section">### 自定义Hooks</span><br><br><span class="hljs-quote">&gt; 能定义函数中使用hooks API</span><br><br><span class="hljs-strong">**规范**</span><br><br><span class="hljs-bullet">-</span> 自定义hooks函数使用use开头<br><span class="hljs-bullet">-</span> 只能在函数顶层使用hooks api<br><br><span class="hljs-strong">**作用**</span><br><br><span class="hljs-bullet">-</span> 抽离函数，复用 || 逻辑 || 封装<br><span class="hljs-bullet">-</span> 简单化易于维护<br><br><span class="hljs-strong">**useDebugValue**</span><br><br><span class="hljs-quote">&gt; 定义hooks函数在开发工具中显示的名称</span><br><br><br><br><span class="hljs-strong">**useTransition**</span><br><br><span class="hljs-quote">&gt; 用于延迟加载，降低加载优先等级</span><br><br><span class="hljs-code">`const [isPending, startTransition] = useTransition();`</span><br><br><span class="hljs-bullet">-</span> isPending:布尔值；false延迟完成，true延迟加载中；<br><br><span class="hljs-bullet">-</span> srartTranstion函数：用于降低代码渲染等级: <br><br>  <br><br><span class="hljs-strong">**useDeferredValue**</span><br><br><span class="hljs-quote">&gt; 接受一个值，创建一个副本，该副本渲染中会被降低优先级</span><br><br><br><br><span class="hljs-section">## 路由</span><br><br>React Router<br><br><span class="hljs-code">`npm i react-router-dom`</span><br><br>路由：通过点击某元素，显示对应路由组件<br><br>路由组件与普通组件的区别：<br><br><span class="hljs-bullet">1.</span> 存储文件夹不同 views pages； comonent<br><span class="hljs-bullet">2.</span> 显示方式不同，路由组件需要通过路由配置<br><br><span class="hljs-section">### 路由原理是什么？</span><br><br>通过判断浏览器的历史记录<br><br><br><br><span class="hljs-section">### 配置路由表</span><br><br><span class="hljs-bullet">1.</span> 创建router文件夹<br><br><span class="hljs-bullet">2.</span> 配置路由表文件<br><br><span class="hljs-bullet">3.</span> 创建路由表<br><br>   <span class="hljs-code">```js</span><br><span class="hljs-code">   import &#123;createBrowserRouter&#125; from &quot;react-router-dom&quot;</span><br><span class="hljs-code">   </span><br><span class="hljs-code">   export createBrowserRouter([</span><br><span class="hljs-code">   </span><br><span class="hljs-code">   	&#123;</span><br><span class="hljs-code">   		path:&quot;&quot;,  //路径</span><br><span class="hljs-code">   		element： //对应组件</span><br><span class="hljs-code">   	&#125;</span><br><span class="hljs-code">   </span><br><span class="hljs-code">   ])</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="react配置路由（路由）"><a href="#react配置路由（路由）" class="headerlink" title="react配置路由（路由）"></a>react配置路由（路由）</h3></li>
+</ul>
+<ol>
+<li><p>入口文件配置（不能存在根组件）</p>
+<p>根组件必须是路由组件</p>
+<p>根index.js文件配置</p>
+</li>
+<li><p>路由文件夹views</p>
+</li>
+<li><p>Link组件</p>
+<blockquote>
+<p>跳转功能，显示不同的路由组件</p>
+<p>to属性：设置跳转地址显示对应路由组件，与路由表进行呼应</p>
+</blockquote>
+</li>
+<li><p>路由API组件只能在根路由及其后代组件中使用</p>
+</li>
+</ol>
+<h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><ol>
+<li>设置路由表children属性，对应路由组件的子路由</li>
+<li>设置子路由渲染位置<code>&lt;Outlet&gt;&lt;/Outlet&gt;</code></li>
+</ol>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><ol>
+<li>设置路由表path： &#x2F;：id</li>
+<li>任何地址都可以匹配成功，并且可以获取匹配的数据</li>
+</ol>
+<h3 id="活动组件"><a href="#活动组件" class="headerlink" title="活动组件"></a>活动组件</h3><ol>
+<li>NavLink 用于跳转显示对应路由组件</li>
+<li>className 属性传递函数</li>
+<li><NavLink>是<Link>的一个特定版本，会在匹配上当前的url的时候给已经渲染的元素添加参数</li>
+</ol>
+<h3 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h3><p><strong>useNavigate</strong></p>
+<p>const navigate &#x3D; useNavigate()</p>
+<p>navigate(url,{replace:true})</p>
+<ul>
+<li><p>url 跳转地址</p>
+</li>
+<li><p>replace： </p>
+<p>false  添加历史记录</p>
+<p>true   替换历史记录</p>
+</li>
+</ul>
+<p>navigate（数值）</p>
+<p>数值为  正数 向前，负数后退</p>
+<h3 id="传递数据"><a href="#传递数据" class="headerlink" title="传递数据"></a>传递数据</h3><p>search参数 </p>
+<ul>
+<li><p>传递</p>
+<p><code>?name=打分</code></p>
+</li>
+<li><p>获取</p>
+<p>const qwe &#x3D; useSearchParams()</p>
+<p>qwe.get(“name”)</p>
+</li>
+<li><p>传递</p>
+<p><code>state=&#123;&#123;&#125;&#125;传递数据</code></p>
+</li>
+<li><p>获取</p>
+<p><code>let &#123;state&#125; = useLocation</code></p>
+</li>
+</ul>
+<p> 动态路由参数</p>
+<p><code>const params = useParams（）</code></p>
+<h3 id="版本区别"><a href="#版本区别" class="headerlink" title="版本区别"></a>版本区别</h3><p>初始化不同，其他api一致</p>
+<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2><p><code>npm i redux</code></p>
+<p>中文网 <a target="_blank" rel="noopener" href="https://cn.redux.js.org/">https://cn.redux.js.org/</a></p>
+<p>react配置的仓库管理，全局数据管理，用于全局组件数据通信</p>
+<p>提供对应的模式和工具包，理解react长裤数据何时发生变化，一级如何更新</p>
+<h3 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h3><ol>
+<li>整个应用的数据存储在一颗对象数结构中，并且这个树结构只存在与唯一一个中</li>
+<li>State 是只读数据，唯一改变state的方法就是触发action</li>
+<li>为了描述action如何改变state，你需要编写对应的函数方法</li>
+</ol>
+<h3 id="Redux-数据流"><a href="#Redux-数据流" class="headerlink" title="Redux 数据流"></a>Redux 数据流</h3><p>初始启动：</p>
+<ul>
+<li>使用最顶层的 root reducer 函数创建 Redux store</li>
+<li>store 调用一次 root reducer，并将返回值保存为它的初始 <code>state</code></li>
+<li>当视图 首次渲染时，视图组件访问 Redux store 的当前 state，并使用该数据来决定要呈现的内容。同时监听 store 的更新，以便他们可以知道 state 是否已更改</li>
+</ul>
+<p>更新环节：</p>
+<ul>
+<li>应用程序中发生了某些事情，例如用户单击按钮</li>
+<li>dispatch 一个 action 到 Redux store，例如 <code>dispatch(&#123;type: &#39;counter/increment&#39;&#125;)</code></li>
+<li>store 用之前的 <code>state</code> 和当前的 <code>action</code> 再次运行 reducer 函数，并将返回值保存为新的 <code>state</code></li>
+<li>store 通知所有订阅过的视图，通知它们 store 发生更新</li>
+<li>每个订阅过 store 数据的视图 组件都会检查它们需要的 state 部分是否被更新。</li>
+<li>发现数据被更新的每个组件都强制使用新数据重新渲染，紧接着更新网页</li>
+</ul>
+<p><img src="/2023/02/27/React/redux.gif"></p>
+<h3 id="redux创建基础"><a href="#redux创建基础" class="headerlink" title="redux创建基础"></a>redux创建基础</h3><ol>
+<li><p>创建仓库文件夹与仓库，仓库文件夹中使用createStore</p>
+<ul>
+<li>&#96;&#96;&#96;jsx<br>import {createStore} from “redux”<br>let init &#x3D; {count:0}<br>function xxx(state &#x3D; count,action){ &#x2F;&#x2F;不赋值为undfind<br>console.log(state)<br>let newstate &#x3D; {…state}<br>return state<br>}<br>export default createStore(xxx)<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs pf"><br><span class="hljs-number">2</span>. 组件渲染<br><br>   组件引入store仓库，通过store仓库API获取<span class="hljs-keyword">state</span>数据<br><br>   store.getState().属性名<br><br>   回调函数尽可能返回新的数据结构，不要用旧的<span class="hljs-keyword">state</span><br><br><span class="hljs-number">3</span>. 数据更新<br><br>   <span class="hljs-number">1</span>. 通过事件，调用store.dispatch函数发送行为及数据至仓库<br><br>      store.dispatch（&#123;type:&#x27;add&#x27;,value:<span class="hljs-number">10</span>&#125;）发送至仓库<br><br>   <span class="hljs-number">2</span>. dispatch提交后会再次触发仓库中的xxx回调函数<br><br>      回调函数接受之前的<span class="hljs-keyword">state</span>和当前的action并将返回值保存为新的数据<br><br>   <span class="hljs-number">3</span>. 仓库通知组件更新<br><br>      通过store.subscribe(回调函数)<br><br>      ```jsx<br>      useEffect(()=&gt;&#123;<br>      	store.subscribe(回调函数)<br>      &#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="redux进阶"><a href="#redux进阶" class="headerlink" title="redux进阶"></a>redux进阶</h2><p><code>npm redux @reduxjs/toolkit react-redux</code> </p>
+<p><strong>初始</strong></p>
+<ul>
+<li><p>通过configureStore函数创建store仓库</p>
+<p>configureStore要求传递一个reducer参数</p>
+<ul>
+<li>reducer对象为应用仓库存储位置（操作函数）</li>
+<li>reducer可以放置多个仓库</li>
+</ul>
+</li>
+<li><p>reducer配置独立仓库</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createSlice &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@reduxjs/toolkit&#x27;</span><br><br><span class="hljs-keyword">const</span> initialState = &#123;<br>  <span class="hljs-attr">entities</span>: [],<br>  <span class="hljs-attr">status</span>: <span class="hljs-literal">null</span><br>&#125;<br><br><span class="hljs-keyword">const</span> todosSlice = <span class="hljs-title function_">createSlice</span>(&#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;todos&#x27;</span>,<br>  initialState,<br>  <span class="hljs-attr">reducers</span>: &#123;<br>    <span class="hljs-title function_">todoAdded</span>(<span class="hljs-params">state, action</span>) &#123;<br>      <span class="hljs-comment">// ✅ “突变”（mutate）代码在 createSlice 中是可以的！</span><br>      state.<span class="hljs-property">entities</span>.<span class="hljs-title function_">push</span>(action.<span class="hljs-property">payload</span>)<br>    &#125;,<br>    <span class="hljs-title function_">todoToggled</span>(<span class="hljs-params">state, action</span>) &#123;<br>      <span class="hljs-keyword">const</span> todo = state.<span class="hljs-property">entities</span>.<span class="hljs-title function_">find</span>(<span class="hljs-function"><span class="hljs-params">todo</span> =&gt;</span> todo.<span class="hljs-property">id</span> === action.<span class="hljs-property">payload</span>)<br>      todo.<span class="hljs-property">completed</span> = !todo.<span class="hljs-property">completed</span><br>    &#125;,<br>    <span class="hljs-title function_">todosLoading</span>(<span class="hljs-params">state, action</span>) &#123;<br>      <span class="hljs-keyword">return</span> &#123;<br>        ...state,<br>        <span class="hljs-attr">status</span>: <span class="hljs-string">&#x27;loading&#x27;</span><br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> &#123; todoAdded, todoToggled, todosLoading &#125; = todosSlice.<span class="hljs-property">actions</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> todosSlice.<span class="hljs-property">reducer</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//index.js</span><br><span class="hljs-keyword">import</span> &#123; configureStore &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@reduxjs/toolkit&#x27;</span><br><span class="hljs-keyword">import</span> todos <span class="hljs-keyword">from</span>  <span class="hljs-string">&#x27;./todos.js&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">configureStore</span>(&#123;<br>    <span class="hljs-attr">reducer</span>:&#123;<br>        todos<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>name 仓库名称</li>
+<li>initialState 仓库数据</li>
+<li>reducers 存放用户通过dispatch触发函数</li>
+</ul>
+</li>
+<li><p>组件渲染</p>
+<p>需要将store仓库传递给根组件，通过内置组件设置在项目入口文件根组件上</p>
+<p>组将中通过useSelector函数获取对应的数据</p>
+<ul>
+<li>const count &#x3D; useSelector(state &#x3D;&gt; state.counter.count)</li>
+</ul>
+</li>
+</ul>
+<p><strong>更新</strong></p>
+<ul>
+<li><p>通过useDispatch更新</p>
+<p><code>import &#123;useDispatch&#125; from &quot;react-redux&quot;</code></p>
+<p><code>const dispatch =  useDispatch()</code></p>
+<ol>
+<li><p>执行useDispatch获取dispatch函数用于触发action行为</p>
+</li>
+<li><p>dispatch（{type：””}）传递一个对象</p>
+<p>type 格式  仓库门&#x2F;函数名称</p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>useStore获取最大的仓库结构</li>
+</ul>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -467,23 +639,6 @@
       
         <a href="/2023/02/19/python-requests%E6%A8%A1%E5%9D%97/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">python-requests模块</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://pic3.zhimg.com/v2-58d652598269710fa67ec8d1c88d8f03_r.jpg?source=1940ef5c"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2023/02/05/es6/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">es6</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -570,7 +725,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">react介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">react特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsx"><span class="toc-number">1.3.</span> <span class="toc-text">jsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.3.1.</span> <span class="toc-text">定义虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E5%90%8D%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%A9%BC%E5%B3%B0%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">React元素属性名使用小驼峰写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E8%A2%ABclassName%E6%9B%BF%E4%BB%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text">class被className替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BF%85%E9%A1%BB%E9%97%AD%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">标签必须闭合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5js%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">嵌入js表达式，字符串模板写法${}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">类组件与函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">类组默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%9A%84ref%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.2.</span> <span class="toc-text">类组件的ref属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.7.3.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">1.3.7.4.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">1.3.7.5.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.7.6.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.7.7.</span> <span class="toc-text">深度传递数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.8.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.9.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.10.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.0.1.</span> <span class="toc-text">认识脚手架目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%AB%E5%90%8D"><span class="toc-number">2.1.</span> <span class="toc-text">别名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">2.1.1.</span> <span class="toc-text">设置代理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoos"><span class="toc-number">3.</span> <span class="toc-text">Hoos</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1-1"><span class="toc-number">3.1.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6api"><span class="toc-number">3.2.</span> <span class="toc-text">函数组件api</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="toc-number">3.3.</span> <span class="toc-text">函数组件的渲染机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81ajax%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.</span> <span class="toc-text">函数组件发送ajax请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useCallback%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">useCallback性能优化</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">react介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">react特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.2.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jsx"><span class="toc-number">1.3.</span> <span class="toc-text">jsx</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%99%9A%E6%8B%9FDOM"><span class="toc-number">1.3.1.</span> <span class="toc-text">定义虚拟DOM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E5%90%8D%E4%BD%BF%E7%94%A8%E5%B0%8F%E9%A9%BC%E5%B3%B0%E5%86%99%E6%B3%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">React元素属性名使用小驼峰写法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E8%A2%ABclassName%E6%9B%BF%E4%BB%A3"><span class="toc-number">1.3.3.</span> <span class="toc-text">class被className替代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%BF%85%E9%A1%BB%E9%97%AD%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">标签必须闭合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5js%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF%E5%86%99%E6%B3%95"><span class="toc-number">1.3.5.</span> <span class="toc-text">嵌入js表达式，字符串模板写法${}</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.3.6.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">类组件与函数组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">类组默认值</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E7%BB%84%E4%BB%B6%E7%9A%84ref%E5%B1%9E%E6%80%A7"><span class="toc-number">1.3.7.2.</span> <span class="toc-text">类组件的ref属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.3.7.3.</span> <span class="toc-text">事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">1.3.7.4.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">1.3.7.5.</span> <span class="toc-text">条件渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.7.6.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.7.7.</span> <span class="toc-text">深度传递数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">1.3.8.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.9.</span> <span class="toc-text">diff算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.10.</span> <span class="toc-text">函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">2.0.1.</span> <span class="toc-text">认识脚手架目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%AB%E5%90%8D"><span class="toc-number">2.1.</span> <span class="toc-text">别名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">2.1.1.</span> <span class="toc-text">设置代理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoos"><span class="toc-number">3.</span> <span class="toc-text">Hoos</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1-1"><span class="toc-number">3.1.</span> <span class="toc-text">通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6api"><span class="toc-number">3.2.</span> <span class="toc-text">函数组件api</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E7%9A%84%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="toc-number">3.3.</span> <span class="toc-text">函数组件的渲染机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81ajax%E8%AF%B7%E6%B1%82"><span class="toc-number">3.4.</span> <span class="toc-text">函数组件发送ajax请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useCallback%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">useCallback性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useMemo"><span class="toc-number">3.6.</span> <span class="toc-text">useMemo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useReducer"><span class="toc-number">3.7.</span> <span class="toc-text">useReducer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%EF%BC%88%E8%B7%AF%E7%94%B1%EF%BC%89"><span class="toc-number">3.8.</span> <span class="toc-text">react配置路由（路由）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1"><span class="toc-number">3.9.</span> <span class="toc-text">嵌套路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">3.10.</span> <span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%BB%E5%8A%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">3.11.</span> <span class="toc-text">活动组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-number">3.12.</span> <span class="toc-text">编程式导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">3.13.</span> <span class="toc-text">传递数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB"><span class="toc-number">3.14.</span> <span class="toc-text">版本区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux"><span class="toc-number">4.</span> <span class="toc-text">redux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">4.1.</span> <span class="toc-text">三大原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redux-%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">4.2.</span> <span class="toc-text">Redux 数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#redux%E5%88%9B%E5%BB%BA%E5%9F%BA%E7%A1%80"><span class="toc-number">4.3.</span> <span class="toc-text">redux创建基础</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux%E8%BF%9B%E9%98%B6"><span class="toc-number">5.</span> <span class="toc-text">redux进阶</span></a></li></ol>
   </div>
 </section>
 
