@@ -24,7 +24,7 @@
 
   
 
-  <title>vue默认ip为0.0.0.0 | 星辰大海</title>
+  <title>git使用 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://ts1.cn.mm.bing.net/th/id/R-C.f7f590227439b2486b8efd65d9581524?rik=G6QU%2fMc4xzCQHA&amp;riu=http%3a%2f%2fimg.mm4000.com%2ffile%2f5%2fcf%2fd711458b03.jpg&amp;ehk=T%2bfDFuEGaMKaeIcQS%2fGakRBJ%2fidJ5N21BUdn3I8H1QQ%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0)"></div>
+    <div class="post-image" style="background-image: url(https://ts1.cn.mm.bing.net/th?id=OIP-C.mH9YLFEL5YdVxJM82mjVJQHaEo&amp;w=316&amp;h=197&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;pid=3.1&amp;rm=2)"></div>
   
 
   <!-- navbar -->
@@ -100,15 +100,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">vue默认ip为0.0.0.0</h1>
+          <h1 class="title-wrap">git使用</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-19T08:08:04.000Z" itemprop="datePublished">2022-07-19</time>
+            <time  class="article-date" datetime="2023-03-07T06:46:35.000Z" itemprop="datePublished">2023-03-07</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/vue/">📒 vue</a></li>
+    <li><a href="/categories/git/">📒 git</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -135,9 +135,49 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="vue启动本地部署npm-run-serve"><a href="#vue启动本地部署npm-run-serve" class="headerlink" title="vue启动本地部署npm run serve"></a>vue启动本地部署npm run serve</h3><p>在配置vue项目后一般会在<em>package.json</em>文件中将serve后面加上<code>--open</code><br>之前写vue2项目打开都是自动打开<code>localhost:8080</code><br>写vue3时突然发现创建后打开的是<code>0.0.0.0:8080</code>项目没显示，自己手动改到localhost：8080才能成功<br>感觉每次这样太麻烦<br>所以在vue.config.js文件里加上</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>  <span class="hljs-attr">devServer</span>: &#123;<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">8080</span>,<br>    <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;localhost&#x27;</span>,<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
-<p><img src="/2022/07/19/vue%E9%BB%98%E8%AE%A4ip%E4%B8%BA0-0-0-0/1.png"><br><em>刚开始配置svg文件因为设置了两个<code>module.exports =</code>没注意到这里是等于，所以config文件中只能有一个module.exports</em><br>#module.exports是全局配置无需导出</p>
+        <h2 id="git使用方法"><a href="#git使用方法" class="headerlink" title="git使用方法"></a>git使用方法</h2><h4 id="拉取已有仓库到本地"><a href="#拉取已有仓库到本地" class="headerlink" title="拉取已有仓库到本地"></a>拉取已有仓库到本地</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">git init<br>git remote add origin https:<span class="hljs-comment">//远程仓库地址/xxx.git</span><br></code></pre></td></tr></table></figure>
+
+<p>此事已经连接仓库成功</p>
+<p>为了查看是否链接成功，可以用这些命令来查看：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">git remote show<br>或<br>git remote -v<br></code></pre></td></tr></table></figure>
+
+<p><strong>然后，执行拉取操作</strong>，键入命令：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git pull origin master<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="创建分支并推送"><a href="#创建分支并推送" class="headerlink" title="创建分支并推送"></a>创建分支并推送</h4><p>切换到基础分支，比如如master分支</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git checkout master<br></code></pre></td></tr></table></figure>
+
+<p>创建<strong>并</strong>切换到新分支</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git checkout -b newBranch<br></code></pre></td></tr></table></figure>
+
+<p>更新分支代码<strong>并</strong>提交</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">git add *<br>git commit -m <span class="hljs-string">&quot;init newBranch&quot;</span><br>git push origin newBranch<br></code></pre></td></tr></table></figure>
+
+<p>这样你就建立一个新分支了</p>
+<h2 id="git-如何查看与切换分支"><a href="#git-如何查看与切换分支" class="headerlink" title="git 如何查看与切换分支"></a>git 如何查看与切换分支</h2><p>查看所有分支</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git branch -a<br></code></pre></td></tr></table></figure>
+
+<p>查看当前使用分支（结果列表前面*号，代表当前使用的分支)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git branch<br></code></pre></td></tr></table></figure>
+
+<p>切换分支</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">git checkout 分支名字<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="git合并分支"><a href="#git合并分支" class="headerlink" title="git合并分支"></a>git合并分支</h4><p>先</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c">git checkout test2<br>git add .<span class="hljs-comment">//把工作区提交到暂存区中</span><br>git commit -m “完成dev2功能的开发”<br>git push origin test2<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//合并分支test2</span><br>git checkout master<br>git merge test2<br><br><span class="hljs-comment">//查看本地仓库状态，若有冲突解决冲突后再push</span><br>git status <br><br>git push<span class="hljs-comment">//推送本地修改到远程仓库</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="git-pull-之后发现有冲突，不管不顾的解决办法：放弃本地修改，直接覆盖之。"><a href="#git-pull-之后发现有冲突，不管不顾的解决办法：放弃本地修改，直接覆盖之。" class="headerlink" title="git pull 之后发现有冲突，不管不顾的解决办法：放弃本地修改，直接覆盖之。"></a>git pull 之后发现有冲突，不管不顾的解决办法：放弃本地修改，直接覆盖之。</h5><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>git reset --hard<br><span class="hljs-variable">$ </span>git pull<br></code></pre></td></tr></table></figure>
+
 
       </section>
 
@@ -145,32 +185,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://pic4.zhimg.com/v2-26e3ff8a795bd84ec55c20cfd8de7e7e_r.jpg?source=1940ef5c"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/09/01/vue3-music/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue3-music</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb.zol-img.com.cn%2Fdesk%2Fbizhi%2Fimage%2F10%2F960x600%2F1602331134706.jpg&amp;refer=http%3A%2F%2Fb.zol-img.com.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1656600769&amp;t=61db364cace7ce41e6ec8b7a7be83e28"></div>
+      <div class="card-cover" background-image-lazy data-img="https://tse3-mm.cn.bing.net/th/id/OIP-C.QFdwl07_aviM1ch2KpyyFgHaEo?w=310&amp;h=193&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7"></div>
     
     <div class="card-text">
       
-        <a href="/2022/05/31/node-js/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">node.js</h2>
+        <a href="/2023/02/27/React/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">React</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -249,6 +273,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">git使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E5%B7%B2%E6%9C%89%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">拉取已有仓库到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF%E5%B9%B6%E6%8E%A8%E9%80%81"><span class="toc-number">1.0.2.</span> <span class="toc-text">创建分支并推送</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E4%B8%8E%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-number">2.</span> <span class="toc-text">git 如何查看与切换分支</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-number">2.0.1.</span> <span class="toc-text">git合并分支</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#git-pull-%E4%B9%8B%E5%90%8E%E5%8F%91%E7%8E%B0%E6%9C%89%E5%86%B2%E7%AA%81%EF%BC%8C%E4%B8%8D%E7%AE%A1%E4%B8%8D%E9%A1%BE%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%9A%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E4%BF%AE%E6%94%B9%EF%BC%8C%E7%9B%B4%E6%8E%A5%E8%A6%86%E7%9B%96%E4%B9%8B%E3%80%82"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">git pull 之后发现有冲突，不管不顾的解决办法：放弃本地修改，直接覆盖之。</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
