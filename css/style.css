@@ -1194,9 +1194,9 @@ html.show-mobile-nav .navbar-list {
 .content-container.post-container .widget-info .widget-site .widget-body .site-info .site-info-item {
   color: var(--theme-text-primary);
 }
-.content-container .post-container .widget-info .widget-toc .widget-body{
+.content-container.post-container .widget-info .widget-toc .widget-body{
   overflow: auto;
-  height: 60vh;
+  max-height: 60vh;
 }
 .content-container.post-container .widget-info .widget-toc .widget-body ol:not(:first-child) {
   padding-left: 20px;
