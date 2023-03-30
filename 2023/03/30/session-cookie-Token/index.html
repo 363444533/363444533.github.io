@@ -24,7 +24,7 @@
 
   
 
-  <title>webpack | 星辰大海</title>
+  <title>session,cookie,Token | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0F620093053%2F200F6093053-7-1200.jpg&amp;refer=http%3A%2F%2Fimg.jj20.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653741387&amp;t=2deed1adf9e8a9ec63e7f2deb9f043e8)"></div>
+    <div class="post-image" style="background-image: url(https://s2.xptou.com/2023/03/30/64256baa904e3.png)"></div>
   
 
   <!-- navbar -->
@@ -100,20 +100,18 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">webpack</h1>
+          <h1 class="title-wrap">session,cookie,Token</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-04-27T12:32:26.000Z" itemprop="datePublished">2022-04-27</time>
+            <time  class="article-date" datetime="2023-03-30T09:21:59.000Z" itemprop="datePublished">2023-03-30</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E5%89%8D%E7%AB%AF/">📒 前端</a></li>
+    <li><a href="/categories/web/">📒 web</a></li>
   
 </ul>
           <ul class="wrap-list dark">
-  
-    <li><a href="/tags/webpack/">🏷️ webpack</a></li>
   
 </ul>
         </div>
@@ -137,14 +135,45 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><p><em>webpack是一个对你的前端项目进行打包的工具</em><br>对webpack进行局部安装  （不要使用全局安装）<br>先对npm初始化<code>npm init -y</code><br><code>npm install webpack@5.64.1 webpack-cli@4.9.2 -D</code><br>可以自己选择自己想要安装的版本</p>
-<p><strong>查看当前目录下webpack</strong><br><code>npx webpack -v</code></p>
-<h2 id="webpack的生产模式"><a href="#webpack的生产模式" class="headerlink" title="webpack的生产模式"></a><strong>webpack的生产模式</strong></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;    <span class="hljs-comment">//开发模式更快 生产模式更好</span><br>	<span class="hljs-comment">//指定打包的构建模式:   开发模式development   / production生产模式</span><br>	<span class="hljs-attr">mode</span>:<span class="hljs-string">&quot;development&quot;</span>,<br>	<span class="hljs-comment">//指定打包的入口文件</span><br>	<span class="hljs-attr">entry</span>:<span class="hljs-string">&quot;./src/file.js&quot;</span>,           <br>	<span class="hljs-comment">//entry:`$&#123;__dirname&#125;/src/file.js`,</span><br>	<span class="hljs-comment">//entry:path.join(__dirname,&quot;./src/file.js&quot;),</span><br>	<span class="hljs-comment">//指定打包的出口</span><br>	output：&#123;<br>	<span class="hljs-comment">//输出文件的文件名</span><br>	<span class="hljs-attr">filename</span>:<span class="hljs-string">&quot;bundle.js&quot;</span>,<br>	<span class="hljs-comment">//输出文件的存放路径</span><br>	<span class="hljs-attr">path</span>:path.<span class="hljs-title function_">join</span>(__dirname,<span class="hljs-string">&quot;./pack&quot;</span>)<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>打包命令</strong><br><code>npx webpack</code><br>可以在package.json里面修改运行命令<br>在scripts标签里加入<code>&quot;dev&quot;:&quot;webpack&quot;</code><br>这样命令就变成了<code>npm run dev</code></p>
-<h2 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h2><p>实时编译打包工具<br>原命令为<code>webpack serve</code><br>在scripts标签里加入<code>&quot;build&quot;: &quot;webpack server&quot;</code><br>则启动命令为  <code>npm run build</code><br>安装命令<br><code>npm i webpack-dev-server@3.11.3 -D</code><br>&#x3D;&#x3D;server 实时编译打包后的输出内容，并不存在物理磁盘，是虚拟的&#x3D;&#x3D;<br>如果想要实时刷新可以先暂时把script标签里的src改为<code>/main.js</code></p>
-<h2 id="针对index-html操作"><a href="#针对index-html操作" class="headerlink" title="针对index.html操作"></a>针对index.html操作</h2><p><code>npm i html-webpack-plugin</code></p>
-<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs q">npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> css-loader<br>npm install --<span class="hljs-built_in">save</span>-<span class="hljs-built_in">dev</span> ts-loader<br></code></pre></td></tr></table></figure>
-<p>更多详情可以移步<a target="_blank" rel="noopener" href="https://www.webpackjs.com/">webpack</a></p>
+        <h1 id="Session、Cookie、Token"><a href="#Session、Cookie、Token" class="headerlink" title="Session、Cookie、Token"></a>Session、Cookie、Token</h1><blockquote>
+<p>最近做了一些项目，发现浏览器与服务器交互中经常要使用Token，于是了解了一下做了个总结</p>
+</blockquote>
+<p>要区分他们三个，首先得知道是什么把他们三联系在一起的</p>
+<h3 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h3><p>Http协议是一种<strong>无状态协议</strong>，即每次服务端与用户端交互都是一次全新的交互，无论是在服务端还是客户端本身都不会留下任何的交互记录</p>
+<p>而本篇主角的作用就是客户端或服务端用来保留记录用来方便下一次甚至是下很多次请求的一种手段</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p><code>cookie</code>是指缓存数据，可以理解为你每次访问网页后浏览器存储在本地硬盘中的一些用户信息</p>
+<p>在第一请求后，你的浏览器会根据服务端的响应头生成本地<code>cookie</code>，在后面的请求中，会将<code>cookie</code>携带到请求头中，但是由于<code>cookie</code>一般是明文发送的，且是存储在客户端的，所以其<strong>安全性</strong>很差。</p>
+<h4 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h4><p>用于联系客户端的多次请求</p>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p><code>Session</code>是指每次服务端在接受到客户端请求后开辟的一块<strong>内存空间</strong>，用来存储与客户端的交互记录</p>
+<h4 id="交互方式"><a href="#交互方式" class="headerlink" title="交互方式"></a><strong>交互方式</strong></h4><ol>
+<li><p>客户端发送第一次请求</p>
+</li>
+<li><p>服务器接收请求，生成并存储<code>session</code>，并响应客户端要求客户端生成<code>cookie</code></p>
+</li>
+<li><p>客户端收到响应后生成<code>cookie</code>，并设置<code>cookie</code>有效期</p>
+</li>
+<li><p>客户端后面每次请求都会携带本地<code>cookie</code></p>
+</li>
+<li><p>服务端通过解析<code>cookie</code>与本地<code>session</code>进行查找认证用户身份后返回信息</p>
+<p><img src="https://s2.xptou.com/2023/03/30/64256bd02efab.png"></p>
+</li>
+</ol>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>与<code>cookie</code>的单独客户端存储，其安全性有提高</p>
+<p><code>cookie</code>只是存储在本地，每次发送都是明文发送</p>
+<p>而使用<code>session</code>的方式，用户信息是保存在服务端的，用户请求只需携带<code>cookie</code>，服务端通过<code>session</code>去匹配后才能返回用户信息</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>当服务端采用<strong>负载均衡</strong>后，由于服务端是在多个机器上进行响应，如果在某一个时间段<strong>服务器A</strong>用户激增，那么请求会被分发到<strong>服务器B</strong>,但是B服务器并没有存储对应的<strong>Session</strong>，这样会导致<strong>Session</strong>失效</p>
+<h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a><strong>Token</strong></h3><p><code>Token</code>也是将用户信息存储在服务端上</p>
+<h4 id="交互方式-1"><a href="#交互方式-1" class="headerlink" title="交互方式"></a><strong>交互方式</strong></h4><ol>
+<li>客户端发起登录请求</li>
+<li>服务器接收请求后将<strong>用户信息</strong>与一段<strong>特殊文本</strong>（随便定义）以及<strong>有效时间</strong>进行加密生成<code>token</code>返回给客户端</li>
+<li>客户端收到<code>token</code>，并保存在本地，并在以后请求中携带</li>
+<li>服务端解密并刷新<code>token</code>，并返回信息给客户端</li>
+</ol>
+<p><img src="https://s2.xptou.com/2023/03/30/64256aaa4b087.png"></p>
+<h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><p>由于其将信息存储在服务端的特点，所以其安全性高，并且相比cookie只能存储4kb的内存空间，token由于没有内存限制可以存储更多信息</p>
+<hr>
+<p><strong>总结</strong>: <code>cookie</code>更适合存储数据小且安全性不高的信息，而<code>token</code>与<code>session</code>更适合存储用户信息大且安全性有要求的信息，<code>token</code>由于可以直接解密得到用户信息使得可以在服务器使用了负载均衡的情况下使用，更加灵活，且被广泛使用</p>
+<p><video src="https://mp-8f25c430-0372-4755-96cf-2bd45756f60a.cdn.bspapp.com/cloudstorage/5bb3b6a3-a917-4d10-84e5-3cdf7c961545.mp3"></video></p>
 
       </section>
 
@@ -152,32 +181,16 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://img0.baidu.com/it/u=2110692174,1219836662&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=889&amp;h=500"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2022/05/01/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E9%85%8D%E7%BD%AE/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">vue脚手架配置</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fc90842fb5658432ff21954a35ab9d555b9e0794c.png&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653574095&amp;t=51a24c8f65cd700b88df96b0a5d1a634"></div>
+      <div class="card-cover" background-image-lazy data-img="https://tse2-mm.cn.bing.net/th/id/OIP-C.2QpKqRTIVw_n-9Ubqq-tOwHaEK?w=330&amp;h=185&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7"></div>
     
     <div class="card-text">
       
-        <a href="/2022/04/26/conda/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">常用conda命令</h2>
+        <a href="/2023/03/29/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E8%A1%A8%E7%BB%84%E4%BB%B6/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">小程序图表组件</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -256,6 +269,18 @@
 </section>
 
       
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E7%B3%BB"><span class="toc-number">1.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie"><span class="toc-number">2.</span> <span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E5%A4%84"><span class="toc-number">2.1.</span> <span class="toc-text">用处</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session"><span class="toc-number">3.</span> <span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">交互方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">3.2.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">3.3.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Token"><span class="toc-number">4.</span> <span class="toc-text">Token</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F-1"><span class="toc-number">4.1.</span> <span class="toc-text">交互方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9-1"><span class="toc-number">4.2.</span> <span class="toc-text">优点</span></a></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
