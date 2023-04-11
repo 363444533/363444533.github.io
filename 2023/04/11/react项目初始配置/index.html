@@ -24,7 +24,7 @@
 
   
 
-  <title>小程序图表组件 | 星辰大海</title>
+  <title>react项目初始配置 | 星辰大海</title>
 
   
 
@@ -47,7 +47,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(https://tse2-mm.cn.bing.net/th/id/OIP-C.2QpKqRTIVw_n-9Ubqq-tOwHaEK?w=330&amp;h=185&amp;c=7&amp;r=0&amp;o=5&amp;pid=1.7)"></div>
+    <div class="post-image" style="background-image: url(https://ts1.cn.mm.bing.net/th?id=OIP-C.De4iKAMeTvWwPQxXNK74ZgHaE8&amp;w=306&amp;h=204&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;pid=3.1&amp;rm=2)"></div>
   
 
   <!-- navbar -->
@@ -100,20 +100,20 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">小程序图表组件</h1>
+          <h1 class="title-wrap">react项目初始配置</h1>
           <h2 class="title-sub-wrap">
             <strong>彦</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-03-29T07:20:27.000Z" itemprop="datePublished">2023-03-29</time>
+            <time  class="article-date" datetime="2023-04-11T07:03:39.000Z" itemprop="datePublished">2023-04-11</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/web/">📒 web</a></li>
+    <li><a href="/categories/react/">📒 react</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/uniapp/">🏷️ uniapp</a></li>
+    <li><a href="/tags/web/">🏷️ web</a></li>
   
 </ul>
         </div>
@@ -137,40 +137,100 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="在小程序中使用图表"><a href="#在小程序中使用图表" class="headerlink" title="在小程序中使用图表"></a>在小程序中使用图表</h1><p><strong>前言:</strong> 使用uniapp写微信小程序图表功能，在插件库里导入过很多次用起来非常麻烦，在尝试了很多种制作图表后，最终选择了echarts，记录一下方便下次使用</p>
-<p>首先使用的uniapp插件库的<code>echarts-for-wx</code>插件</p>
-<p><a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?id=1538">https://ext.dcloud.net.cn/plugin?id=1538</a></p>
-<p>导入到自己的项目下，会产生一个<strong>js_sdk</strong> 的文件夹</p>
-<p>将<code>uni-ec-canvas</code>文件夹直接剪切到自己的组件文件夹（components）下</p>
-<p>现在<strong>js_sdk</strong>已经没用了，可以直接删掉了</p>
-<p>在运行的时候<strong>HBuilder X</strong>会爆内存过大，这是由于echart.js源文件里包含的包太多，可以直接去官网定制自己需要的图表</p>
-<p>官网地址 –&gt;     <a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/builder.html">https://echarts.apache.org/zh/builder.html</a></p>
-<blockquote>
-<p>注意这里为了兼容版本要选择5.0以下的版本下载</p>
+        <h1 id="React项目初始配置"><a href="#React项目初始配置" class="headerlink" title="React项目初始配置"></a>React项目初始配置</h1><blockquote>
+<p>记录一下react项目的初始化配置</p>
 </blockquote>
-<p>下载后会得到一个echart.min.js文件，将其更名为echart.js后直接替换源文件</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在需要使用组件的页面导入<code>uni-ec-canvas</code>组件</p>
-<p><code>import uniEcCanvas from &quot;@/components/uni-ec-canvas/uni-ec-canvas.vue&quot;;</code></p>
-<p>贴出使用代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">uni-ec-canvas</span> </span><br><span class="hljs-tag">          <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;uni-ec-canvas&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;uni-ec-canvas&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;uni-ec-canvas&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">canvas-id</span>=<span class="hljs-string">&quot;uni-ec-canvas&quot;</span></span><br><span class="hljs-tag">          <span class="hljs-attr">:ec</span>=<span class="hljs-string">&quot;ec&quot;</span></span><br><span class="hljs-tag">       &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">uni-ec-canvas</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>基础配置已配好模板资源 ——- &gt;</p>
+<p><a target="_blank" rel="noopener" href="https://download.csdn.net/download/qq_53107845/87677345">资源下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://download.csdn.net/download/qq_53107845/87677345">https://download.csdn.net/download/qq_53107845/87677345</a></p>
+<p>使用的create-react-app脚手架</p>
+<p><code>npx create-react-app my-app</code>  my-app是你要创建的项目名</p>
+<p>使用的配置</p>
+<ul>
+<li>axios </li>
+<li>antd-ui框架 </li>
+<li>react-router-dom路由 </li>
+<li>redux react-redux react仓库</li>
+</ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>创建项目后，<code>cd my-app</code>进入项目</p>
+<p><code>npm i axios react-router-dom redux react-redux</code>  </p>
+<p><code>npm i @reduxjs/toolkit</code></p>
+<p><code>npm i sass -D</code></p>
+<p><code>npm i http-proxy-middleware</code></p>
+<p><code>npm add antd</code></p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>删除一些不相干的文件</p>
+<p>src下只留<code>index.css</code> <code>index.js</code>就行</p>
+<p>记得删除对删除文件的引入代码</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><blockquote>
+<p>配置路径</p>
+</blockquote>
+<p>进入node_modules—&gt;react-scripts–&gt;config–&gt;webpack.config.js</p>
+<p>搜索alias添加配置</p>
+<p><code>&quot;@&quot;:path.resolve(&quot;src&quot;),</code></p>
+<p>修改完后记得重新启动<code>npm start</code></p>
+<blockquote>
+<p>配置页面</p>
+</blockquote>
+<p>创建views文件夹下面存放页面jsx</p>
+<p>目录结构为</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">views</span><br><span class="hljs-literal">--</span> <span class="hljs-comment">home</span><br><span class="hljs-literal">--</span> <span class="hljs-literal">--</span> <span class="hljs-comment">Home</span><span class="hljs-string">.</span><span class="hljs-comment">jsx</span><br><span class="hljs-literal">--</span> <span class="hljs-comment">login</span><br><span class="hljs-literal">--</span> <span class="hljs-literal">--</span> <span class="hljs-comment">Login</span><span class="hljs-string">.</span><span class="hljs-comment">jsx</span><br><span class="hljs-literal">--</span> <span class="hljs-literal">--</span> <span class="hljs-comment">Login</span><span class="hljs-string">.</span><span class="hljs-comment">sass</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script&gt;<br><span class="hljs-comment">// 此处将路径替换为你放置该组件的路径  </span><br><span class="hljs-keyword">import</span> uniEcCanvas <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./uni-ec-canvas/ec-canvas.vue&#x27;</span>  <br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;<br>    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">return</span> &#123;<br>            <span class="hljs-attr">ec</span>:&#123;<br>                <span class="hljs-attr">options</span>:&#123;&#125; <span class="hljs-comment">//echart 配置项</span><br>            &#125;<br>        &#125;<br>    &#125;,<br>    <span class="hljs-attr">components</span>:&#123;<br>        uniEcCanvas<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css">// 这里一定要注意 设置该组件宽高 以及<span class="hljs-attribute">display</span>:block来确保canvas初始化的时候是有宽高的<br>&lt;style&gt;<br>.uni-ec-canvas&#123;<br>    <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">display</span>:block;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>配置路由</p>
+</blockquote>
+<p>创建router文件夹下index.js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createBrowserRouter &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react-router-dom&quot;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123;  <span class="hljs-title class_">Suspense</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;react&quot;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Login</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/views/login/Login.jsx&quot;</span><br><span class="hljs-keyword">const</span> <span class="hljs-title class_">Home</span> = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">lazy</span>(<span class="hljs-function">()=&gt;</span><span class="hljs-title function_">import</span>(<span class="hljs-string">&quot;@/views/home/Home.jsx&quot;</span>))<br><br><span class="hljs-comment">//创建路由表</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">createBrowserRouter</span>([<br>    &#123;<br>        <span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/&quot;</span>,<br>        <span class="hljs-attr">element</span>:<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Login</span>&gt;</span>等<span class="hljs-tag">&lt;/<span class="hljs-name">Login</span>&gt;</span></span><br>    &#125;,&#123;<br>        <span class="hljs-attr">path</span>:<span class="hljs-string">&quot;/home&quot;</span>,<br>        <span class="hljs-attr">element</span>:<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Suspense</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Home</span>&gt;</span>home<span class="hljs-tag">&lt;/<span class="hljs-name">Home</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Suspense</span>&gt;</span></span><br>    &#125;<br>])<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意</strong> 导出组件名要大驼峰命名法 首字母必须大写 然后rfc初始化</p>
+<blockquote>
+<p>配置代理</p>
+</blockquote>
+<p>创建<code>setupProxy.js</code>文件必须在src下面且文件名必须一致</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; createProxyMiddleware  &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;http-proxy-middleware&quot;</span>);<br><span class="hljs-comment">//配置跨域 代理</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">app</span>)&#123;<br>    app.<span class="hljs-title function_">use</span>(<br>        <span class="hljs-title function_">createProxyMiddleware</span>(<br>            <span class="hljs-string">&quot;/api&quot;</span>, <span class="hljs-comment">// 代理名称</span><br>            &#123;<br>                <span class="hljs-attr">target</span>:<span class="hljs-string">&quot;http://localhost:5000&quot;</span>, <span class="hljs-comment">// 后端地址</span><br>                <span class="hljs-attr">changeOrigin</span>:<span class="hljs-literal">true</span>,      <br>                <span class="hljs-attr">pathRewrite</span>:&#123;<span class="hljs-string">&quot;^/api&quot;</span>:<span class="hljs-string">&quot;&quot;</span>&#125;  <span class="hljs-comment">// 请求中将/api替换成空</span><br>            &#125;<br>        ),<br>    )<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 
+<blockquote>
+<p>修改index.css全局样式</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span> &#123;<br>  <span class="hljs-attribute">font-family</span>: -apple-system, BlinkMacSystemFont, <span class="hljs-string">&#x27;Segoe UI&#x27;</span>, <span class="hljs-string">&#x27;Roboto&#x27;</span>, <span class="hljs-string">&#x27;Oxygen&#x27;</span>,<br>    <span class="hljs-string">&#x27;Ubuntu&#x27;</span>, <span class="hljs-string">&#x27;Cantarell&#x27;</span>, <span class="hljs-string">&#x27;Fira Sans&#x27;</span>, <span class="hljs-string">&#x27;Droid Sans&#x27;</span>, <span class="hljs-string">&#x27;Helvetica Neue&#x27;</span>,<br>    sans-serif;<br>  -webkit-<span class="hljs-attribute">font-smoothing</span>: antialiased;<br>  -moz-osx-<span class="hljs-attribute">font-smoothing</span>: grayscale;<br>&#125;<br><br><span class="hljs-selector-tag">body</span>,<span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-tag">h3</span>,<span class="hljs-selector-tag">h4</span>,<span class="hljs-selector-tag">h5</span>,<span class="hljs-selector-tag">h6</span>,hr,<span class="hljs-selector-tag">p</span>,<span class="hljs-selector-tag">blockquote</span>,<span class="hljs-selector-tag">dl</span>,<span class="hljs-selector-tag">dt</span>,<span class="hljs-selector-tag">dd</span>,<span class="hljs-selector-tag">ul</span>,<span class="hljs-selector-tag">ol</span>,<span class="hljs-selector-tag">li</span>,pre,<span class="hljs-selector-tag">form</span>,<span class="hljs-selector-tag">fieldset</span>,<span class="hljs-selector-tag">legend</span>,<span class="hljs-selector-tag">button</span>,<span class="hljs-selector-tag">input</span>,<span class="hljs-selector-tag">textarea</span>,<span class="hljs-selector-tag">th</span>,<span class="hljs-selector-tag">td</span>&#123;<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>&#125;<br><br><br><span class="hljs-selector-tag">body</span>,<span class="hljs-selector-tag">button</span>,<span class="hljs-selector-tag">input</span>,select,<span class="hljs-selector-tag">textarea</span>&#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">12px</span>;<span class="hljs-attribute">font-family</span>:arial,<span class="hljs-string">&#x27;Hiragino Sans GB&#x27;</span>,<span class="hljs-string">&#x27;Microsoft Yahei&#x27;</span>,<span class="hljs-string">&#x27;微软雅黑&#x27;</span>,<span class="hljs-string">&#x27;宋体&#x27;</span>,\<span class="hljs-number">5</span>b8b\<span class="hljs-number">4</span>f53,Tahoma,Arial,Helvetica,STHeiti&#125;<br><br><span class="hljs-selector-tag">h1</span>,<span class="hljs-selector-tag">h2</span>,<span class="hljs-selector-tag">h3</span>,<span class="hljs-selector-tag">h4</span>,<span class="hljs-selector-tag">h5</span>,<span class="hljs-selector-tag">h6</span>&#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">100%</span>&#125;<br><br><span class="hljs-selector-tag">em</span>&#123;<span class="hljs-attribute">font-style</span>:normal&#125;<br><br>small&#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">12px</span>&#125;<br><br><span class="hljs-selector-tag">ul</span>,<span class="hljs-selector-tag">ol</span>&#123;<span class="hljs-attribute">list-style</span>:none&#125;<br><br><span class="hljs-selector-tag">a</span>&#123;<span class="hljs-attribute">text-decoration</span>:none&#125;<br><br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>&#123;<span class="hljs-attribute">text-decoration</span>:underline&#125;<br><br><span class="hljs-selector-tag">legend</span>&#123;<span class="hljs-attribute">color</span>:<span class="hljs-number">#000</span>&#125;<br><br><span class="hljs-selector-tag">fieldset</span>,<span class="hljs-selector-tag">img</span>&#123;<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>&#125;<br><br><span class="hljs-selector-tag">button</span>,<span class="hljs-selector-tag">input</span>,select,<span class="hljs-selector-tag">textarea</span>&#123;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">100%</span>&#125;<br><br><span class="hljs-selector-tag">table</span>&#123;<span class="hljs-attribute">border-collapse</span>:collapse;<span class="hljs-attribute">border-spacing</span>:<span class="hljs-number">0</span>&#125;<br><br><span class="hljs-selector-tag">img</span>&#123;-ms-interpolation-mode:bicubic&#125;<br><br><span class="hljs-selector-tag">textarea</span>&#123;<span class="hljs-attribute">resize</span>:vertical&#125;<br></code></pre></td></tr></table></figure>
 
 
-<h3 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h3><p>data里的数据里options为图标配置项，直接可以参考echarts官网配置项介绍</p>
-<p><a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/index.html">https://echarts.apache.org/examples/zh/index.html</a></p>
-<p><img src="https://s2.xptou.com/2023/03/29/6423ec2da6ac7.png"></p>
+
+<blockquote>
+<p>配置仓库</p>
+</blockquote>
+<p>创建store文件夹下的index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;configureStore&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@reduxjs/toolkit&quot;</span><br><span class="hljs-keyword">import</span> useUserStore <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./userinfoStore.js&quot;</span><br><span class="hljs-comment">//创建仓库</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">configureStore</span>(&#123;<br>    <span class="hljs-attr">reducer</span>:&#123;<br>        useUserStore,<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>userinfoStore.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; createSlice &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@reduxjs/toolkit&quot;</span>;<br><br><span class="hljs-keyword">const</span> counterSlice = <span class="hljs-title function_">createSlice</span>(&#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;useUserStore&#x27;</span>,<br>  <span class="hljs-attr">initialState</span>:&#123;<br>    <span class="hljs-attr">userinfo</span>: <span class="hljs-literal">null</span><br>  &#125;,<br>  <span class="hljs-attr">reducers</span>: &#123;<br>    <span class="hljs-attr">changeInit</span>:<span class="hljs-function">(<span class="hljs-params">state,val</span>)=&gt;</span>&#123;<br>        state.<span class="hljs-property">userinfo</span> = val.<span class="hljs-property">val</span><br><br>    &#125;,<br>  &#125;<br>&#125;)<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> &#123; incremented &#125; = counterSlice.<span class="hljs-property">actions</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> counterSlice.<span class="hljs-property">reducer</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置请求拦截器</p>
+</blockquote>
+<p>创建required文件夹</p>
+<p>index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;axios&quot;</span><br><span class="hljs-keyword">import</span> &#123; message &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;antd&#x27;</span>;<br><br>axios.<span class="hljs-property">interceptors</span>.<span class="hljs-property">request</span>.<span class="hljs-title function_">use</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">config</span>) &#123;<br>    <span class="hljs-comment">// 在发送请求之前做些什么</span><br>    <span class="hljs-keyword">let</span> token = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;Xinghaiwu&quot;</span>)<br>    token &amp;&amp; (config.<span class="hljs-property">headers</span>[<span class="hljs-string">&#x27;Authorization&#x27;</span>] = token)<br>    <span class="hljs-keyword">return</span> config;<br>  &#125;, <span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) &#123;<br>    <span class="hljs-comment">// 对请求错误做些什么</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error);<br>  &#125;);<br><br><span class="hljs-comment">// 添加响应拦截器</span><br>axios.<span class="hljs-property">interceptors</span>.<span class="hljs-property">response</span>.<span class="hljs-title function_">use</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) &#123;<br>    <span class="hljs-comment">// 2xx 范围内的状态码都会触发该函数。</span><br>    <span class="hljs-comment">// 对响应数据做点什么</span><br>    <span class="hljs-keyword">return</span> response;<br>  &#125;, <span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) &#123;<br>    <span class="hljs-comment">// 超出 2xx 范围的状态码都会触发该函数。</span><br>    <span class="hljs-comment">// 对响应错误做点什么</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error);<br>  &#125;);<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">byAxiosData</span>(<span class="hljs-params">type,url,value</span>)&#123;<br>  <span class="hljs-comment">// post发送data,get发送params</span><br>  <span class="hljs-keyword">let</span> &#123;data&#125; = <span class="hljs-keyword">await</span> <span class="hljs-title function_">axios</span>(&#123;<br>    <span class="hljs-attr">method</span>:type,<br>    <span class="hljs-attr">url</span>:url,<br>    <span class="hljs-attr">params</span>:type === <span class="hljs-string">&quot;get&quot;</span> ? value :<span class="hljs-literal">null</span>,<br>    <span class="hljs-attr">data</span>:type === <span class="hljs-string">&quot;post&quot;</span> ? value :<span class="hljs-literal">null</span><br>  &#125;)<br>  <br>    <span class="hljs-keyword">switch</span>(data.<span class="hljs-property">code</span>)&#123;<br>      <span class="hljs-keyword">case</span> <span class="hljs-number">300</span>:<br>        message.<span class="hljs-title function_">error</span>(data.<span class="hljs-property">value</span>, <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">break</span><br>      <span class="hljs-keyword">case</span> <span class="hljs-number">200</span>:<br>        message.<span class="hljs-title function_">success</span>(data.<span class="hljs-property">value</span>, <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">break</span><br>      <span class="hljs-keyword">case</span> <span class="hljs-number">100</span>:<br>        <span class="hljs-keyword">break</span><br>      <span class="hljs-attr">default</span>:<br>        message.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;请求失败！&#x27;</span>, <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">break</span><br>    &#125;<br>  <span class="hljs-keyword">return</span> data<br>&#125;<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> byAxiosData<br></code></pre></td></tr></table></figure>
+
+<p>getMsg.js文件进行请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> getMsg <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./index&quot;</span><br><span class="hljs-comment">// 默认地址</span><br><span class="hljs-keyword">let</span> pathUrl = <span class="hljs-string">&quot;/api&quot;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">setLogin</span> = (<span class="hljs-params">value</span>) =&gt; <span class="hljs-title function_">getMsg</span>(<span class="hljs-string">&quot;post&quot;</span>, pathUrl + <span class="hljs-string">&quot;/root/login&quot;</span>, value)<br></code></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>index.js引入</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ReactDOM</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-dom/client&#x27;</span>;<br><span class="hljs-comment">//通过路由组件渲染根路由</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">RouterProvider</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-router-dom&#x27;</span>;<br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./router/index.js&quot;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;antd/dist/reset.css&#x27;</span><br><span class="hljs-comment">//全局样式覆盖</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./index.css&#x27;</span>;<br><span class="hljs-comment">//引入仓库</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Provider</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react-redux&#x27;</span>;<br><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/store/index.js&quot;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;./required/getMsg&quot;</span><br><br><span class="hljs-keyword">const</span> root = <span class="hljs-title class_">ReactDOM</span>.<span class="hljs-title function_">createRoot</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;root&#x27;</span>));<br>root.<span class="hljs-title function_">render</span>(<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">&#123;store&#125;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">RouterProvider</span> <span class="hljs-attr">router</span>=<span class="hljs-string">&#123;router&#125;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">RouterProvider</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span><br>);<br></code></pre></td></tr></table></figure>
+
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -181,23 +241,6 @@
       
         <a href="/2023/03/30/session-cookie-Token/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">session,cookie,Token</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://ts1.cn.mm.bing.net/th?id=OIP-C.mH9YLFEL5YdVxJM82mjVJQHaEo&amp;w=316&amp;h=197&amp;c=8&amp;rs=1&amp;qlt=90&amp;o=6&amp;pid=3.1&amp;rm=2"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2023/03/07/git%E4%BD%BF%E7%94%A8/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">git使用</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -284,7 +327,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9"><span class="toc-number">2.</span> <span class="toc-text">配置项</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">2.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li></ol>
   </div>
 </section>
 
